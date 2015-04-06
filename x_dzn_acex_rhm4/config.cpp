@@ -45,111 +45,18 @@ class CfgPatches
 #define SOUND_416_FA
 #define SOUND_416_FA_SD
 
+#define SOUND_HB
+#define SOUND_HB_SD
+#define SOUND_HB_FA
+#define SOUND_HB_FA_SD
+
+#define SOUND_SBR9
+#define SOUND_SBR9_SD
+#define SOUND_SBR9_FA
+#define SOUND_SBR9_FA_SD
+
 #define	SOUND_GL
 #define	SOUND_GL_RELOAD
-
-/*
-class CfgMagazines
-{
-	class Default;
-	class CA_Magazine;
-	class 20Rnd_762x51_Mag;
-	class 30Rnd_556x45_Stanag;
-	class 30Rnd_9x21_Mag;
-	class RH_20Rnd_762x51_AR10: 20Rnd_762x51_Mag
-	{
-		STRNAME("$STR_xdzn_RH_20Rnd_762x51_AR10")
-	};
-	class RH_20Rnd_762x51_M80A1: 20Rnd_762x51_Mag
-	{
-		STRNAME("$STR_xdzn_RH_20Rnd_762x51_M80A1")
-	};
-	class RH_20Rnd_762x51_Mk316LR: 20Rnd_762x51_Mag
-	{
-		STRNAME("$STR_xdzn_RH_20Rnd_762x51_Mk316LR")
-	};
-	class RH_20Rnd_762x51_Mk319: 20Rnd_762x51_Mag
-	{
-		STRNAME("$STR_xdzn_RH_20Rnd_762x51_Mk319")
-	};
-	class RH_20Rnd_762x51_LFMJSB: 20Rnd_762x51_Mag
-	{
-		STRNAME("$STR_xdzn_RH_20Rnd_762x51_LFMJSB")
-	};
-	class RH_30Rnd_68x43_FMJ: 30Rnd_556x45_Stanag
-	{
-		STRNAME("$STR_xdzn_RH_30Rnd_68x43_FMJ")
-	};
-	class RH_30Rnd_68x43_Match: 30Rnd_556x45_Stanag
-	{
-		STRNAME("$STR_xdzn_RH_30Rnd_68x43_Match")
-	};
-	class RH_60Rnd_556x45_M855A1: 30Rnd_556x45_Stanag
-	{
-		STRNAME("$STR_xdzn_RH_60Rnd_556x45_M855A1")
-	};
-	class RH_60Rnd_556x45_Mk318: 30Rnd_556x45_Stanag
-	{
-		STRNAME("$STR_xdzn_RH_60Rnd_556x45_Mk318")
-	};
-	class RH_60Rnd_556x45_Mk262: 30Rnd_556x45_Stanag
-	{
-		STRNAME("$STR_xdzn_RH_60Rnd_556x45_Mk262")
-	};
-	class RH_30Rnd_556x45_M855A1: 30Rnd_556x45_Stanag
-	{
-		STRNAME("$STR_xdzn_RH_30Rnd_556x45_M855A1")
-	};
-	class RH_30Rnd_556x45_Mk318: 30Rnd_556x45_Stanag
-	{
-		STRNAME("$STR_xdzn_RH_30Rnd_556x45_Mk318")
-	};
-	
-	
-	class RH_30Rnd_556x45_Mk262: 30Rnd_556x45_Stanag
-	{
-		STRNAME("$STR_xdzn_RH_30Rnd_556x45_Mk262")
-	};
-	class RH_20Rnd_556x45_M855A1: 30Rnd_556x45_Stanag
-	{
-		STRNAME("$STR_xdzn_RH_20Rnd_556x45_M855A1")
-	};
-	class RH_20Rnd_556x45_Mk318: 30Rnd_556x45_Stanag
-	{
-		STRNAME("$STR_xdzn_RH_20Rnd_556x45_Mk318")
-	};
-	class RH_20Rnd_556x45_Mk262: 30Rnd_556x45_Stanag
-	{
-		STRNAME("$STR_xdzn_RH_20Rnd_556x45_Mk262")
-	};
-	class RH_30Rnd_762x35_FMJ: 30Rnd_556x45_Stanag
-	{
-		STRNAME("$STR_xdzn_RH_30Rnd_762x35_FMJ")
-	};
-	class RH_30Rnd_762x35_Match: 30Rnd_556x45_Stanag
-	{
-		STRNAME("$STR_xdzn_RH_30Rnd_762x35_Match")
-	};
-	class RH_30Rnd_762x35_MSB: 30Rnd_556x45_Stanag
-	{
-		STRNAME("$STR_xdzn_RH_30Rnd_762x35_MSB")
-	};
-	class RH_32Rnd_9mm_M822: 30Rnd_9x21_Mag
-	{
-		STRNAME("$STR_xdzn_RH_32Rnd_9mm_M822")
-	};
-	class RH_32Rnd_9mm_HP: 30Rnd_9x21_Mag
-	{
-		STRNAME("$STR_xdzn_RH_32Rnd_9mm_HP")
-	};
-	class RH_32Rnd_9mm_HPSB: 30Rnd_9x21_Mag
-	{
-		STRNAME("$STR_xdzn_RH_32Rnd_9mm_HPSB")
-	};
-};
-*/
-
-
 
 
 class Mode_SemiAuto;
