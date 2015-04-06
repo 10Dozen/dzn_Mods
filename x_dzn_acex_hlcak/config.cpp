@@ -197,11 +197,11 @@ class CfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				SOUND_AK74
+				SOUND_AK74_FA
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				SOUND_AK74_SD
+				SOUND_AK74_FA_SD
 			};
 		};
 	};
@@ -227,11 +227,11 @@ class CfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				SOUND_AK74
+				SOUND_AK74_FA
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				SOUND_AK74_SD
+				SOUND_AK74_FA_SD
 			};
 		};
 	};
@@ -261,11 +261,11 @@ class CfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				SOUND_AK74
+				SOUND_AK74_FA
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				SOUND_AK74_SD
+				SOUND_AK74_FA_SD
 			};
 		};
 	};
@@ -290,11 +290,11 @@ class CfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				SOUND_AK74
+				SOUND_AK12_FA
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				SOUND_AK74_SD
+				SOUND_AK12_FA_SD
 			};
 		};
 		class Single: Mode_SemiAuto
@@ -302,11 +302,11 @@ class CfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				SOUND_AK74
+				SOUND_AK12
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				SOUND_AK74_SD
+				SOUND_AK12_SD
 			};
 		};
 		/*
@@ -315,11 +315,11 @@ class CfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				SOUND_AK74_BURST
+				SOUND_AK12_BURST
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				SOUND_AK74_BURST_SD
+				SOUND_AK12_BURST_SD
 			};
 		};
 		*/
@@ -338,11 +338,11 @@ class CfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				SOUND_AK74
+				SOUND_AK12_FA
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				SOUND_AK74_SD
+				SOUND_AK12_FA_SD
 			};
 		};
 		class Single: Mode_SemiAuto
@@ -350,11 +350,11 @@ class CfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				SOUND_AK74
+				SOUND_AK12
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				SOUND_AK74_SD
+				SOUND_AK12_SD
 			};
 		};
 		/*
@@ -363,11 +363,11 @@ class CfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				SOUND_BURST
+				SOUND_AK12_BURST
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				SOUND_BURST_SD
+				SOUND_AK12_BURST_SD
 			};
 		};
 		*/
@@ -381,11 +381,11 @@ class CfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				SOUND_AKSU
+				SOUND_AK12U_FA
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				SOUND_AKSU_SD
+				SOUND_AK12U_FA_SD
 			};
 		};
 		class Single: Mode_SemiAuto
@@ -393,11 +393,11 @@ class CfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				SOUND_AKSU
+				SOUND_AK12U
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				SOUND_AKSU_SD
+				SOUND_AK12U_SD
 			};
 		};
 		/*
@@ -406,11 +406,11 @@ class CfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				SOUND_BURST
+				SOUND_AK12U_BURST
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				SOUND_BURST_SD
+				SOUND_AK12U_BURST_SD
 			};
 		};
 		*/
@@ -424,11 +424,11 @@ class CfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				SOUND_AK74
+				SOUND_RPK12_FA
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				SOUND_AK74_SD
+				SOUND_RPK12_FA_SD
 			};
 		};
 		class Single: Mode_SemiAuto
@@ -436,11 +436,11 @@ class CfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				SOUND_AK74
+				SOUND_RPK12
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				SOUND_AK74_SD
+				SOUND_RPK12_SD
 			};
 		};
 		/*
@@ -449,11 +449,11 @@ class CfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				SOUND_BURST
+				SOUND_RPK12_BURST
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				SOUND_BURST_SD
+				SOUND_RPK12_BURST_SD
 			};
 		};
 		*/
@@ -469,11 +469,11 @@ class CfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				SOUND_AKSU
+				SOUND_AKSU_FA
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				SOUND_AKSU_SD
+				SOUND_AKSU_FA_SD
 			};
 		};
 		class Single: Mode_SemiAuto
@@ -499,11 +499,11 @@ class CfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				SOUND_AKM
+				SOUND_AKM_FA
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				SOUND_AKM_SD
+				SOUND_AKM_FA_SD
 			};
 		};
 		class Single: Mode_SemiAuto
@@ -528,11 +528,11 @@ class CfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				SOUND_AKM
+				SOUND_AKM_FA
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				SOUND_AKM_SD
+				SOUND_AKM__FASD
 			};
 		};
 		class Single: Mode_SemiAuto
@@ -568,11 +568,11 @@ class CfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				SOUND_RPK
+				SOUND_RPK_FA
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				SOUND_RPK_SD
+				SOUND_RPK_FA_SD
 			};
 		};
 		class Single: Mode_SemiAuto
@@ -607,11 +607,11 @@ class CfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				SOUND_AEK
+				SOUND_AEK_FA
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				SOUND_AEK_SD
+				SOUND_AEK_FA_SD
 			};
 		};
 		class Burst: Mode_Burst
@@ -619,11 +619,11 @@ class CfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				SOUND_AEK
+				SOUND_AEK_BURST
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				SOUND_AEK_SD
+				SOUND_AEK_BURST_SD
 			};
 		};
 		class Single: Mode_SemiAuto
