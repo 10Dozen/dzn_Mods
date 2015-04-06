@@ -248,7 +248,18 @@
 		<Russian>Пурпурный дым</Russian>
 	</Key>
 	
-	
+	<Key ID='STR_xdzn_ak_GRD_Blue'>
+		<English>40mm VDG-40 (blue)</English>
+		<Russian>40мм ВДГ-40 (синий)</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_GRD_Blue_desc'>
+		<English>Caliber: 40mm Smoke Grenade Round&lt;br /&gt;Rounds: 1&lt;br /&gt;Used in: GP-25, GP-30</English>
+		<Russian>Калибр: 40мм дымовая граната&lt;br /&gt;Патронов: 1&lt;br /&gt;Используется в: ГП-25, ГП-30</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_GRD_Blue_short'>
+		<English>Blue Smoke</English>
+		<Russian>Синий дым</Russian>
+	</Key>
 	
 	
 	<Key ID='STR_xdzn_ak_opt_pso1'>
