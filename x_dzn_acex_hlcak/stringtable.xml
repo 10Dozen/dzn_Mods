@@ -220,31 +220,121 @@
 		<Russian>Прибор бесшумной и беспламенной стрельбы ПБС-4 для АК калибра 7.62</Russian>
 	</Key>	
 	
-	<Key ID='STR_xdzn_ak_ak_base'><English>AK-74</English><Russian>АК-74</Russian></Key><Key ID='STR_xdzn_ak_ak_base_desc'><English>Assault rifle&lt;br /&gt;Cartridge: 5.45x39 mm&lt;br /&gt;Feed: 30, 45 and 75 round magazines</English><Russian>Штурмовая винтовка&lt;br /&gt;Боеприпас: 5.45х39 мм&lt;br /&gt;Питание: Магазины на 30, 45 или 75.</Russian></Key>
+	<Key ID='STR_xdzn_ak_ak_base'>
+		<English>AK-74</English>
+		<Russian>АК-74</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_ak_base_desc'>
+		<English>Assault rifle&lt;br /&gt;Cartridge: 5.45x39 mm&lt;br /&gt;Feed: 30, 45 and 75 round magazines</English>
+		<Russian>Штурмовая винтовка&lt;br /&gt;Боеприпас: 5.45х39 мм&lt;br /&gt;Питание: Магазины на 30, 45 или 75.</Russian>
+	</Key>
 
-	<Key ID='STR_xdzn_ak_ak74'><English>AK-74</English><Russian>АК-74</Russian></Key><Key ID='STR_xdzn_ak_ak74_desc'><English>Assault rifle&lt;br /&gt;Cartridge: 5.45x39 mm&lt;br /&gt;Feed: 30, 45 and 75 round magazines</English><Russian>Штурмовая винтовка&lt;br /&gt;Боеприпас: 5.45х39 мм&lt;br /&gt;Питание: Магазины на 30, 45 или 75.</Russian></Key>
+	<Key ID='STR_xdzn_ak_ak74'>
+		<English>AK-74</English>
+		<Russian>АК-74</Russian>
+	</Key>
+		<Key ID='STR_xdzn_ak_ak74_desc'>
+		<English>Assault rifle&lt;br /&gt;Cartridge: 5.45x39 mm&lt;br /&gt;Feed: 30, 45 and 75 round magazines</English>
+		<Russian>Штурмовая винтовка&lt;br /&gt;Боеприпас: 5.45х39 мм&lt;br /&gt;Питание: Магазины на 30, 45 или 75.</Russian>
+	</Key>
 
-	<Key ID='STR_xdzn_ak_ak74_worn'><English>AK-74 (Dirty)</English><Russian>АК-74 (Грязный)</Russian></Key><Key ID='STR_xdzn_ak_ak74_worn_desc'><English>Assault rifle covered in dirt.&lt;br /&gt;Cartridge: 5.45x39 mm&lt;br /&gt;Feed: 30, 45 and 75 round magazines</English><Russian>Штурмовая винтовка покрытая грязью. Из этого вообще можно стрелять?&lt;br /&gt;Боеприпас: 5.45х39 мм&lt;br /&gt;Питание: Магазины на 30, 45 или 75.</Russian></Key>
+	<Key ID='STR_xdzn_ak_ak74_worn'>
+		<English>AK-74 (Dirty)</English>
+		<Russian>АК-74 (Грязный)</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_ak74_worn_desc'>
+		<English>Assault rifle covered in dirt.&lt;br /&gt;Cartridge: 5.45x39 mm&lt;br /&gt;Feed: 30, 45 and 75 round magazines</English>
+		<Russian>Штурмовая винтовка покрытая грязью. Из этого вообще можно стрелять?&lt;br /&gt;Боеприпас: 5.45х39 мм&lt;br /&gt;Питание: Магазины на 30, 45 или 75.</Russian>
+	</Key>
 
-	<Key ID='STR_xdzn_ak_aks74'><English>AKS-74</English><Russian>АКС-74</Russian></Key><Key ID='STR_xdzn_ak_aks74_desc'><English>Assault rifle, version with folding stock.&lt;br /&gt;Cartridge: 5.45x39 mm&lt;br /&gt;Feed: 30, 45 and 75 round magazines</English><Russian>Штурмовая винтовка, версия со складным прикладом.&lt;br /&gt;Боеприпас: 5.45х39 мм&lt;br /&gt;Питание: Магазины на 30, 45 или 75.</Russian></Key>
+	<Key ID='STR_xdzn_ak_aks74'>
+		<English>AKS-74</English>
+		<Russian>АКС-74</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_aks74_desc'>
+		<English>Assault rifle, version with folding stock.&lt;br /&gt;Cartridge: 5.45x39 mm&lt;br /&gt;Feed: 30, 45 and 75 round magazines</English>
+		<Russian>Штурмовая винтовка, версия со складным прикладом.&lt;br /&gt;Боеприпас: 5.45х39 мм&lt;br /&gt;Питание: Магазины на 30, 45 или 75.</Russian>
+	</Key>
 
-	<Key ID='STR_xdzn_ak_ak12'><English>AK-12</English><Russian>АК-12</Russian></Key><Key ID='STR_xdzn_ak_ak12_desc'><English>Assault rifle, with folding stock.&lt;br /&gt;Cartridge: 5.45x39 mm&lt;br /&gt;Feed: 30, 45 and 75 round magazines</English><Russian>Штурмовая винтовка, складной приклад.&lt;br /&gt;Боеприпас: 5.45х39 мм&lt;br /&gt;Питание: Магазины на 30, 45 или 75.</Russian></Key>
+	<Key ID='STR_xdzn_ak_ak12'>
+		<English>AK-12</English>
+		<Russian>АК-12</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_ak12_desc'>
+		<English>Assault rifle, with folding stock.&lt;br /&gt;Cartridge: 5.45x39 mm&lt;br /&gt;Feed: 30, 45 and 75 round magazines</English>
+		<Russian>Штурмовая винтовка, складной приклад.&lt;br /&gt;Боеприпас: 5.45х39 мм&lt;br /&gt;Питание: Магазины на 30, 45 или 75.</Russian>
+	</Key>
 
-	<Key ID='STR_xdzn_ak_aks74u'><English>AKS-74U</English><Russian>АКС-74У</Russian></Key><Key ID='STR_xdzn_ak_aks74u_desc'><English>Carbine version of AK-74.&lt;br /&gt;Cartridge: 5.45x39 mm&lt;br /&gt;Feed: 30, 45 and 75 round magazines</English><Russian> Укороченная модификация автомата АК74&lt;br /&gt;Боеприпас: 5.45х39 мм&lt;br /&gt;Питание: Магазины на 30, 45 или 75.</Russian></Key>
+	<Key ID='STR_xdzn_ak_aks74u'>
+		<English>AKS-74U</English>
+		<Russian>АКС-74У</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_aks74u_desc'>
+		<English>Carbine version of AK-74.&lt;br /&gt;Cartridge: 5.45x39 mm&lt;br /&gt;Feed: 30, 45 and 75 round magazines</English>
+		<Russian> Укороченная модификация автомата АК74&lt;br /&gt;Боеприпас: 5.45х39 мм&lt;br /&gt;Питание: Магазины на 30, 45 или 75.</Russian>
+	</Key>
 
-	<Key ID='STR_xdzn_ak_ak47'><English>AK</English><Russian>АК</Russian></Key><Key ID='STR_xdzn_ak_ak47_desc'><English>Assault rifle&lt;br /&gt;Cartridge: 7.62x39 mm&lt;br /&gt;Feed: 30, 45 and 75 round magazines</English><Russian>Штурмовая винтовка&lt;br /&gt;Боеприпас: 7.62х39 мм&lt;br /&gt;Питание: Магазины на 30, 45 или 75.</Russian></Key>
+	<Key ID='STR_xdzn_ak_ak47'>
+		<English>AK</English>
+		<Russian>АК</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_ak47_desc'>
+		<English>Assault rifle&lt;br /&gt;Cartridge: 7.62x39 mm&lt;br /&gt;Feed: 30, 45 and 75 round magazines</English>
+		<Russian>Штурмовая винтовка&lt;br /&gt;Боеприпас: 7.62х39 мм&lt;br /&gt;Питание: Магазины на 30, 45 или 75.</Russian>
+	</Key>
 
-	<Key ID='STR_xdzn_ak_akm'><English>AKM</English><Russian>АКМ</Russian></Key><Key ID='STR_xdzn_ak_akm_desc'><English>Assault rifle&lt;br /&gt;Cartridge: 7.62x39 mm&lt;br /&gt;Feed: 30, 45 and 75 round magazines</English><Russian>Штурмовая винтовка&lt;br /&gt;Боеприпас: 7.62х39 мм&lt;br /&gt;Питание: Магазины на 30, 45 или 75.</Russian></Key>
+	<Key ID='STR_xdzn_ak_akm'>
+		<English>AKM</English>
+		<Russian>АКМ</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_akm_desc'>
+		<English>Assault rifle&lt;br /&gt;Cartridge: 7.62x39 mm&lt;br /&gt;Feed: 30, 45 and 75 round magazines</English>
+		<Russian>Штурмовая винтовка&lt;br /&gt;Боеприпас: 7.62х39 мм&lt;br /&gt;Питание: Магазины на 30, 45 или 75.</Russian>
+	</Key>
 
-	<Key ID='STR_xdzn_ak_akm_gl'><English>AKM (GP-25)</English><Russian>АКМ (ГП-25)</Russian></Key><Key ID='STR_xdzn_ak_akm_gl_desc'><English>Assault rifle with grenade launcher&lt;br /&gt;Cartridge: 7.62x39 mm, 40 mm grenades&lt;br /&gt;Feed: 30, 45 and 75 round magazines.  40 mm grenades.</English><Russian>Штурмовая винтовка с подствольным гранатометом&lt;br /&gt;Боеприпас: 7.62х39 мм, 40мм гранаты&lt;br /&gt;Питание: Магазины на 30, 45 или 75. 40мм гранаты.</Russian></Key>
+	<Key ID='STR_xdzn_ak_akm_gl'>
+		<English>AKM (GP-25)</English>
+		<Russian>АКМ (ГП-25)</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_akm_gl_desc'>
+		<English>Assault rifle with grenade launcher&lt;br /&gt;Cartridge: 7.62x39 mm, 40 mm grenades&lt;br /&gt;Feed: 30, 45 and 75 round magazines.  40 mm grenades.</English>
+		<Russian>Штурмовая винтовка с подствольным гранатометом&lt;br /&gt;Боеприпас: 7.62х39 мм, 40мм гранаты&lt;br /&gt;Питание: Магазины на 30, 45 или 75. 40мм гранаты.</Russian>
+	</Key>
 
-	<Key ID='STR_xdzn_ak_rpk'><English>RPK</English><Russian>РПК</Russian></Key><Key ID='STR_xdzn_ak_rpk_desc'><English>Light machine gun&lt;br /&gt;Cartridge: 7.62x39 mm&lt;br /&gt;Feed: 30, 45 and 75 round magazines</English><Russian>Легкий пулемет&lt;br /&gt;Боеприпас: 7.62х39 мм&lt;br /&gt;Питание: Магазины на 30, 45 или 75.</Russian></Key>
+	<Key ID='STR_xdzn_ak_rpk'>
+		<English>RPK</English>
+		<Russian>РПК</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_rpk_desc'>
+		<English>Light machine gun&lt;br /&gt;Cartridge: 7.62x39 mm&lt;br /&gt;Feed: 30, 45 and 75 round magazines</English>
+		<Russian>Легкий пулемет&lt;br /&gt;Боеприпас: 7.62х39 мм&lt;br /&gt;Питание: Магазины на 30, 45 или 75.</Russian>
+	</Key>
 
-	<Key ID='STR_xdzn_ak_aks74_gl'><English>AKS-74 (GP-30)</English><Russian>АКС-74 (ГП-30)</Russian></Key><Key ID='STR_xdzn_ak_aks74_gl_desc'><English>Assault rifle with grenade launcher&lt;br /&gt;Cartridge: 5.45x39 mm, 40 mm grenades&lt;br /&gt;Feed: 30, 45 and 75 round magazines.  40 mm grenades.</English><Russian>Штурмовая винтовка с подствольным гранатометом&lt;br /&gt;Боеприпас: 5.45x39 мм, 40мм гранаты&lt;br /&gt;Питание: Магазины на 30, 45 или 75. 40мм гранаты.</Russian></Key>
+	<Key ID='STR_xdzn_ak_aks74_gl'>
+		<English>AKS-74 (GP-30)</English>
+		<Russian>АКС-74 (ГП-30)</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_aks74_gl_desc'>
+		<English>Assault rifle with grenade launcher&lt;br /&gt;Cartridge: 5.45x39 mm, 40 mm grenades&lt;br /&gt;Feed: 30, 45 and 75 round magazines.  40 mm grenades.</English>
+		<Russian>Штурмовая винтовка с подствольным гранатометом&lt;br /&gt;Боеприпас: 5.45x39 мм, 40мм гранаты&lt;br /&gt;Питание: Магазины на 30, 45 или 75. 40мм гранаты.</Russian>
+	</Key>
 
-	<Key ID='STR_xdzn_ak_aek971'><English>AEK-971</English><Russian>АЕК-971</Russian></Key><Key ID='STR_xdzn_ak_aek971_desc'><English>Assault rifle&lt;br /&gt;Cartridge: 5.45x39 mm&lt;br /&gt;Feed: 30, 45 and 75 round magazines</English><Russian>Штурмовая винтовка&lt;br /&gt;Боеприпас: 5.45х39 мм&lt;br /&gt;Питание: Магазины на 30, 45 или 75.</Russian></Key>
+	<Key ID='STR_xdzn_ak_aek971'>
+		<English>AEK-971</English>
+		<Russian>АЕК-971</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_aek971_desc'>
+		<English>Assault rifle&lt;br /&gt;Cartridge: 5.45x39 mm&lt;br /&gt;Feed: 30, 45 and 75 round magazines</English>
+		<Russian>Штурмовая винтовка&lt;br /&gt;Боеприпас: 5.45х39 мм&lt;br /&gt;Питание: Магазины на 30, 45 или 75.</Russian>
+	</Key>
 
-	<Key ID='STR_xdzn_ak_saiga12k'><English>Saiga-12K</English><Russian>Сайга-12К</Russian></Key><Key ID='STR_xdzn_ak_saiga12k_desc'><English>Semi-auto shotgun&lt;br /&gt;Cartridge: .12 Gauge&lt;br /&gt;Feed: 10 round magazine.</English><Russian>Самозарядное ружье&lt;br /&gt;Боеприпас: 12 кал.&lt;br /&gt;Питание: Магазин на 10 патронов.</Russian></Key>
-	
+	<Key ID='STR_xdzn_ak_saiga12k'>
+		<English>Saiga-12K</English>
+		<Russian>Сайга-12К</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_saiga12k_desc'>
+		<English>Semi-auto shotgun&lt;br /&gt;Cartridge: .12 Gauge&lt;br /&gt;Feed: 10 round magazine.</English>
+		<Russian>Самозарядное ружье&lt;br /&gt;Боеприпас: 12 кал.&lt;br /&gt;Питание: Магазин на 10 патронов.</Russian>
+	</Key>
   </Package>
 </Project>
