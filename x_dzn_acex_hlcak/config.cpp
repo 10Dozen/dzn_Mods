@@ -33,6 +33,7 @@ class asdg_FrontSideRail;
 class asdg_OpticRail1913;
 class asdg_OpticRail1913_short;
 
+// DEFINES
 #define	STRNAME(NAME)	displayName = "NAME";displayNameShort = "NAME_short";descriptionShort = "NAME_desc";
 #define STRNAME2(NAME)	displayname = "NAME";descriptionShort = "NAME_desc";
 
@@ -40,15 +41,18 @@ class asdg_OpticRail1913_short;
 #define SOUND_AK74_SD	begin1[]={"\x_dzn_acex_hlcak\acex_sound\aks74un_fire",1,1,80};begin2[]={"\x_dzn_acex_hlcak\acex_sound\aks74un_fire",1,0.97,80};begin3[]={"\x_dzn_acex_hlcak\acex_sound\aks74un_fire",1,1.016,80};soundBegin[]={"begin1",0.33,"begin2",0.33,"begin3",0.33};	
 #define SOUND_AKSU	begin1[]={"\x_dzn_acex_hlcak\acex_sound\aks74u_fire1",1.77828,1,1100};begin2[]={"\x_dzn_acex_hlcak\acex_sound\aks74u_fire2",1.77828,1,1100};begin3[]={"\x_dzn_acex_hlcak\acex_sound\aks74u_fire3",1.77828,1,1100};soundBegin[]={"begin1",0.33,"begin2",0.33,"begin3",0.33};
 #define SOUND_AKSU_SD	begin1[]={"\x_dzn_acex_hlcak\acex_sound\aks74un_fire",1,1,80};begin2[]={"\x_dzn_acex_hlcak\acex_sound\aks74un_fire",1,0.97,80};begin3[]={"\x_dzn_acex_hlcak\acex_sound\aks74un_fire",1,1.016,80};soundBegin[]={"begin1",0.33,"begin2",0.33,"begin3"
-#define SOUND_AKM
-#define SOUND_AKM_SD
-#define SOUND_RPK
-#define SOUND_RPL_SD
-#define SOUND_AEK
-#define SOUND_AEK_SD
-#define	SOUND_GP
-#define	SOUND_GP_RELOAD
+#define SOUND_AKM	begin1[]={"\x_dzn_acex_hlcak\acex_sound\akm_fire1",1.77828,1,1700};begin2[]={"\x_dzn_acex_hlcak\acex_sound\akm_fire2",1.77828,1,1700};begin3[]={"\x_dzn_acex_hlcak\acex_sound\akm_fire2",1.77828,1.027,1700};soundBegin[]={"begin1",0.33,"begin2",0.33,"begin3",0.33};
+#define SOUND_AKM_SD	SOUND_AK74_SD
+#define SOUND_RPK	SOUND_AKM
+#define SOUND_RPL_SD	SOUND_AK74_SD
+#define SOUND_AEK	SOUND_AK74
+#define SOUND_AEK_SD	SOUND_AK74_SD
+#define	SOUND_GP	sound[]={"\x_dzn_acex_hlcak\acex_sound\gp30_fire",1,1,100};
+#define	SOUND_GP_RELOAD	reloadMagazineSound[]={"\x_dzn_acex_hlcak\acex_sound\gp30_reload",1.0,1,10};
+#define SOUND_BURST	SOUND_AK74
+#define SOUND_BURST_SD	SOUND_AK74_SD
 
+// CONFIGS
 class CfgMagazines
 {
 	class 30Rnd_556x45_Stanag;
@@ -191,7 +195,7 @@ class CfgWeapons
 		};
 		class FullAuto: Mode_FullAuto
 		{
-			class BaseSoundModeType
+			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
 				SOUND_AK74
@@ -312,44 +316,34 @@ class CfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				begin1[] = {"\hlc_wp_ak\snd\ak12_fire",1,1,1200};
-				begin2[] = {"\hlc_wp_ak\snd\ak12_fire",1,1,1200};
-				begin3[] = {"\hlc_wp_ak\snd\ak12_fire",1,1,1200};
-				soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.34};
+				SOUND_AK74_BURST
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				begin1[] = {"\hlc_wp_ak\snd\aek_sil",1,1,200};
-				begin2[] = {"\hlc_wp_ak\snd\aek_sil",1,1,200};
-				soundBegin[] = {"begin1",0.5,"begin2",0.5};
+				SOUND_AK74_BURST_SD
 			};
 		};
 		*/
 	};
 	
-	/*
+	
 	class hlc_rifle_ak12GL: hlc_rifle_aks74
 	{
-	
+		STRNAME("$STR_xdzn_ak_ak12_gl")
 		class hlc_GP30_AK12: UGL_F
 		{
-			sound[] = {"\hlc_wp_ak\snd\gp30_fire",1.0,1,400};
+			SOUND_GP
 		};
 		class FullAuto: Mode_FullAuto
 		{
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				begin1[] = {"\hlc_wp_ak\snd\ak12_fire",1,1,1200};
-				begin2[] = {"\hlc_wp_ak\snd\ak12_fire",1,1,1200};
-				begin3[] = {"\hlc_wp_ak\snd\ak12_fire",1,1,1200};
-				soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.34};
+				SOUND_AK74
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				begin1[] = {"\hlc_wp_ak\snd\aek_sil",1,1,200};
-				begin2[] = {"\hlc_wp_ak\snd\aek_sil",1,1,200};
-				soundBegin[] = {"begin1",0.5,"begin2",0.5};
+				SOUND_AK74_SD
 			};
 		};
 		class Single: Mode_SemiAuto
@@ -357,54 +351,42 @@ class CfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				begin1[] = {"\hlc_wp_ak\snd\ak12_fire",1,1,1200};
-				begin2[] = {"\hlc_wp_ak\snd\ak12_fire",1,1,1200};
-				begin3[] = {"\hlc_wp_ak\snd\ak12_fire",1,1,1200};
-				soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.34};
+				SOUND_AK74
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				begin1[] = {"\hlc_wp_ak\snd\aek_sil",1,1,200};
-				begin2[] = {"\hlc_wp_ak\snd\aek_sil",1,1,200};
-				soundBegin[] = {"begin1",0.5,"begin2",0.5};
+				SOUND_AK74_SD
 			};
 		};
+		/*
 		class Burst: Mode_Burst
 		{
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				begin1[] = {"\hlc_wp_ak\snd\ak12_fire",1,1,1200};
-				begin2[] = {"\hlc_wp_ak\snd\ak12_fire",1,1,1200};
-				begin3[] = {"\hlc_wp_ak\snd\ak12_fire",1,1,1200};
-				soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.34};
+				SOUND_BURST
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				begin1[] = {"\hlc_wp_ak\snd\aek_sil",1,1,200};
-				begin2[] = {"\hlc_wp_ak\snd\aek_sil",1,1,200};
-				soundBegin[] = {"begin1",0.5,"begin2",0.5};
+				SOUND_BURST_SD
 			};
 		};
+		*/
 	};
 	
 	class hlc_rifle_aku12: hlc_rifle_ak12
 	{
+		STRNAME("$STR_xdzn_ak_ak12u")
 		class FullAuto: Mode_FullAuto
 		{
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				begin1[] = {"\hlc_wp_ak\snd\ak74u_fire",1,1,1200};
-				begin2[] = {"\hlc_wp_ak\snd\ak74u_fire",1,1,1200};
-				begin3[] = {"\hlc_wp_ak\snd\ak74u_fire",1,1,1200};
-				soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.34};
+				SOUND_AKSU
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				begin1[] = {"\hlc_wp_ak\snd\ak74_sil",1,1,200};
-				begin2[] = {"\hlc_wp_ak\snd\ak74_sil",1,1,200};
-				soundBegin[] = {"begin1",0.5,"begin2",0.5};
+				SOUND_AKSU_SD
 			};
 		};
 		class Single: Mode_SemiAuto
@@ -412,54 +394,42 @@ class CfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				begin1[] = {"\hlc_wp_ak\snd\ak74u_fire",1,1,1200};
-				begin2[] = {"\hlc_wp_ak\snd\ak74u_fire",1,1,1200};
-				begin3[] = {"\hlc_wp_ak\snd\ak74u_fire",1,1,1200};
-				soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.34};
+				SOUND_AKSU
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				begin1[] = {"\hlc_wp_ak\snd\ak74_sil",1,1,200};
-				begin2[] = {"\hlc_wp_ak\snd\ak74_sil",1,1,200};
-				soundBegin[] = {"begin1",0.5,"begin2",0.5};
+				SOUND_AKSU_SD
 			};
 		};
+		/*
 		class Burst: Mode_Burst
 		{
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				begin1[] = {"\hlc_wp_ak\snd\ak74u_fire",1,1,1200};
-				begin2[] = {"\hlc_wp_ak\snd\ak74u_fire",1,1,1200};
-				begin3[] = {"\hlc_wp_ak\snd\ak74u_fire",1,1,1200};
-				soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.34};
+				SOUND_BURST
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				begin1[] = {"\hlc_wp_ak\snd\ak74_sil",1,1,200};
-				begin2[] = {"\hlc_wp_ak\snd\ak74_sil",1,1,200};
-				soundBegin[] = {"begin1",0.5,"begin2",0.5};
+				SOUND_BURST_SD
 			};
 		};
+		*/
 	};
 	
 	class hlc_rifle_RPK12: hlc_rifle_ak12
 	{
+		STRNAME("$STR_xdzn_ak_rpk12")
 		class FullAuto: Mode_FullAuto
 		{
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				begin1[] = {"\hlc_wp_ak\snd\rpk74m_fire",1,1,1200};
-				begin2[] = {"\hlc_wp_ak\snd\rpk74m_fire",1,1,1200};
-				begin3[] = {"\hlc_wp_ak\snd\rpk74m_fire",1,1,1200};
-				soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.34};
+				SOUND_AK74
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				begin1[] = {"\hlc_wp_ak\snd\rpk74_silenced",1,1,200};
-				begin2[] = {"\hlc_wp_ak\snd\rpk74_silenced",1,1,200};
-				soundBegin[] = {"begin1",0.5,"begin2",0.5};
+				SOUND_AK74_SD
 			};
 		};
 		class Single: Mode_SemiAuto
@@ -467,37 +437,29 @@ class CfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				begin1[] = {"\hlc_wp_ak\snd\rpk74m_fire",1,1,1200};
-				begin2[] = {"\hlc_wp_ak\snd\rpk74m_fire",1,1,1200};
-				begin3[] = {"\hlc_wp_ak\snd\rpk74m_fire",1,1,1200};
-				soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.34};
+				SOUND_AK74
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				begin1[] = {"\hlc_wp_ak\snd\rpk74_silenced",1,1,200};
-				begin2[] = {"\hlc_wp_ak\snd\rpk74_silenced",1,1,200};
-				soundBegin[] = {"begin1",0.5,"begin2",0.5};
+				SOUND_AK74_SD
 			};
 		};
+		/*
 		class Burst: Mode_Burst
 		{
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				begin1[] = {"\hlc_wp_ak\snd\rpk74m_fire",1,1,1200};
-				begin2[] = {"\hlc_wp_ak\snd\rpk74m_fire",1,1,1200};
-				begin3[] = {"\hlc_wp_ak\snd\rpk74m_fire",1,1,1200};
-				soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.34};
+				SOUND_BURST
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				begin1[] = {"\hlc_wp_ak\snd\rpk74_silenced",1,1,200};
-				begin2[] = {"\hlc_wp_ak\snd\rpk74_silenced",1,1,200};
-				soundBegin[] = {"begin1",0.5,"begin2",0.5};
+				SOUND_BURST_SD
 			};
 		};
+		*/
 	};
-	*/
+	
 	
 	
 	class hlc_rifle_aks74u: hlc_rifle_ak74
@@ -655,7 +617,7 @@ class CfgWeapons
 		};
 		class Burst: Mode_Burst
 		{
-				class BaseSoundModeType;
+			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
 				SOUND_AEK
@@ -686,25 +648,14 @@ class CfgWeapons
 		/*
 		class Single: Mode_SemiAuto
 		{
-			class BaseSoundModeType
-			{
-				weaponSoundEffect = "DefaultRifle";
-				closure1[] = {"\hlc_wp_ak\snd\ak74_first",1,1,10};
-				closure2[] = {"\hlc_wp_ak\snd\ak74_first",1,1,10};
-				soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			};
+			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				begin1[] = {"\hlc_wp_ak\snd\saiga_fire",1,1,1200};
-				begin2[] = {"\hlc_wp_ak\snd\saiga_fire",1,1,1200};
-				begin3[] = {"\hlc_wp_ak\snd\saiga_fire",1,1,1200};
-				soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.34};
+				SOUND_12K
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				begin1[] = {"\hlc_wp_ak\snd\aek_sil",1,1,200};
-				begin2[] = {"\hlc_wp_ak\snd\aek_sil",1,1,200};
-				soundBegin[] = {"begin1",0.5,"begin2",0.5};
+				SOUND_12K_SD
 			};
 		};
 		*/
