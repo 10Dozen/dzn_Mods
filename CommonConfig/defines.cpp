@@ -1,5 +1,4 @@
 #define SOUND_PATH  x_dzn_acex_hlcak
-
 // AK 74 **************************************
 #define SOUND_AK74				begin1[] = {"\SOUND_PATH\acex_sound\ak74_fire1.wss",1.77828,1,1100};begin2[] = {"\SOUND_PATH\acex_sound\ak74_fire2.wss",1.77828,1,1100};begin3[] = {"\SOUND_PATH\acex_sound\ak74_fire3.wss",1.77828,1,1100};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
 #define SOUND_AK74_SD			begin1[] = {"\SOUND_PATH\acex_sound\aks74un_fire.wss",1,1,80};begin2[] = {"\SOUND_PATH\acex_sound\aks74un_fire.wss",1,0.97,80};begin3[] = {"\SOUND_PATH\acex_sound\aks74un_fire.wss",1,1.016,80};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
@@ -24,7 +23,7 @@
 
 // AKS 74 U / Carbine *************************
 #define SOUND_AKSU				begin1[] = {"\SOUND_PATH\acex_sound\aks74u_fire1.wss",1.77828,1,1100};begin2[] = {"\SOUND_PATH\acex_sound\aks74u_fire2.wss",1.77828,1,1100};begin3[] = {"\SOUND_PATH\acex_sound\aks74u_fire3.wss",1.77828,1,1100};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
-#define SOUND_AKSU_SD			begin1[] = {"\SOUND_PATH\acex_sound\aks74un_fire",1,1,80};begin2[]={"\SOUND_PATH\acex_sound\aks74un_fire",1,0.97,80};begin3[]={"\SOUND_PATH\acex_sound\aks74un_fire",1,1.016,80};soundBegin[]={"begin1",0.33,"begin2",0.33,"begin3"
+#define SOUND_AKSU_SD			begin1[] = {"\SOUND_PATH\acex_sound\aks74un_fire",1,1,80};begin2[]={"\SOUND_PATH\acex_sound\aks74un_fire",1,0.97,80};begin3[]={"\SOUND_PATH\acex_sound\aks74un_fire",1,1.016,80};soundBegin[]={"begin1",0.33,"begin2",0.33,"begin3"};
 #define SOUND_AKSU_BURST		begin1[] = {"\SOUND_PATH\acex_sound\aks74u_fire1.wss",1.77828,1,1100};begin2[] = {"\SOUND_PATH\acex_sound\aks74u_fire2.wss",1.77828,1,1100};begin3[] = {"\SOUND_PATH\acex_sound\aks74u_fire3.wss",1.77828,1,1100};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
 #define SOUND_AKSU_BURST_SD		SOUND_AKSU_SD
 #define SOUND_AKSU_FA			begin1[] = {"\SOUND_PATH\acex_sound\aks74u_fire1.wss",1.77828,1,1100};begin2[] = {"\SOUND_PATH\acex_sound\aks74u_fire2.wss",1.77828,1,1100};begin3[] = {"\SOUND_PATH\acex_sound\aks74u_fire3.wss",1.77828,1,1100};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
