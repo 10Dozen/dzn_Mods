@@ -172,7 +172,7 @@ class CfgWeapons
 		STRNAME("$STR_xdzn_ak_ak_base")
 		class Single: Mode_SemiAuto
 		{
-			class BaseSoundModeType
+			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
 				SOUND_AK74
@@ -201,7 +201,7 @@ class CfgWeapons
 		STRNAME("$STR_xdzn_ak_ak74")
 		class Single: Mode_SemiAuto
 		{
-			class BaseSoundModeType
+			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
 				SOUND_AK74
@@ -214,7 +214,41 @@ class CfgWeapons
 		class FullAuto: Mode_FullAuto
 		{
 			
-			class BaseSoundModeType
+			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				SOUND_AK74
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				SOUND_AK74_SD
+			};
+		};
+	};
+	
+	class hlc_rifle_ak74_dirty: hlc_rifle_ak74
+	{
+		STRNAME("$STR_xdzn_ak_ak74_worn")
+	};
+	
+	class hlc_rifle_aks74: hlc_rifle_ak74
+	{
+		STRNAME("$STR_xdzn_ak_aks74")
+		class Single: Mode_SemiAuto
+		{
+			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				SOUND_AK74
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				SOUND_AK74_SD
+			};
+		};
+		class FullAuto: Mode_FullAuto
+		{
+			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
 				SOUND_AK74
@@ -227,129 +261,6 @@ class CfgWeapons
 	};
 	
 	
-	class hlc_rifle_ak74_dirty: hlc_rifle_ak74
-	{
-		STRNAME("$STR_xdzn_ak_ak74_worn")
-	};
-	
-	class hlc_rifle_aks74: hlc_rifle_ak74
-	{
-		inertia = 0.45;
-		author = "MrRifleman, Toadie";
-		reloadAction = "HLC_GestureReloadAK";
-		scope = 2;
-		model = "\hlc_wp_ak\mesh\aks74\aks74.p3d";
-		picture = "\hlc_wp_ak\tex\ui\gear_aks74_x_ca";
-		UiPicture = "\A3\weapons_f\data\UI\icon_regular_CA.paa";
-		displayName = "Izhmash AKS74";
-		discretedistance[] = {200,100,200,300,400,500,600,700,800,900,1000};
-		discretedistanceinitindex = 0;
-		bg_bipod = 0;
-		modes[] = {"FullAuto","Single","fullauto_medium","single_medium_optics1","single_far_optics2"};
-		drysound[] = {"\hlc_core\sound\empty_assaultrifles",1,1,10};
-		opticszoominit = 0.75;
-		opticszoommax = 1.1;
-		opticszoommin = 0.375;
-		changeFiremodeSound[] = {"hlc_wp_ak\snd\ak_selector",1,1,20};
-		class Single: Mode_SemiAuto
-		{
-			airateoffire = "1e-006";
-			begin1[] = {"\hlc_wp_ak\snd\ak74m_fire",1,1,900};
-			begin2[] = {"\hlc_wp_ak\snd\ak74m_fire",1,1,900};
-			soundBegin[] = {"begin1",0.5,"begin2",0.5};
-			closure1[] = {"\hlc_wp_ak\snd\ak74_first",1.0,1,30};
-			closure2[] = {"\hlc_wp_ak\snd\ak74_first",1.0,1,30};
-			soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			weaponSoundEffect = "DefaultRifle";
-			reloadTime = 0.086;
-			recoil = "recoil_single_mk20";
-			recoilProne = "recoil_single_prone_mk20";
-			dispersion = 0.000654498;
-			minRange = 2;
-			minRangeProbab = 0.7;
-			midRange = 75;
-			midRangeProbab = 0.08;
-			maxRange = 250;
-			maxRangeProbab = 0.0015;
-			sounds[] = {"StandardSound","SilencedSound"};
-			class BaseSoundModeType
-			{
-				weaponSoundEffect = "DefaultRifle";
-				closure1[] = {"\hlc_wp_ak\snd\ak74_first",1,1,10};
-				closure2[] = {"\hlc_wp_ak\snd\ak74_first",1,1,10};
-				soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			};
-			class StandardSound: BaseSoundModeType
-			{
-				begin1[] = {"\hlc_wp_ak\snd\ak74m_fire",1,1,1200};
-				begin2[] = {"\hlc_wp_ak\snd\ak74m_fire2",1,1,1200};
-				begin3[] = {"\hlc_wp_ak\snd\ak74m_fire",1,1,1200};
-				soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.34};
-			};
-			class SilencedSound: BaseSoundModeType
-			{
-				begin1[] = {"\hlc_wp_ak\snd\ak74_sil",1,1,200};
-				begin2[] = {"\hlc_wp_ak\snd\ak74_sil",1,1,200};
-				soundBegin[] = {"begin1",0.5,"begin2",0.5};
-			};
-		};
-		class FullAuto: Mode_FullAuto
-		{
-			airateoffire = "1e-006";
-			begin1[] = {"\hlc_wp_ak\snd\ak74m_fire",1,1,900};
-			begin2[] = {"\hlc_wp_ak\snd\ak74m_fire",1,1,900};
-			soundBegin[] = {"begin1",0.5,"begin2",0.5};
-			closure1[] = {"\hlc_wp_ak\snd\ak74_first",1.0,1,30};
-			closure2[] = {"\hlc_wp_ak\snd\ak74_first",1.0,1,30};
-			soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			weaponSoundEffect = "DefaultRifle";
-			reloadTime = 0.086;
-			recoil = "recoil_auto_mk20";
-			recoilProne = "recoil_auto_prone_mk20";
-			dispersion = 0.000654498;
-			minRange = 0;
-			minRangeProbab = 0.9;
-			midRange = 15;
-			midRangeProbab = 0.7;
-			maxRange = 30;
-			maxRangeProbab = 0.1;
-			sounds[] = {"StandardSound","SilencedSound"};
-			class BaseSoundModeType
-			{
-				weaponSoundEffect = "DefaultRifle";
-				closure1[] = {"\hlc_wp_ak\snd\ak74_first",1,1,10};
-				closure2[] = {"\hlc_wp_ak\snd\ak74_first",1,1,10};
-				soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			};
-			class StandardSound: BaseSoundModeType
-			{
-				begin1[] = {"\hlc_wp_ak\snd\ak74m_fire",1,1,1200};
-				begin2[] = {"\hlc_wp_ak\snd\ak74m_fire2",1,1,1200};
-				begin3[] = {"\hlc_wp_ak\snd\ak74m_fire",1,1,1200};
-				soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.34};
-			};
-			class SilencedSound: BaseSoundModeType
-			{
-				begin1[] = {"\hlc_wp_ak\snd\ak74_sil",1,1,200};
-				begin2[] = {"\hlc_wp_ak\snd\ak74_sil",1,1,200};
-				soundBegin[] = {"begin1",0.5,"begin2",0.5};
-			};
-		};
-		class ItemInfo
-		{
-			priority = 1;
-			RMBhint = "XMC";
-			onHoverText = "TODO XMC DSS";
-		};
-		class WeaponSlotsInfo: WeaponSlotsInfo
-		{
-			mass = 59.4;
-			class CowsSlot: CowsSlot
-			{
-				compatibleItems[] = {"hlc_optic_pso1","hlc_optic_goshawk","hlc_optic_kobra","hlc_optic_1p29"};
-			};
-		};
-	};
 	class optic_ACO_grn;
 	class hlc_optic_kobra: optic_ACO_grn
 	{
@@ -359,111 +270,39 @@ class CfgWeapons
 	{
 		STRNAME2("$STR_xdzn_ak_opt_goshawk")
 	};
+	
+	
 	class hlc_rifle_ak12: hlc_rifle_aks74
 	{
-		inertia = 0.5;
-		author = "Maibatsu, Toadie";
-		scope = 2;
-		displayName = "Izhmash AK12";
-		model = "\hlc_wp_ak\mesh\ak12\ak12.p3d";
-		picture = "\hlc_wp_ak\tex\ui\gear_ak12_x_ca";
-		UiPicture = "\A3\weapons_f\data\UI\icon_regular_CA.paa";
-		discretedistance[] = {100,200,300,400,500,600,700,800,900};
-		discretedistanceinitindex = 2;
-		bg_bipod = 0;
-		drysound[] = {"\hlc_core\sound\empty_assaultrifles",1,1,10};
-		reloadMagazineSound[] = {"\hlc_wp_ak\snd\ak12_reload",0.74,1,30};
-		modes[] = {"Burst","Single","FullAuto","fullauto_medium","single_medium_optics1","single_far_optics2"};
-		handanim[] = {"OFP2_ManSkeleton","hlc_core\animation\gesture\handpose_ak12.rtm"};
-		reloadAction = "HLC_GestureReloadAK12";
+		STRNAME("$STR_xdzn_ak_ak12")
 		class FullAuto: Mode_FullAuto
 		{
-			reloadTime = 0.1;
-			begin1[] = {"\hlc_wp_ak\snd\ak12_fire",1.0,1,1200};
-			begin2[] = {"\hlc_wp_ak\snd\ak12_fire",1.0,1,1200};
-			soundBegin[] = {"begin1",0.5,"begin2",0.5};
-			closure1[] = {"\hlc_wp_ak\snd\ak12_first",1.0,1,30};
-			closure2[] = {"\hlc_wp_ak\snd\ak12_first",1.0,1,30};
-			soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			dispersion = 0.000654498;
-			recoil = "recoil_auto_mk20";
-			recoilProne = "recoil_auto_prone_mk20";
-			sounds[] = {"StandardSound","SilencedSound"};
-			class BaseSoundModeType
-			{
-				weaponSoundEffect = "DefaultRifle";
-				closure1[] = {"\hlc_wp_ak\snd\ak12_first",1,1,10};
-				closure2[] = {"\hlc_wp_ak\snd\ak12_first",1,1,10};
-				soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			};
+			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				begin1[] = {"\hlc_wp_ak\snd\ak12_fire",1,1,1200};
-				begin2[] = {"\hlc_wp_ak\snd\ak12_fire",1,1,1200};
-				begin3[] = {"\hlc_wp_ak\snd\ak12_fire",1,1,1200};
-				soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.34};
+				SOUND_AK74
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				begin1[] = {"\hlc_wp_ak\snd\aek_sil",1,1,200};
-				begin2[] = {"\hlc_wp_ak\snd\aek_sil",1,1,200};
-				soundBegin[] = {"begin1",0.5,"begin2",0.5};
+				SOUND_AK74_SD
 			};
 		};
 		class Single: Mode_SemiAuto
 		{
-			reloadTime = 0.1;
-			begin1[] = {"\hlc_wp_ak\snd\ak12_fire",1.0,1,1200};
-			begin2[] = {"\hlc_wp_ak\snd\ak12_fire",1.0,1,1200};
-			soundBegin[] = {"begin1",0.5,"begin2",0.5};
-			closure1[] = {"\hlc_wp_ak\snd\ak12_first",1.0,1,30};
-			closure2[] = {"\hlc_wp_ak\snd\ak12_first",1.0,1,30};
-			soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			dispersion = 0.00062541;
-			recoil = "recoil_auto_mk20";
-			recoilprone = "recoil_auto_prone_mk20";
-			sounds[] = {"StandardSound","SilencedSound"};
-			class BaseSoundModeType
-			{
-				weaponSoundEffect = "DefaultRifle";
-				closure1[] = {"\hlc_wp_ak\snd\ak12_first",1,1,10};
-				closure2[] = {"\hlc_wp_ak\snd\ak12_first",1,1,10};
-				soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			};
+			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				begin1[] = {"\hlc_wp_ak\snd\ak12_fire",1,1,1200};
-				begin2[] = {"\hlc_wp_ak\snd\ak12_fire",1,1,1200};
-				begin3[] = {"\hlc_wp_ak\snd\ak12_fire",1,1,1200};
-				soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.34};
+				SOUND_AK74
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				begin1[] = {"\hlc_wp_ak\snd\aek_sil",1,1,200};
-				begin2[] = {"\hlc_wp_ak\snd\aek_sil",1,1,200};
-				soundBegin[] = {"begin1",0.5,"begin2",0.5};
+				SOUND_AK74_SD
 			};
 		};
+		/*
 		class Burst: Mode_Burst
 		{
-			reloadTime = 0.06;
-			begin1[] = {"\hlc_wp_ak\snd\ak12_fire",1.0,1,1200};
-			begin2[] = {"\hlc_wp_ak\snd\ak12_fire",1.0,1,1200};
-			closure1[] = {"\hlc_wp_ak\snd\ak12_first",1.0,1,30};
-			closure2[] = {"\hlc_wp_ak\snd\ak12_first",1.0,1,30};
-			soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			soundBegin[] = {"begin1",0.5,"begin2",0.5};
-			dispersion = 0.00062541;
-			recoil = "recoil_auto_mk20";
-			recoilProne = "recoil_auto_mk20";
-			sounds[] = {"StandardSound","SilencedSound"};
-			class BaseSoundModeType
-			{
-				weaponSoundEffect = "DefaultRifle";
-				closure1[] = {"\hlc_wp_ak\snd\ak12_first",1,1,10};
-				closure2[] = {"\hlc_wp_ak\snd\ak12_first",1,1,10};
-				soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			};
+			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
 				begin1[] = {"\hlc_wp_ak\snd\ak12_fire",1,1,1200};
@@ -477,91 +316,21 @@ class CfgWeapons
 				begin2[] = {"\hlc_wp_ak\snd\aek_sil",1,1,200};
 				soundBegin[] = {"begin1",0.5,"begin2",0.5};
 			};
-			burst = 3;
-			minRange = 1;
-			minRangeProbab = 0.03;
-			midRange = 75;
-			midRangeProbab = 0.015;
-			maxRange = 200;
-			maxRangeProbab = 0.0005;
 		};
-		class Library
-		{
-			libTextDesc = "Izhmash AK12 5.45mm";
-		};
-		class WeaponSlotsInfo: WeaponSlotsInfo
-		{
-			mass = 66;
-			class MuzzleSlot: SlotInfo
-			{
-				linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";
-				compatibleItems[] = {"hlc_muzzle_545SUP_AK"};
-			};
-			class asdg_OpticRail_AK12: asdg_OpticRail1913{};
-			class asdg_FrontSideRail_AK12: asdg_FrontSideRail{};
-			class CowsSlot{};
-		};
+		*/
 	};
+	
+	/*
 	class hlc_rifle_ak12GL: hlc_rifle_aks74
 	{
-		inertia = 0.5;
-		author = "Maibatsu, Toadie";
-		scope = 2;
-		displayName = "Izhmash AK12(GL)";
-		model = "\hlc_wp_ak\mesh\ak12\ak12GP.p3d";
-		picture = "\hlc_wp_ak\tex\ui\gear_ak12_x_ca";
-		UiPicture = "\A3\weapons_f\data\UI\icon_regular_CA.paa";
-		discretedistance[] = {100,200,300,400,500,600,700,800,900};
-		discretedistanceinitindex = 2;
-		bg_bipod = 0;
-		drysound[] = {"\hlc_core\sound\empty_assaultrifles",1,1,10};
-		reloadMagazineSound[] = {"\hlc_wp_ak\snd\ak12_reload",0.74,1,30};
-		modes[] = {"Burst","Single","FullAuto","fullauto_medium","single_medium_optics1","single_far_optics2"};
-		handanim[] = {"OFP2_ManSkeleton","hlc_core\animation\gesture\handpose_gp25.rtm"};
-		reloadAction = "HLC_GestureReloadAK12";
-		muzzles[] = {"this","hlc_GP30_AK12"};
+	
 		class hlc_GP30_AK12: UGL_F
 		{
-			cameradir = "GL Look";
-			discreteDistance[] = {100,200,300,400};
-			discreteDistanceCameraPoint[] = {"GL Eye1","GL Eye2","GL Eye3","GL Eye4"};
-			discreteDistanceInitIndex = 1;
-			displayname = "GP30";
-			useModelOptics = 0;
-			useExternalOptic = 0;
-			optics = 1;
-			drysound[] = {"A3\sounds_f\Weapons\other\sfx5",1,1,400};
-			cursoraim = "gl";
-			magazinereloadtime = 0;
-			magazines[] = {"hlc_VOG25_AK","hlc_GRD_White","hlc_GRD_Red","hlc_GRD_Green","hlc_GRD_Yellow","hlc_GRD_Purple","hlc_GRD_Blue","hlc_GRD_Orange"};
-			opticszoominit = 0.75;
-			opticszoommax = 1.1;
-			opticszoommin = 0.375;
-			reloadmagazinesound[] = {"\hlc_wp_ak\snd\gp30_reload",0.1,1,20};
-			reloadtime = 0.1;
 			sound[] = {"\hlc_wp_ak\snd\gp30_fire",1.0,1,400};
 		};
-		weaponinfotype = "RscWeaponZeroing";
 		class FullAuto: Mode_FullAuto
 		{
-			reloadTime = 0.1;
-			begin1[] = {"\hlc_wp_ak\snd\ak12_fire",1.0,1,1200};
-			begin2[] = {"\hlc_wp_ak\snd\ak12_fire",1.0,1,1200};
-			soundBegin[] = {"begin1",0.5,"begin2",0.5};
-			closure1[] = {"\hlc_wp_ak\snd\ak12_first",1.0,1,30};
-			closure2[] = {"\hlc_wp_ak\snd\ak12_first",1.0,1,30};
-			soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			dispersion = 0.000654498;
-			recoil = "recoil_auto_mk20";
-			recoilProne = "recoil_auto_prone_mk20";
-			sounds[] = {"StandardSound","SilencedSound"};
-			class BaseSoundModeType
-			{
-				weaponSoundEffect = "DefaultRifle";
-				closure1[] = {"\hlc_wp_ak\snd\ak12_first",1,1,10};
-				closure2[] = {"\hlc_wp_ak\snd\ak12_first",1,1,10};
-				soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			};
+			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
 				begin1[] = {"\hlc_wp_ak\snd\ak12_fire",1,1,1200};
@@ -578,24 +347,7 @@ class CfgWeapons
 		};
 		class Single: Mode_SemiAuto
 		{
-			reloadTime = 0.1;
-			begin1[] = {"\hlc_wp_ak\snd\ak12_fire",1.0,1,1200};
-			begin2[] = {"\hlc_wp_ak\snd\ak12_fire",1.0,1,1200};
-			soundBegin[] = {"begin1",0.5,"begin2",0.5};
-			closure1[] = {"\hlc_wp_ak\snd\ak12_first",1.0,1,30};
-			closure2[] = {"\hlc_wp_ak\snd\ak12_first",1.0,1,30};
-			soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			dispersion = 0.00062541;
-			recoil = "recoil_auto_mk20";
-			recoilprone = "recoil_auto_prone_mk20";
-			sounds[] = {"StandardSound","SilencedSound"};
-			class BaseSoundModeType
-			{
-				weaponSoundEffect = "DefaultRifle";
-				closure1[] = {"\hlc_wp_ak\snd\ak12_first",1,1,10};
-				closure2[] = {"\hlc_wp_ak\snd\ak12_first",1,1,10};
-				soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			};
+			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
 				begin1[] = {"\hlc_wp_ak\snd\ak12_fire",1,1,1200};
@@ -612,24 +364,7 @@ class CfgWeapons
 		};
 		class Burst: Mode_Burst
 		{
-			reloadTime = 0.06;
-			begin1[] = {"\hlc_wp_ak\snd\ak12_fire",1.0,1,1200};
-			begin2[] = {"\hlc_wp_ak\snd\ak12_fire",1.0,1,1200};
-			closure1[] = {"\hlc_wp_ak\snd\ak12_first",1.0,1,30};
-			closure2[] = {"\hlc_wp_ak\snd\ak12_first",1.0,1,30};
-			soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			soundBegin[] = {"begin1",0.5,"begin2",0.5};
-			dispersion = 0.00062541;
-			recoil = "recoil_auto_mk20";
-			recoilProne = "recoil_auto_mk20";
-			sounds[] = {"StandardSound","SilencedSound"};
-			class BaseSoundModeType
-			{
-				weaponSoundEffect = "DefaultRifle";
-				closure1[] = {"\hlc_wp_ak\snd\ak12_first",1,1,10};
-				closure2[] = {"\hlc_wp_ak\snd\ak12_first",1,1,10};
-				soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			};
+			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
 				begin1[] = {"\hlc_wp_ak\snd\ak12_fire",1,1,1200};
@@ -643,70 +378,14 @@ class CfgWeapons
 				begin2[] = {"\hlc_wp_ak\snd\aek_sil",1,1,200};
 				soundBegin[] = {"begin1",0.5,"begin2",0.5};
 			};
-			burst = 3;
-			minRange = 1;
-			minRangeProbab = 0.03;
-			midRange = 75;
-			midRangeProbab = 0.015;
-			maxRange = 200;
-			maxRangeProbab = 0.0005;
-		};
-		class Library
-		{
-			libTextDesc = "Izhmash AK12 5.45mm";
-		};
-		class WeaponSlotsInfo: WeaponSlotsInfo
-		{
-			mass = 66;
-			class MuzzleSlot: SlotInfo
-			{
-				linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";
-				compatibleItems[] = {"hlc_muzzle_545SUP_AK"};
-			};
-			class asdg_OpticRail_AK12: asdg_OpticRail1913{};
-			class CowsSlot{};
 		};
 	};
+	
 	class hlc_rifle_aku12: hlc_rifle_ak12
 	{
-		AB_barrelTwist = 6.3;
-		AB_barrelLength = 8.3;
-		inertia = 0.4;
-		author = "Maibatsu, Toadie";
-		scope = 2;
-		initspeed = -0.816667;
-		displayName = "Izhmash AKU12";
-		model = "\hlc_wp_ak\mesh\ak12\akU12.p3d";
-		picture = "\hlc_wp_ak\tex\ui\gear_ak12_x_ca";
-		UiPicture = "\A3\weapons_f\data\UI\icon_regular_CA.paa";
-		discretedistance[] = {100,200,300,400,500,600,700,800,900};
-		discretedistanceinitindex = 2;
-		bg_bipod = 0;
-		drysound[] = {"\hlc_core\sound\empty_assaultrifles",1,1,10};
-		reloadMagazineSound[] = {"\hlc_wp_ak\snd\ak12_reload",0.74,1,30};
-		modes[] = {"Burst","Single","FullAuto","fullauto_medium","single_medium_optics1","single_far_optics2"};
-		handanim[] = {"OFP2_ManSkeleton","hlc_core\animation\gesture\handpose_ak12.rtm"};
-		reloadAction = "HLC_GestureReloadAK12";
 		class FullAuto: Mode_FullAuto
 		{
-			reloadTime = 0.1;
-			begin1[] = {"\hlc_wp_ak\snd\ak12_fire",1.0,1,1200};
-			begin2[] = {"\hlc_wp_ak\snd\ak12_fire",1.0,1,1200};
-			soundBegin[] = {"begin1",0.5,"begin2",0.5};
-			closure1[] = {"\hlc_wp_ak\snd\ak12_first",1.0,1,30};
-			closure2[] = {"\hlc_wp_ak\snd\ak12_first",1.0,1,30};
-			soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			dispersion = 0.000972294;
-			recoil = "recoil_auto_mk20";
-			recoilProne = "recoil_auto_prone_mk20";
-			sounds[] = {"StandardSound","SilencedSound"};
-			class BaseSoundModeType
-			{
-				weaponSoundEffect = "DefaultRifle";
-				closure1[] = {"\hlc_wp_ak\snd\ak12_first",1,1,10};
-				closure2[] = {"\hlc_wp_ak\snd\ak12_first",1,1,10};
-				soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			};
+			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
 				begin1[] = {"\hlc_wp_ak\snd\ak74u_fire",1,1,1200};
@@ -723,24 +402,7 @@ class CfgWeapons
 		};
 		class Single: Mode_SemiAuto
 		{
-			reloadTime = 0.1;
-			begin1[] = {"\hlc_wp_ak\snd\ak74u_fire",1.0,1,1200};
-			begin2[] = {"\hlc_wp_ak\snd\ak74u_fire",1.0,1,1200};
-			soundBegin[] = {"begin1",0.5,"begin2",0.5};
-			closure1[] = {"\hlc_wp_ak\snd\ak12_first",1.0,1,30};
-			closure2[] = {"\hlc_wp_ak\snd\ak12_first",1.0,1,30};
-			soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			dispersion = 0.000972294;
-			recoil = "recoil_auto_mk20";
-			recoilprone = "recoil_auto_prone_mk20";
-			sounds[] = {"StandardSound","SilencedSound"};
-			class BaseSoundModeType
-			{
-				weaponSoundEffect = "DefaultRifle";
-				closure1[] = {"\hlc_wp_ak\snd\ak12_first",1,1,10};
-				closure2[] = {"\hlc_wp_ak\snd\ak12_first",1,1,10};
-				soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			};
+			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
 				begin1[] = {"\hlc_wp_ak\snd\ak74u_fire",1,1,1200};
@@ -757,24 +419,7 @@ class CfgWeapons
 		};
 		class Burst: Mode_Burst
 		{
-			reloadTime = 0.06;
-			begin1[] = {"\hlc_wp_ak\snd\ak12_fire",1.0,1,1200};
-			begin2[] = {"\hlc_wp_ak\snd\ak12_fire",1.0,1,1200};
-			closure1[] = {"\hlc_wp_ak\snd\ak12_first",1.0,1,30};
-			closure2[] = {"\hlc_wp_ak\snd\ak12_first",1.0,1,30};
-			soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			soundBegin[] = {"begin1",0.5,"begin2",0.5};
-			dispersion = 0.000972294;
-			recoil = "recoil_auto_mk20";
-			recoilProne = "recoil_auto_mk20";
-			sounds[] = {"StandardSound","SilencedSound"};
-			class BaseSoundModeType
-			{
-				weaponSoundEffect = "DefaultRifle";
-				closure1[] = {"\hlc_wp_ak\snd\ak12_first",1,1,10};
-				closure2[] = {"\hlc_wp_ak\snd\ak12_first",1,1,10};
-				soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			};
+			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
 				begin1[] = {"\hlc_wp_ak\snd\ak74u_fire",1,1,1200};
@@ -788,71 +433,14 @@ class CfgWeapons
 				begin2[] = {"\hlc_wp_ak\snd\ak74_sil",1,1,200};
 				soundBegin[] = {"begin1",0.5,"begin2",0.5};
 			};
-			burst = 3;
-			minRange = 1;
-			minRangeProbab = 0.03;
-			midRange = 75;
-			midRangeProbab = 0.015;
-			maxRange = 200;
-			maxRangeProbab = 0.0005;
-		};
-		class Library
-		{
-			libTextDesc = "Izhmash AK12 5.45mm";
-		};
-		class WeaponSlotsInfo: WeaponSlotsInfo
-		{
-			mass = 61;
-			class MuzzleSlot: SlotInfo
-			{
-				linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";
-				compatibleItems[] = {"hlc_muzzle_545SUP_AK"};
-			};
-			class asdg_OpticRail_AK12: asdg_OpticRail1913{};
-			class asdg_FrontSideRail_AK12: asdg_FrontSideRail{};
-			class CowsSlot{};
 		};
 	};
+	
 	class hlc_rifle_RPK12: hlc_rifle_ak12
 	{
-		AB_barrelLength = 23.2;
-		agm_bipod = 1;
-		cse_bipod = 1;
-		bg_bipod = 1;
-		inertia = 0.66;
-		magazines[] = {"hlc_45Rnd_545x39_t_rpk","hlc_30Rnd_545x39_B_AK","hlc_30Rnd_545x39_T_AK","hlc_30Rnd_545x39_EP_AK","hlc_30Rnd_545x39_S_AK"};
-		author = "Maibatsu, Toadie";
-		scope = 2;
-		displayName = "Izhmash RPK12";
-		model = "\hlc_wp_ak\mesh\ak12\rpk12.p3d";
-		picture = "\hlc_wp_ak\tex\ui\gear_ak12_x_ca";
-		UiPicture = "\A3\weapons_f\data\UI\icon_regular_CA.paa";
-		discretedistance[] = {100,200,300,400,500,600,700,800,900};
-		discretedistanceinitindex = 2;
-		drysound[] = {"\hlc_core\sound\empty_assaultrifles",1,1,10};
-		reloadMagazineSound[] = {"\hlc_wp_ak\snd\rpk_reload_me",0.74,1,30};
-		modes[] = {"Burst","Single","FullAuto","fullauto_medium","single_medium_optics1","single_far_optics2"};
-		handanim[] = {"OFP2_ManSkeleton","hlc_core\animation\gesture\handpose_ak12.rtm"};
-		reloadAction = "HLC_GestureReloadRPK";
 		class FullAuto: Mode_FullAuto
 		{
-			reloadTime = 0.1;
-			begin1[] = {"\hlc_wp_ak\snd\ak12_fire",1.0,1,1200};
-			begin2[] = {"\hlc_wp_ak\snd\ak12_fire",1.0,1,1200};
-			soundBegin[] = {"begin1",0.5,"begin2",0.5};
-			closure1[] = {"\hlc_wp_ak\snd\ak12_first",1.0,1,30};
-			closure2[] = {"\hlc_wp_ak\snd\ak12_first",1.0,1,30};
-			soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			recoil = "recoil_auto_mk20";
-			recoilProne = "recoil_auto_prone_mk20";
-			sounds[] = {"StandardSound","SilencedSound"};
-			class BaseSoundModeType
-			{
-				weaponSoundEffect = "DefaultRifle";
-				closure1[] = {"\hlc_wp_ak\snd\ak12_first",1,1,10};
-				closure2[] = {"\hlc_wp_ak\snd\ak12_first",1,1,10};
-				soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			};
+			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
 				begin1[] = {"\hlc_wp_ak\snd\rpk74m_fire",1,1,1200};
@@ -869,23 +457,7 @@ class CfgWeapons
 		};
 		class Single: Mode_SemiAuto
 		{
-			reloadTime = 0.1;
-			begin1[] = {"\hlc_wp_ak\snd\ak74u_fire",1.0,1,1200};
-			begin2[] = {"\hlc_wp_ak\snd\ak74u_fire",1.0,1,1200};
-			soundBegin[] = {"begin1",0.5,"begin2",0.5};
-			closure1[] = {"\hlc_wp_ak\snd\ak12_first",1.0,1,30};
-			closure2[] = {"\hlc_wp_ak\snd\ak12_first",1.0,1,30};
-			soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			recoil = "recoil_auto_mk20";
-			recoilprone = "recoil_auto_prone_mk20";
-			sounds[] = {"StandardSound","SilencedSound"};
-			class BaseSoundModeType
-			{
-				weaponSoundEffect = "DefaultRifle";
-				closure1[] = {"\hlc_wp_ak\snd\ak12_first",1,1,10};
-				closure2[] = {"\hlc_wp_ak\snd\ak12_first",1,1,10};
-				soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			};
+			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
 				begin1[] = {"\hlc_wp_ak\snd\rpk74m_fire",1,1,1200};
@@ -902,24 +474,7 @@ class CfgWeapons
 		};
 		class Burst: Mode_Burst
 		{
-			reloadTime = 0.06;
-			begin1[] = {"\hlc_wp_ak\snd\ak12_fire",1.0,1,1200};
-			begin2[] = {"\hlc_wp_ak\snd\ak12_fire",1.0,1,1200};
-			closure1[] = {"\hlc_wp_ak\snd\ak12_first",1.0,1,30};
-			closure2[] = {"\hlc_wp_ak\snd\ak12_first",1.0,1,30};
-			soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			soundBegin[] = {"begin1",0.5,"begin2",0.5};
-			dispersion = 0.000972294;
-			recoil = "recoil_auto_mk20";
-			recoilProne = "recoil_auto_mk20";
-			sounds[] = {"StandardSound","SilencedSound"};
-			class BaseSoundModeType
-			{
-				weaponSoundEffect = "DefaultRifle";
-				closure1[] = {"\hlc_wp_ak\snd\ak12_first",1,1,10};
-				closure2[] = {"\hlc_wp_ak\snd\ak12_first",1,1,10};
-				soundClosure[] = {"closure1",0.5,"closure2",0.5};
-			};
+			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
 				begin1[] = {"\hlc_wp_ak\snd\rpk74m_fire",1,1,1200};
@@ -933,31 +488,11 @@ class CfgWeapons
 				begin2[] = {"\hlc_wp_ak\snd\rpk74_silenced",1,1,200};
 				soundBegin[] = {"begin1",0.5,"begin2",0.5};
 			};
-			burst = 3;
-			minRange = 1;
-			minRangeProbab = 0.03;
-			midRange = 75;
-			midRangeProbab = 0.015;
-			maxRange = 200;
-			maxRangeProbab = 0.0005;
-		};
-		class Library
-		{
-			libTextDesc = "Izhmash AK12 5.45mm";
-		};
-		class WeaponSlotsInfo: WeaponSlotsInfo
-		{
-			mass = 98;
-			class MuzzleSlot: SlotInfo
-			{
-				linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";
-				compatibleItems[] = {"hlc_muzzle_545SUP_AK"};
-			};
-			class asdg_OpticRail_AK12: asdg_OpticRail1913{};
-			class asdg_FrontSideRail_AK12: asdg_FrontSideRail{};
-			class CowsSlot{};
 		};
 	};
+	*/
+	
+	
 	class hlc_rifle_aks74u: hlc_rifle_ak74
 	{
 		AB_barrelTwist = 6.3;
