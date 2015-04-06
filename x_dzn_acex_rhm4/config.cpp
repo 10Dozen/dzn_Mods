@@ -167,159 +167,36 @@ class CfgWeapons
 	class Zasleh2;
 	class RH_hbsd: ItemCore
 	{
-		htMin = 1;
-		htMax = 600;
-		afMax = 0;
-		mfMax = 0;
-		mFact = 1;
-		tBody = 100;
-		author = "RobertHammer";
-		scope = 2;
-		displayName = "AAC Honey Badger suppressor";
-		picture = "\RH_m4\inv\ui\hbsd_ui_ca.paa";
-		model = "\RH_m4\RH_hbsd";
-		class ItemInfo: InventoryMuzzleItem_Base_F
-		{
-			mass = 4;
-			class MagazineCoef
-			{
-				initSpeed = 1;
-			};
-			class AmmoCoef
-			{
-				hit = 1;
-				visibleFire = 0.5;
-				audibleFire = 0.3;
-				visibleFireTime = 0.5;
-				audibleFireTime = 0.5;
-				cost = 1;
-				typicalSpeed = 1;
-				airFriction = 1;
-			};
-			muzzleEnd = "zaslehPoint";
-			alternativeFire = "Zasleh2";
-			class MuzzleCoef
-			{
-				dispersionCoef = "1.0f";
-				artilleryDispersionCoef = "1.0f";
-				inertiaCoef = "0.9f";
-				fireLightCoef = "0.1f";
-				recoilCoef = "1.0f";
-				recoilProneCoef = "1.0f";
-				minRangeCoef = "1.0f";
-				minRangeProbabCoef = "1.0f";
-				midRangeCoef = "1.0f";
-				midRangeProbabCoef = "1.0f";
-				maxRangeCoef = "1.0f";
-				maxRangeProbabCoef = "1.0f";
-			};
-		};
-		inertia = 0.2;
+		STRNAME2("$STR_xdzn_RH_hbsd")
+		//displayName = "AAC Honey Badger suppressor";
 	};
 	class RH_Delft: ItemCore
 	{
-		scope = 2;
-		author = "RobertHammer";
-		displayName = "Delft scope";
-		picture = "\RH_M4\inv\ui\Delft_ui_ca.paa";
-		model = "\RH_M4\RH_Delft.p3d";
-		descriptionShort = "$STR_A3_cfgWeapons_optic_Valdada1";
-		weaponInfoType = "RscWeaponZeroing";
-		class ItemInfo: InventoryOpticsItem_Base_F
-		{
-			opticType = 1;
-			mass = 10;
-			RMBhint = "Delft";
-			optics = 1;
-			modelOptics = "\A3\Weapons_F\empty";
-			class OpticsModes
-			{
-				class Delftcqb
-				{
-					opticsID = 1;
-					useModelOptics = 0;
-					opticsPPEffects[] = {""};
-					opticsFlare = 0;
-					opticsDisablePeripherialVision = 0;
-					opticsZoomMin = 0.25;
-					opticsZoomMax = 1.1;
-					opticsZoomInit = 0.5;
-					memoryPointCamera = "eye";
-					visionMode[] = {};
-					distanceZoomMin = 100;
-					distanceZoomMax = 100;
-				};
-				class Delftscope
-				{
-					opticsID = 2;
-					useModelOptics = 0;
-					opticsPPEffects[] = {"OpticsCHAbera5","OpticsBlur5"};
-					opticsFlare = 0;
-					opticsDisablePeripherialVision = 0;
-					opticsZoomMin = 0.0691;
-					opticsZoomMax = 0.0691;
-					opticsZoomInit = 0.0691;
-					memoryPointCamera = "opticView";
-					visionMode[] = {};
-					distanceZoomMin = 300;
-					distanceZoomMax = 300;
-				};
-			};
-		};
-		inertia = 0.1;
+		STRNAME2("$STR_xdzn_RH_Delft")
+		//displayName = "Delft scope";
 	};
 	class RH_m4covers_s: ItemCore
 	{
-		scope = 2;
-		author = "RobertHammer";
-		displayName = "M4 side rail covers";
-		picture = "\RH_M4\inv\ui\m4covers_s_ui_ca.paa";
-		model = "\RH_M4\RH_m4covers_s.p3d";
-		class ItemInfo: InventoryFlashLightItem_Base_F
-		{
-			mass = 1;
-		};
-		inertia = 0;
+		STRNAME2("$STR_xdzn_RH_m4covers_s")
+		//displayName = "M4 side rail covers";
 	};
 	class RH_m4covers_f: ItemCore
 	{
-		scope = 2;
-		author = "RobertHammer";
-		displayName = "M4 full rail covers";
-		picture = "\RH_M4\inv\ui\m4covers_f_ui_ca.paa";
-		model = "\RH_M4\RH_m4covers_f.p3d";
-		class ItemInfo: InventoryFlashLightItem_Base_F
-		{
-			mass = 1;
-		};
-		inertia = 0;
+		STRNAME2("$STR_xdzn_RH_m4covers_f")
+		//displayName = "M4 full rail covers";
 	};
 	class RH_m16covers_s: ItemCore
 	{
-		scope = 2;
-		author = "RobertHammer";
-		displayName = "M16A4 side rail covers";
-		picture = "\RH_M4\inv\ui\m16covers_s_ui_ca.paa";
-		model = "\RH_M4\RH_m16covers_s.p3d";
-		class ItemInfo: InventoryFlashLightItem_Base_F
-		{
-			mass = 1;
-		};
-		inertia = 0;
+		STRNAME2("$STR_xdzn_RH_m16covers_s")
+		//displayName =  "M16A4 side rail covers";
 	};
 	class RH_m16covers_f: ItemCore
 	{
-		scope = 2;
-		author = "RobertHammer";
-		displayName = "M16A4 full rail covers";
-		picture = "\RH_M4\inv\ui\m16covers_f_ui_ca.paa";
-		model = "\RH_M4\RH_m16covers_f.p3d";
-		class ItemInfo: InventoryFlashLightItem_Base_F
-		{
-			mass = 1;
-		};
-		inertia = 0;
+		STRNAME2("$STR_xdzn_RH_m16covers_f")
+		//displayName = "M16A4 full rail covers";
 	};
+	
+	
 	class RH_ar10: Rifle_Base_F
 	{
 		scope = 2;
