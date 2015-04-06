@@ -128,10 +128,7 @@ class CfgMagazines
 };
 
 
-
-
-
-#define
+#define STRNAME2(NAME)	displayname = "NAME"; descriptionShort = "NAME_desc";
 
 class CfgWeapons
 {
@@ -147,118 +144,24 @@ class CfgWeapons
 	class optic_dms;
 	class HLC_Optic_PSO1: optic_dms
 	{
-		STRNAME("$STR_xdzn_ak_10Rnd_12g_buck_s12")
-		
-		author = "Bohemia Interactive, Toadie";
-		descriptionshort = "PSO1 Optical Sniper Sight<br />Magnification: 4x";
-		displayname = "PSO-1M";
-		model = "\hlc_wp_ak\mesh\pso1\pso1.p3d";
-		picture = "\hlc_wp_ak\tex\ui\gear_pso1_x_ca";
-		class ItemInfo: InventoryOpticsItem_Base_F
-		{
-			mass = 7;
-			modelOptics = "\hlc_wp_ak\mesh\pso1\pso_optics";
-			class OpticsModes
-			{
-				class Snip
-				{
-					opticsID = 1;
-					useModelOptics = 1;
-					opticsPPEffects[] = {"OpticsCHAbera2","OpticsBlur3"};
-					opticsZoomMin = 0.0623;
-					opticsZoomMax = 0.0623;
-					opticsZoomInit = 0.0623;
-					discreteDistance[] = {400};
-					discreteDistanceInitIndex = 0;
-					distanceZoomMin = 400;
-					distanceZoomMax = 400;
-					discretefov[] = {0.0623};
-					discreteInitIndex = 0;
-					memoryPointCamera = "opticView";
-					modelOptics[] = {"\hlc_wp_ak\mesh\pso1\pso_optics"};
-					visionMode[] = {"Normal"};
-					opticsFlare = 1;
-					opticsDisablePeripherialVision = 1;
-					cameraDir = "";
-				};
-				class Snip_ILLUM
-				{
-					opticsID = 2;
-					useModelOptics = 1;
-					opticsPPEffects[] = {"OpticsCHAbera2","OpticsBlur3"};
-					opticsZoomMin = 0.0623;
-					opticsZoomMax = 0.0623;
-					opticsZoomInit = 0.0623;
-					discreteDistance[] = {400};
-					discreteDistanceInitIndex = 0;
-					distanceZoomMin = 400;
-					distanceZoomMax = 400;
-					discretefov[] = {0.0623};
-					discreteInitIndex = 0;
-					memoryPointCamera = "opticView";
-					modelOptics[] = {"\hlc_wp_ak\mesh\pso1\pso_optics_illum"};
-					visionMode[] = {"Normal"};
-					opticsFlare = 1;
-					opticsDisablePeripherialVision = 1;
-					cameraDir = "";
-				};
-			};
-		};
+		STRNAME2("$STR_xdzn_ak_opt_pso1")
 	};
 	class HLC_Optic_1p29: HLC_Optic_PSO1
 	{
-		author = "Bionic, Toadie";
-		descriptionshort = "1P29 Combat Optic<br />Magnification: 4x";
-		displayname = "1P29";
-		model = "\hlc_wp_ak\mesh\1p29\1p29.p3d";
-		picture = "\hlc_wp_ak\tex\ui\gear_1p29_ca";
-		class ItemInfo: InventoryOpticsItem_Base_F
-		{
-			mass = 7;
-			modelOptics = "\hlc_wp_ak\mesh\1p29\1p29_optics";
-			class OpticsModes
-			{
-				class Snip
-				{
-					opticsID = 1;
-					useModelOptics = 1;
-					opticsPPEffects[] = {"OpticsCHAbera2","OpticsBlur3"};
-					opticsZoomMin = 0.0623;
-					opticsZoomMax = 0.0623;
-					opticsZoomInit = 0.0623;
-					discreteDistance[] = {300};
-					discreteDistanceInitIndex = 0;
-					distanceZoomMin = 400;
-					distanceZoomMax = 400;
-					discretefov[] = {0.0623};
-					discreteInitIndex = 0;
-					memoryPointCamera = "opticView";
-					modelOptics[] = {"\hlc_wp_ak\mesh\1p29\1p29_optics"};
-					visionMode[] = {"Normal"};
-					opticsFlare = 1;
-					opticsDisablePeripherialVision = 1;
-					cameraDir = "";
-				};
-			};
-		};
+		STRNAME2("$STR_xdzn_ak_opt_1p29")
 	};
 	class muzzle_snds_H;
 	class hlc_muzzle_545SUP_AK: muzzle_snds_H
 	{
-		author = "Bohemia Interactive, Toadie";
-		displayName = "PBS4 AK Suppressor";
-		picture = "\A3\weapons_F\Data\UI\gear_acca_snds_h_CA.paa";
-		model = "\hlc_wp_ak\mesh\PBS4\pbs4";
+		STRNAME2("$STR_xdzn_ak_muz_545_sd_ak")
 	};
 	class ItemInfo;
 	class muzzle_snds_M;
 	class hlc_muzzle_762SUP_AK: muzzle_snds_M
 	{
-		author = "Jason9Jason, Toadie";
-		displayName = "PBS1 AK Suppressor";
-		picture = "\A3\weapons_F\Data\UI\gear_acca_snds_h_CA.paa";
-		model = "\hlc_wp_ak\mesh\PBS1\pbs1";
+		STRNAME2("$STR_xdzn_ak_muz_762_sd_ak")
 	};
+	
 	class hlc_ak_base: Rifle_Base_F
 	{
 		inertia = 0.5;
@@ -692,50 +595,11 @@ class CfgWeapons
 	class optic_ACO_grn;
 	class hlc_optic_kobra: optic_ACO_grn
 	{
-		author = "Tigg, Toadie";
-		descriptionshort = "Open Face Collimator Optic";
-		displayname = "Kobra Sight";
-		model = "\hlc_wp_ak\mesh\Kobra\kobra.p3d";
-		picture = "\A3\weapons_F\Data\UI\gear_acco_aco_CA.paa";
-		scope = 2;
-		weaponinfotype = "RscWeaponZeroing";
+		STRNAME2("$STR_xdzn_ak_opt_kobra")
 	};
 	class hlc_optic_goshawk: optic_ACO_grn
 	{
-		author = "Bohemia Interactive, Toadie";
-		scope = 2;
-		displayName = "Goshawk";
-		descriptionshort = "Goshawk Adaptable Thermal Optic<br />Magnification: 3.6x";
-		picture = "\hlc_wp_ak\tex\ui\gear_goshawk_ca.paa";
-		model = "\hlc_wp_ak\mesh\goshawk\goshawk.p3d";
-		class ItemInfo: InventoryOpticsItem_Base_F
-		{
-			mass = 10;
-			modelOptics = "\hlc_wp_ak\mesh\goshawk\TI_goshawk_optic.p3d";
-			class OpticsModes
-			{
-				class Goshawk_TI
-				{
-					opticsID = 1;
-					useModelOptics = 1;
-					opticsZoomMin = 0.06944444;
-					opticsZoomMax = 0.06944444;
-					opticsZoomInit = 0.06944444;
-					distanceZoomMin = 300;
-					distanceZoomMax = 2200;
-					opticsppeffects[] = {"OpticsCHAbera1","OpticsBlur1"};
-					discreteDistance[] = {300,400,500,600,700,800,900,1000,1100,1200,1300,1400,1500,1600,1700,1800,1900,2000,2100,2200};
-					discreteDistanceInitIndex = 1;
-					modelOptics[] = {"\hlc_wp_ak\mesh\goshawk\TI_goshawk_optic.p3d"};
-					memoryPointCamera = "eye2";
-					visionmode[] = {"Ti","Normal"};
-					thermalMode[] = {0,1};
-					opticsFlare = 1;
-					opticsDisablePeripherialVision = 1;
-					cameraDir = "eye";
-				};
-			};
-		};
+		STRNAME2("$STR_xdzn_ak_opt_goshawk")
 	};
 	class hlc_rifle_ak12: hlc_rifle_aks74
 	{
