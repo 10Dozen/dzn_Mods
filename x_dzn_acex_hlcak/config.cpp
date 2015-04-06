@@ -113,36 +113,35 @@ class CfgMagazines
 	{
 		STRNAME("$STR_xdzn_ak_VOG25_HE")
 	};
-	/*
+	
 	class hlc_GRD_White: 1Rnd_HE_Grenade_shell
 	{
-		STRNAME("$STR_xdzn_ak_30Rnd_545_ep_ak")
+		STRNAME("$STR_xdzn_ak_GRD_White")
 	};
 	class hlc_GRD_Red: hlc_grd_white
 	{
-		STRNAME("$STR_xdzn_ak_30Rnd_545_ep_ak")
+		STRNAME("$STR_xdzn_ak_GRD_Red")
 	};
 	class hlc_GRD_green: hlc_grd_white
 	{
-		STRNAME("$STR_xdzn_ak_30Rnd_545_ep_ak")
+		STRNAME("$STR_xdzn_ak_GRD_Green")
 	};
 	class hlc_GRD_yellow: hlc_grd_white
 	{
-		STRNAME("$STR_xdzn_ak_30Rnd_545_ep_ak")
+		STRNAME("$STR_xdzn_ak_GRD_Yellow")
 	};
 	class hlc_GRD_orange: hlc_grd_white
 	{
-		STRNAME("$STR_xdzn_ak_30Rnd_545_ep_ak")
+		STRNAME("$STR_xdzn_ak_GRD_Orange")
 	};
 	class hlc_GRD_purple: hlc_grd_white
 	{
-		STRNAME("$STR_xdzn_ak_30Rnd_545_ep_ak")
+		STRNAME("$STR_xdzn_ak_GRD_Purple")
 	};
 	class hlc_GRD_blue: hlc_grd_white
 	{
-		STRNAME("$STR_xdzn_ak_30Rnd_545_ep_ak")
+		STRNAME("$STR_xdzn_ak_GRD_Blue")
 	};
-	*/
 };
 
 
