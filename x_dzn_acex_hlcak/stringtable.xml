@@ -256,15 +256,6 @@
 		<Russian>Штурмовая винтовка, версия со складным прикладом.&lt;br /&gt;Боеприпас: 5.45х39 мм&lt;br /&gt;Питание: Магазины на 30, 45 или 75.</Russian>
 	</Key>
 
-	<Key ID='STR_xdzn_ak_ak12'>
-		<English>AK-12</English>
-		<Russian>АК-12</Russian>
-	</Key>
-	<Key ID='STR_xdzn_ak_ak12_desc'>
-		<English>Assault rifle, with folding stock.&lt;br /&gt;Cartridge: 5.45x39 mm&lt;br /&gt;Feed: 30, 45 and 75 round magazines</English>
-		<Russian>Штурмовая винтовка, складной приклад.&lt;br /&gt;Боеприпас: 5.45х39 мм&lt;br /&gt;Питание: Магазины на 30, 45 или 75.</Russian>
-	</Key>
-
 	<Key ID='STR_xdzn_ak_aks74u'>
 		<English>AKS-74U</English>
 		<Russian>АКС-74У</Russian>
@@ -327,6 +318,7 @@
 		<English>Assault rifle&lt;br /&gt;Cartridge: 5.45x39 mm&lt;br /&gt;Feed: 30, 45 and 75 round magazines</English>
 		<Russian>Штурмовая винтовка&lt;br /&gt;Боеприпас: 5.45х39 мм&lt;br /&gt;Питание: Магазины на 30, 45 или 75.</Russian>
 	</Key>
+	
 
 	<Key ID='STR_xdzn_ak_saiga12k'>
 		<English>Saiga-12K</English>
@@ -337,11 +329,41 @@
 		<Russian>Самозарядное ружье&lt;br /&gt;Боеприпас: 12 кал.&lt;br /&gt;Питание: Магазин на 10 патронов.</Russian>
 	</Key>
 	
-	<!--
-		STR_xdzn_ak_ak12_gl
-		STR_xdzn_ak_ak12u
-		STR_xdzn_ak_rpk12
+	<Key ID='STR_xdzn_ak_ak12'>
+		<English>AK-12</English>
+		<Russian>АК-12</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_ak12_desc'>
+		<English>Assault rifle, with folding stock.&lt;br /&gt;Cartridge: 5.45x39 mm&lt;br /&gt;Feed: 30, 45 and 75 round magazines</English>
+		<Russian>Штурмовая винтовка, складной приклад.&lt;br /&gt;Боеприпас: 5.45х39 мм&lt;br /&gt;Питание: Магазины на 30, 45 или 75.</Russian>
+	</Key>
 	
-	-->
+	<Key ID='STR_xdzn_ak_ak12_gl'>
+		<English>AK-12 (GP-30)</English>
+		<Russian>АК-12 (ГП-30)</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_ak12_gl_desc'>
+		<English>Assault rifle with grenade launcher.&lt;br /&gt;;Cartridge: 5.45x39 mm, 40 mm grenades&lt;br /&gt;Feed: 30, 45 and 75 round magazines. 40 mm grenades.</English>
+		<Russian>Штурмовая винтовка с подствольным гранатометом&lt;br /&gt;Боеприпас: 5.45х39 мм, 40мм гранаты&lt;br /&gt;Питание: Магазины на 30, 45 или 75. 40мм гранаты</Russian>
+	</Key>
+	
+	<Key ID='STR_xdzn_ak_ak12u'>
+		<English>AK-12U</English>
+		<Russian>АК-12У</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_ak12u_desc'>
+		<English>Carbine version of AK-12.&lt;br /&gt;Cartridge: 5.45x39 mm&lt;br /&gt;Feed: 30, 45 and 75 round magazines</English>
+		<Russian>Укороченная модификация автомата АК12&lt;br /&gt;Боеприпас: 5.45х39 мм&lt;br /&gt;Питание: Магазины на 30, 45 или 75.</Russian>
+	</Key>
+	
+	<Key ID='STR_xdzn_ak_rpk12'>
+		<English>AK-12U</English>
+		<Russian>АК-12У</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_rpk12_desc'>
+		<English>Light machine gun.&lt;br /&gt;Cartridge: 5.45x39 mm&lt;br /&gt;Feed: 45 and 75 round magazines</English>
+		<Russian>м&lt;br /&gt;Боеприпас: 5.45х39 мм&lt;br /&gt;Питание: Магазины на 45 или 75.</Russian>
+	</Key>
+
   </Package>
 </Project>
