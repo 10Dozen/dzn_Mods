@@ -21,7 +21,7 @@ class CfgPatches
 
 
 
-
+#define SOUND_PATH				x_dzn_acex_rhsus
 // M4 *****************************************
 #define SOUND_M4				begin1[] = {"\SOUND_PATH\acex_sound\m4_fire1.wss",1.77828,1,1100};begin2[] = {"\SOUND_PATH\acex_sound\m4_fire2.wss",1.77828,1,1100};begin3[] = {"\SOUND_PATH\acex_sound\m4_fire2.wss",1.77828,0.97,1100};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
 #define SOUND_M4_SD				begin1[] = {"\SOUND_PATH\acex_sound\m4sd_fire.wss",1,1,80};begin2[] = {"\SOUND_PATH\acex_sound\m4sd_fire.wss",1,0.96,80};begin3[] = {"\SOUND_PATH\acex_sound\m4sd_fire.wss",1,1.02,80};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
@@ -92,7 +92,7 @@ class cfgWeapons
 {
 	class InventoryOpticsItem_Base_F;
 	class Rifle_Base_F;
-	class arifle_MX_Base_F: Rifle_Base_F{};
+	class arifle_MX_Base_F;
 	class Rifle_Long_Base_F;
 	class WeaponSlotsInfo;
 	class GunParticles;
@@ -101,7 +101,7 @@ class cfgWeapons
 	class LMG_Mk200_F;
 	class LMG_M200;
 	class MGun;
-	class LMG_RCWS: MGun{};
+	class LMG_RCWS;
 	class rhs_M249_base: LMG_Mk200_F
 	{
 		class FullAuto: Mode_FullAuto
