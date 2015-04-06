@@ -164,66 +164,7 @@ class CfgWeapons
 	
 	class hlc_ak_base: Rifle_Base_F
 	{
-		inertia = 0.5;
-		author = "Toadie";
-		scope = 0;
-		aidispersioncoefx = 3;
-		aidispersioncoefy = 5;
-		magazines[] = {"hlc_30Rnd_545x39_B_AK","hlc_30Rnd_545x39_T_AK","hlc_30Rnd_545x39_EP_AK","hlc_45Rnd_545x39_t_rpk","hlc_30Rnd_545x39_S_AK"};
-		class Library
-		{
-			libTextDesc = "Izhmash AK74";
-		};
-		reloadAction = "HLC_GestureReloadAK";
-		maxRecoilSway = 0.0125;
-		swayDecaySpeed = 1.25;
-		class GunParticles: GunParticles
-		{
-			class SecondEffect
-			{
-				positionName = "Nabojnicestart";
-				directionName = "Nabojniceend";
-				effectName = "CaselessAmmoCloud";
-			};
-		};
-		class WeaponSlotsInfo: WeaponSlotsInfo
-		{
-			mass = 33;
-			class MuzzleSlot: SlotInfo
-			{
-				linkProxy = "\A3\data_f\proxies\weapon_slots\MUZZLE";
-				compatibleItems[] = {"hlc_muzzle_545SUP_AK"};
-			};
-			class CowsSlot: CowsSlot
-			{
-				compatibleItems[] = {"hlc_optic_pso1","hlc_optic_goshawk","hlc_optic_kobra","hlc_optic_1p29"};
-			};
-			class PointerSlot: PointerSlot
-			{
-				compatibleItems[] = {};
-			};
-		};
-		opticsZoomMin = 0.375;
-		opticsZoomMax = 1.1;
-		opticsZoomInit = 0.75;
-		distanceZoomMin = 300;
-		distanceZoomMax = 300;
-		descriptionShort = "Assault rifle<br/>Caliber: 5.45mm";
-		handAnim[] = {"OFP2_ManSkeleton","hlc_core\animation\oldgesture\ak74_hands.rtm"};
-		dexterity = 1.8;
-		bullet1[] = {"A3\sounds_f\weapons\shells\7_62\metal_762_01",0.398107,1,15};
-		bullet10[] = {"A3\sounds_f\weapons\shells\7_62\grass_762_02",0.281838,1,15};
-		bullet11[] = {"A3\sounds_f\weapons\shells\7_62\grass_762_03",0.281838,1,15};
-		bullet12[] = {"A3\sounds_f\weapons\shells\7_62\grass_762_04",0.281838,1,15};
-		bullet2[] = {"A3\sounds_f\weapons\shells\7_62\metal_762_02",0.398107,1,15};
-		bullet3[] = {"A3\sounds_f\weapons\shells\7_62\metal_762_03",0.398107,1,15};
-		bullet4[] = {"A3\sounds_f\weapons\shells\7_62\metal_762_04",0.398107,1,15};
-		bullet5[] = {"A3\sounds_f\weapons\shells\7_62\dirt_762_01",0.281838,1,15};
-		bullet6[] = {"A3\sounds_f\weapons\shells\7_62\dirt_762_02",0.281838,1,15};
-		bullet7[] = {"A3\sounds_f\weapons\shells\7_62\dirt_762_03",0.281838,1,15};
-		bullet8[] = {"A3\sounds_f\weapons\shells\7_62\dirt_762_04",0.281838,1,15};
-		bullet9[] = {"A3\sounds_f\weapons\shells\7_62\grass_762_01",0.281838,1,15};
-		soundBullet[] = {"bullet1",0.083,"bullet2",0.083,"bullet3",0.083,"bullet4",0.083,"bullet5",0.083,"bullet6",0.083,"bullet7",0.083,"bullet8",0.083,"bullet9",0.083,"bullet10",0.083,"bullet11",0.083,"bullet12",0.083};
+		STRNAME("$STR_xdzn_ak_ak_base")
 		modes[] = {"FullAuto","Single","fullauto_medium","single_medium_optics1","single_far_optics2"};
 		class Single: Mode_SemiAuto
 		{
@@ -234,16 +175,6 @@ class CfgWeapons
 			closure2[] = {"\hlc_wp_ak\snd\ak74_first",1.0,1,30};
 			soundClosure[] = {"closure1",0.5,"closure2",0.5};
 			weaponSoundEffect = "DefaultRifle";
-			reloadTime = 0.086;
-			recoil = "recoil_single_mx";
-			recoilProne = "recoil_single_prone_mx";
-			dispersion = 0.000654498;
-			minRange = 2;
-			minRangeProbab = 0.7;
-			midRange = 75;
-			midRangeProbab = 0.08;
-			maxRange = 250;
-			maxRangeProbab = 0.0015;
 			sounds[] = {"StandardSound","SilencedSound"};
 			class BaseSoundModeType
 			{
@@ -275,17 +206,6 @@ class CfgWeapons
 			closure2[] = {"\hlc_wp_ak\snd\ak74_first",1.0,1,30};
 			soundClosure[] = {"closure1",0.5,"closure2",0.5};
 			weaponSoundEffect = "DefaultRifle";
-			reloadTime = 0.086;
-			recoil = "recoil_auto_mx";
-			recoilProne = "recoil_auto_prone_mx";
-			dispersion = 0.000654498;
-			minRange = 0;
-			minRangeProbab = 0.03;
-			midRange = 75;
-			midRangeProbab = 0.005;
-			maxRange = 250;
-			maxRangeProbab = 0.0003;
-			aiRateOfFire = 1e-006;
 			sounds[] = {"StandardSound","SilencedSound"};
 			class BaseSoundModeType
 			{
@@ -307,45 +227,6 @@ class CfgWeapons
 				begin2[] = {"\hlc_wp_ak\snd\ak74_sil",1,1,200};
 				soundBegin[] = {"begin1",0.5,"begin2",0.5};
 			};
-		};
-		class fullauto_medium: FullAuto
-		{
-			showToPlayer = 0;
-			burst = 3;
-			minRange = 2;
-			minRangeProbab = 0.5;
-			midRange = 75;
-			midRangeProbab = 0.7;
-			maxRange = 150;
-			maxRangeProbab = 0.05;
-			aiRateOfFire = 2.0;
-			aiRateOfFireDistance = 200;
-		};
-		class single_medium_optics1: Single
-		{
-			requiredOpticType = 1;
-			showToPlayer = 0;
-			minRange = 2;
-			minRangeProbab = 0.2;
-			midRange = 450;
-			midRangeProbab = 0.7;
-			maxRange = 600;
-			maxRangeProbab = 0.2;
-			aiRateOfFire = 6;
-			aiRateOfFireDistance = 600;
-		};
-		class single_far_optics2: single_medium_optics1
-		{
-			requiredOpticType = 2;
-			showToPlayer = 0;
-			minRange = 100;
-			minRangeProbab = 0.1;
-			midRange = 500;
-			midRangeProbab = 0.6;
-			maxRange = 700;
-			maxRangeProbab = 0.05;
-			aiRateOfFire = 8;
-			aiRateOfFireDistance = 700;
 		};
 		drysound[] = {"hlc_core\sound\empty_assaultrifles",1,1,10};
 		reloadMagazineSound[] = {"\hlc_wp_ak\snd\ak74m_reload",0.74,1,30};
