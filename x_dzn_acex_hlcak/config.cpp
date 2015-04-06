@@ -180,7 +180,7 @@ class CfgWeapons
 	
 	class hlc_ak_base: Rifle_Base_F
 	{
-		STRNAME("$STR_xdzn_ak_ak_base")
+		STRNAME2("$STR_xdzn_ak_ak_base")
 		class Single: Mode_SemiAuto
 		{
 			class BaseSoundModeType;
@@ -209,7 +209,7 @@ class CfgWeapons
 	
 	class hlc_rifle_ak74: hlc_ak_base
 	{
-		STRNAME("$STR_xdzn_ak_ak74")
+		STRNAME2("$STR_xdzn_ak_ak74")
 		class Single: Mode_SemiAuto
 		{
 			class BaseSoundModeType;
@@ -239,12 +239,12 @@ class CfgWeapons
 	
 	class hlc_rifle_ak74_dirty: hlc_rifle_ak74
 	{
-		STRNAME("$STR_xdzn_ak_ak74_worn")
+		STRNAME2("$STR_xdzn_ak_ak74_worn")
 	};
 	
 	class hlc_rifle_aks74: hlc_rifle_ak74
 	{
-		STRNAME("$STR_xdzn_ak_aks74")
+		STRNAME2("$STR_xdzn_ak_aks74")
 		class Single: Mode_SemiAuto
 		{
 			class BaseSoundModeType;
@@ -285,7 +285,7 @@ class CfgWeapons
 	
 	class hlc_rifle_ak12: hlc_rifle_aks74
 	{
-		STRNAME("$STR_xdzn_ak_ak12")
+		STRNAME2("$STR_xdzn_ak_ak12")
 		class FullAuto: Mode_FullAuto
 		{
 			class BaseSoundModeType;
@@ -329,7 +329,7 @@ class CfgWeapons
 	
 	class hlc_rifle_ak12GL: hlc_rifle_aks74
 	{
-		STRNAME("$STR_xdzn_ak_ak12_gl")
+		STRNAME2("$STR_xdzn_ak_ak12_gl")
 		class hlc_GP30_AK12: UGL_F
 		{
 			SOUND_GP
@@ -376,7 +376,7 @@ class CfgWeapons
 	
 	class hlc_rifle_aku12: hlc_rifle_ak12
 	{
-		STRNAME("$STR_xdzn_ak_ak12u")
+		STRNAME2("$STR_xdzn_ak_ak12u")
 		class FullAuto: Mode_FullAuto
 		{
 			class BaseSoundModeType;
@@ -419,7 +419,7 @@ class CfgWeapons
 	
 	class hlc_rifle_RPK12: hlc_rifle_ak12
 	{
-		STRNAME("$STR_xdzn_ak_rpk12")
+		STRNAME2("$STR_xdzn_ak_rpk12")
 		class FullAuto: Mode_FullAuto
 		{
 			class BaseSoundModeType;
@@ -464,7 +464,7 @@ class CfgWeapons
 	
 	class hlc_rifle_aks74u: hlc_rifle_ak74
 	{
-		STRNAME("$STR_xdzn_ak_aks74u")
+		STRNAME2("$STR_xdzn_ak_aks74u")
 		class FullAuto: Mode_FullAuto
 		{
 			class BaseSoundModeType;
@@ -494,7 +494,7 @@ class CfgWeapons
 	
 	class hlc_rifle_ak47: hlc_rifle_ak74
 	{
-		STRNAME("$STR_xdzn_ak_ak47")
+		STRNAME2("$STR_xdzn_ak_ak47")
 		class FullAuto: Mode_FullAuto
 		{
 			class BaseSoundModeType;
@@ -523,7 +523,7 @@ class CfgWeapons
 	
 	class hlc_rifle_akm: hlc_rifle_ak47
 	{
-		STRNAME("$STR_xdzn_ak_akm")
+		STRNAME2("$STR_xdzn_ak_akm")
 		class FullAuto: Mode_FullAuto
 		{
 			class BaseSoundModeType;
@@ -552,7 +552,7 @@ class CfgWeapons
 	
 	class hlc_rifle_akmgl: hlc_rifle_akm
 	{
-		STRNAME("$STR_xdzn_ak_akm_gl")
+		STRNAME2("$STR_xdzn_ak_akm_gl")
 		class hlc_GP25_AKM: UGL_F
 		{
 			SOUND_GP
@@ -563,7 +563,7 @@ class CfgWeapons
 	
 	class hlc_rifle_rpk: hlc_rifle_ak47
 	{
-		STRNAME("$STR_xdzn_ak_rpk")
+		STRNAME2("$STR_xdzn_ak_rpk")
 		class FullAuto: Mode_FullAuto
 		{
 			class BaseSoundModeType;
@@ -592,7 +592,7 @@ class CfgWeapons
 	
 	class hlc_rifle_aks74_GL: hlc_rifle_aks74
 	{
-		STRNAME("$STR_xdzn_ak_aks74_gl")
+		STRNAME2("$STR_xdzn_ak_aks74_gl")
 		class hlc_GP30_AKS74: UGL_F
 		{
 			SOUND_GP
@@ -602,7 +602,7 @@ class CfgWeapons
 	
 	class hlc_rifle_aek971: hlc_rifle_ak74
 	{
-		STRNAME("$STR_xdzn_ak_aek971")
+		STRNAME2("$STR_xdzn_ak_aek971")
 		class FullAuto: Mode_FullAuto
 		{
 			class BaseSoundModeType;
@@ -644,7 +644,7 @@ class CfgWeapons
 	
 	class hlc_rifle_saiga12k: hlc_rifle_ak47
 	{
-		STRNAME("$STR_xdzn_ak_saiga12k")
+		STRNAME2("$STR_xdzn_ak_saiga12k")
 		/*
 		class Single: Mode_SemiAuto
 		{
