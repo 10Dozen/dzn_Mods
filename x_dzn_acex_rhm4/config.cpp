@@ -18,10 +18,10 @@ class CfgPatches
 };
 
 #define	STRNAME(NAME)	displayName = "NAME";displayNameShort = "NAME_short";descriptionShort = "NAME_desc";
-#define STRNAME2(NAME)	displayname = "NAME";descriptionShort = "NAME_desc";
+#define SHORT_NAME(NAME)	displayname = "NAME";descriptionShort = "NAME_desc";
 
 
-
+#define SOUND_PATH  x_dzn_acex_rhm4
 // M4 *****************************************
 #define SOUND_M4				begin1[] = {"\SOUND_PATH\acex_sound\m4_fire1.wss",1.77828,1,1100};begin2[] = {"\SOUND_PATH\acex_sound\m4_fire2.wss",1.77828,1,1100};begin3[] = {"\SOUND_PATH\acex_sound\m4_fire2.wss",1.77828,0.97,1100};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
 #define SOUND_M4_SD				begin1[] = {"\SOUND_PATH\acex_sound\m4sd_fire.wss",1,1,80};begin2[] = {"\SOUND_PATH\acex_sound\m4sd_fire.wss",1,0.96,80};begin3[] = {"\SOUND_PATH\acex_sound\m4sd_fire.wss",1,1.02,80};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
@@ -124,7 +124,7 @@ class CfgWeapons
 	class RH_ar10;
 	class RH_m110: Rifle_Base_F
 	{
-		//STRNAME2("$STR_xdzn_RH_m110")
+		//SHORT_NAME("$STR_xdzn_RH_m110")
 		class Single: Mode_SemiAuto
 		{
 			class BaseSoundModeType;
@@ -140,15 +140,15 @@ class CfgWeapons
 	};
 	class RH_Mk11: RH_m110
 	{
-		//STRNAME2("$STR_xdzn_RH_Mk11")
+		//SHORT_NAME("$STR_xdzn_RH_Mk11")
 	};
 	class RH_SR25EC: RH_m110
 	{
-		//STRNAME2("$STR_xdzn_RH_SR25EC")
+		//SHORT_NAME("$STR_xdzn_RH_SR25EC")
 	};
 	class RH_m4: Rifle_Base_F
 	{
-		//STRNAME2("$STR_xdzn_RH_m4")
+		//SHORT_NAME("$STR_xdzn_RH_m4")
 		class Single: Mode_SemiAuto
 		{
 			class BaseSoundModeType;
@@ -212,7 +212,7 @@ class CfgWeapons
 	class RH_M4_moe;
 	class RH_M4_moe_b;
 	class RH_M4_moe_g;
-	class RH_M4sbr: RH_M4A1_ris;
+	class RH_M4sbr;
 	class RH_M4sbr_g;
 	class RH_M4sbr_b;
 	
@@ -358,7 +358,7 @@ class CfgWeapons
 			};
 		};
 	};
-	class RH_M16A2gl: RH_M16A2;
+	class RH_M16A2gl;
 	class RH_M16A4: RH_M4_ris
 	{
 		class Single: Mode_SemiAuto
@@ -450,19 +450,19 @@ class CfgWeapons
 	
 	class RH_Hk416: RH_M4A1_ris
 	{		
-		class Single: Single
+		class Single: Mode_SemiAuto
 		{
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				SOUND_M416
+				SOUND_416
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				SOUND_M416_SD
+				SOUND_416_SD
 			};
 		};
-		class FullAuto: FullAuto
+		class FullAuto: Mode_FullAuto
 		{
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
@@ -478,19 +478,19 @@ class CfgWeapons
 	
 	class RH_Hk416s: RH_M4sbr
 	{
-		class Single: Single
+		class Single: Mode_SemiAuto
 		{
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				SOUND_M416
+				SOUND_416
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				SOUND_M416_SD
+				SOUND_416_SD
 			};
 		};
-		class FullAuto: FullAuto
+		class FullAuto: Mode_FullAuto
 		{
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
@@ -506,19 +506,19 @@ class CfgWeapons
 	
 	class RH_Hk416c: RH_M4sbr
 	{
-		class Single: Single
+		class Single: Mode_SemiAuto
 		{
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
-				SOUND_M416
+				SOUND_416
 			};
 			class SilencedSound: BaseSoundModeType
 			{
-				SOUND_M416_SD
+				SOUND_416_SD
 			};
 		};
-		class FullAuto: FullAuto
+		class FullAuto: Mode_FullAuto
 		{
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
@@ -534,7 +534,7 @@ class CfgWeapons
 	
 	class RH_M27IAR: RH_Mk12mod1
 	{		
-		class manual: FullAuto
+		class manual: Mode_FullAuto
 		{
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
