@@ -56,20 +56,71 @@
 
 
 // PKM/PKP ************************************
+#define SOUND_PKP
+#define SOUND_PKP_SD
+#define SOUND_PKP_FA
+#define SOUND_PKP_FA_SD
+
+#define SOUND_PKM
+#define SOUND_PKM_SD
+
 
 // GP-25/30 ***********************************
 #define	SOUND_GP				sound[]={"\SOUND_PATH\acex_sound\gp30_fire",1,1,100};
 #define	SOUND_GP_RELOAD			reloadMagazineSound[]={"\SOUND_PATH\acex_sound\gp30_reload",1.0,1,10};
 
+
+
 // M4 *****************************************
+#define SOUND_M4
+#define SOUND_M4_SD
+#define SOUND_M4_BURST
+#define SOUND_M4_BURST_SD
+#define SOUND_M4_FA
+#define SOUND_M4_FA_SD
 
 // M16 ****************************************
+#define SOUND_M16
+#define SOUND_M16_SD
+#define SOUND_M16_BURST
+#define SOUND_M16_BURST_SD
+#define SOUND_M16_FA
+#define SOUND_M16_FA_SD
+
 
 // Mk12 and other AR-15 based rifles **********
+#define SOUND_MK12
+#define SOUND_MK12_SD
+
+#define SOUND_M110
+#define SOUND_M110_SD
+
+#define SOUND_HB
+#define SOUND_HB_SD
+#define SOUND_HB_FA
+#define SOUND_HB_FA_SD
+
+#define SOUND_SBR9
+#define SOUND_SBR9_SD
+#define SOUND_SBR9_FA
+#define SOUND_SBR9_FA_SD
+
+// HK416 **************************************
+#define SOUND_416
+#define SOUND_416_SD
+#define SOUND_416_FA
+#define SOUND_416_FA_SD
+
 
 // M249 ***************************************
+#define	SOUND_M249
+#define	SOUND_M249_SD
 
 // M240 ***************************************
+#define	SOUND_M240
+#define	SOUND_M240_SD
+
 
 // M203/AG36 **********************************
-
+#define	SOUND_GL
+#define	SOUND_GL_RELOAD
