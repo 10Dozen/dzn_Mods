@@ -33,102 +33,105 @@ class asdg_FrontSideRail;
 class asdg_OpticRail1913;
 class asdg_OpticRail1913_short;
 
-#define	MAGNAME(NAME)	displayName = "NAME";displayNameShort = "NAME_short";descriptionShort = "NAME_desc";
+#define	STRNAME(NAME)	displayName = "NAME";displayNameShort = "NAME_short";descriptionShort = "NAME_desc";
 
 class CfgMagazines
 {
 	class 30Rnd_556x45_Stanag;
 	class hlc_10rnd_12g_buck_S12: 30Rnd_556x45_Stanag
 	{
-		MAGNAME("$STR_xdzn_ak_10Rnd_12g_buck_s12")
+		STRNAME("$STR_xdzn_ak_10Rnd_12g_buck_s12")
 	};
 	class hlc_10rnd_12g_slug_S12: 30Rnd_556x45_Stanag
 	{
-		MAGNAME("$STR_xdzn_ak_10Rnd_12g_slug_s12")
+		STRNAME("$STR_xdzn_ak_10Rnd_12g_slug_s12")
 	};
 	class hlc_30Rnd_545x39_B_AK: 30Rnd_556x45_Stanag
 	{
-		MAGNAME("$STR_xdzn_ak_30Rnd_545_b_ak")
+		STRNAME("$STR_xdzn_ak_30Rnd_545_b_ak")
 	};
 	class hlc_30Rnd_545x39_S_AK: 30Rnd_556x45_Stanag
 	{
-	//	MAGNAME("")
+		STRNAME("$STR_xdzn_ak_30Rnd_545_s_ak")
 	};
 	class hlc_30Rnd_545x39_t_ak: hlc_30Rnd_545x39_B_AK
 	{
-	//	MAGNAME("")
+		STRNAME("$STR_xdzn_ak_30Rnd_545_t_ak")
 	};
 	class hlc_45Rnd_545x39_t_rpk: hlc_30Rnd_545x39_T_ak
 	{
-	//	MAGNAME("")
+		STRNAME("$STR_xdzn_ak_45Rnd_545_t_rpk")
 	};
 	class hlc_30Rnd_545x39_EP_ak: hlc_30Rnd_545x39_B_AK
 	{
-	//	MAGNAME("")
+		STRNAME("$STR_xdzn_ak_30Rnd_545_ep_ak")
 	};
 	class hlc_30Rnd_762x39_b_ak: 30Rnd_556x45_Stanag
 	{
-	//	MAGNAME("")
+		STRNAME("$STR_xdzn_ak_30Rnd_762_b_ak")
 	};
 	class hlc_30Rnd_762x39_t_ak: hlc_30Rnd_762x39_b_ak
 	{
-	//	MAGNAME("")
+		STRNAME("$STR_xdzn_ak_30Rnd_762_t_ak")
 	};
 	class hlc_30rnd_762x39_s_ak: hlc_30Rnd_762x39_b_ak
 	{
-	//	MAGNAME("")
+		STRNAME("$STR_xdzn_ak_30Rnd_762_s_ak")
 	};
 	class hlc_45Rnd_762x39_t_rpk: 30Rnd_556x45_Stanag
 	{
-	//	MAGNAME("")
+		STRNAME("$STR_xdzn_ak_45Rnd_762_t_rpk")
 	};
 	class hlc_45Rnd_762x39_m_rpk: hlc_45Rnd_762x39_t_rpk
 	{
-	//	MAGNAME("")
+		STRNAME("$STR_xdzn_ak_45Rnd_762_m_rpk")
 	};
 	class hlc_75Rnd_762x39_m_rpk: hlc_45Rnd_762x39_m_rpk
 	{
-	//	MAGNAME("")
+		STRNAME("$STR_xdzn_ak_75Rnd_762_m_rpk")
 	};
 	class 1Rnd_HE_Grenade_shell;
 	class hlc_VOG25_AK: 1Rnd_HE_Grenade_shell
 	{
-	//	MAGNAME("")
+		STRNAME("$STR_xdzn_ak_VOG25_HE")
 	};
+	/*
 	class hlc_GRD_White: 1Rnd_HE_Grenade_shell
 	{
-	//	MAGNAME("")
+		STRNAME("$STR_xdzn_ak_30Rnd_545_ep_ak")
 	};
 	class hlc_GRD_Red: hlc_grd_white
 	{
-	//	MAGNAME("")
+		STRNAME("$STR_xdzn_ak_30Rnd_545_ep_ak")
 	};
 	class hlc_GRD_green: hlc_grd_white
 	{
-	//	MAGNAME("")
+		STRNAME("$STR_xdzn_ak_30Rnd_545_ep_ak")
 	};
 	class hlc_GRD_yellow: hlc_grd_white
 	{
-	//	MAGNAME("")
+		STRNAME("$STR_xdzn_ak_30Rnd_545_ep_ak")
 	};
 	class hlc_GRD_orange: hlc_grd_white
 	{
-	//	MAGNAME("")
+		STRNAME("$STR_xdzn_ak_30Rnd_545_ep_ak")
 	};
 	class hlc_GRD_purple: hlc_grd_white
 	{
-	//	MAGNAME("")
+		STRNAME("$STR_xdzn_ak_30Rnd_545_ep_ak")
 	};
 	class hlc_GRD_blue: hlc_grd_white
 	{
-	//	MAGNAME("")
+		STRNAME("$STR_xdzn_ak_30Rnd_545_ep_ak")
 	};
+	*/
 };
 
 
 
 
 
+#define
 
 class CfgWeapons
 {
@@ -144,6 +147,8 @@ class CfgWeapons
 	class optic_dms;
 	class HLC_Optic_PSO1: optic_dms
 	{
+		STRNAME("$STR_xdzn_ak_10Rnd_12g_buck_s12")
+		
 		author = "Bohemia Interactive, Toadie";
 		descriptionshort = "PSO1 Optical Sniper Sight<br />Magnification: 4x";
 		displayname = "PSO-1M";
