@@ -5,246 +5,35 @@
 //Class rh_m4_cfg : config.bin{
 class CfgPatches
 {
-	class RH_m4_cfg
+	class x_dzn_acex_rhm4
 	{
-		units[] = {"RH_m4m16ammobox"};
-		weapons[] = {"RH_hbsd","RH_Delft","RH_m4covers_s","RH_m4covers_f","RH_m16covers_s","RH_m16covers_f","RH_m4","RH_m4_m203","RH_m4_ris","RH_m4_ris_m203","RH_m4_ris_m","RH_m4m","RH_m4_moe","RH_m4sbr","RH_m4a6","RH_hb","RH_sbr9","RH_m16a1","RH_m16a1gl","RH_m16a2","RH_m16a2gl","RH_m16a4","RH_m16a4_m","RH_m16a4gl","RH_m16a6","RH_hk416","RH_hk416c","RH_hk416s","RH_m27iar","RH_mk12mod1","RH_samr","RH_m110","RH_mk11","RH_sr25ec"};
+		units[] = {};
+		weapons[] = {};
 		requiredVersion = 0.1;
-		requiredAddons[] = {"A3_Data_F","A3_Weapons_F","RH_acc","asdg_jointrails"};
+		requiredAddons[] = {"A3_Data_F","A3_Weapons_F","RH_acc","asdg_jointrails","RH_m4_cfg"};
+		
+		version = "V0.1";
+		author = "10Dozen";
 	};
 };
-class cfgRecoils
-{
-	class Default;
-	class RH_recoil_default: Default
-	{
-		muzzleOuter[] = {0.3,1,0.3,0.2};
-		muzzleInner[] = {0,0,0.1,0.1};
-		kickBack[] = {0.03,0.06};
-		permanent = 0.1;
-		temporary = 0.01;
-	};
-	class RH_recoil_AR10: RH_recoil_default
-	{
-		muzzleOuter[] = {0.4,1.5,0.6,0.4};
-		kickBack[] = {0.04,0.07};
-		temporary = 0.01;
-	};
-	class RH_recoil_M4: RH_recoil_default
-	{
-		muzzleOuter[] = {0.3,1,0.4,0.3};
-		kickBack[] = {0.02,0.04};
-		temporary = 0.01;
-	};
-	class RH_recoil_M16: RH_recoil_default
-	{
-		muzzleOuter[] = {0.3,0.8,0.4,0.3};
-		kickBack[] = {0.02,0.04};
-		temporary = 0.01;
-	};
-	class RH_recoil_HB: RH_recoil_default
-	{
-		muzzleOuter[] = {0.35,1.2,0.45,0.35};
-		kickBack[] = {0.03,0.05};
-		temporary = 0.01;
-	};
-	class RH_recoil_SBR9: RH_recoil_default
-	{
-		muzzleOuter[] = {0.1,0.6,0.2,0.2};
-		kickBack[] = {0.01,0.02};
-		temporary = 0.01;
-	};
-	RH_AR10_Recoil[] = {0,0.009,0.017,0.02,0.009,0.017,0.03,0.007,0.023,0.16,0,0};
-	RH_AR10_RecoilProne[] = {0,0.007,0.01,0.013,0.007,0.01,0.03,0.003,0,0.12,0,0};
-	RH_M4_Recoil[] = {0,0.005,0.005,0.005,0.01,0.011,0.09,0.005,-0.0004,0.13,0,0};
-	RH_M4_RecoilProne[] = {0,0.005,0.005,0.005,0.01,0.009,0.075,0.005,-0.0003,0.13,0,0};
-	RH_M4_Recoil_Auto[] = {0,0.007,0.015,0.007,0.01,0.022,0.09,0.02,0.01,0.13,0,0};
-	RH_M4_RecoilProneAuto[] = {0,0.005,0.005,0.005,0.01,0.009,0.075,0.005,-0.0003,0.13,0,0};
-	RH_M4_Recoil_GLRecoil[] = {0,0.005,0,0.01,0.005,0,0.02,0.003,0.006,0.12,0,0};
-	RH_M203GLBase[] = {0,0.03,0.05,0.13,0.01,-0.001,0.26,0,0};
-	RH_M249_Recoil[] = {0,0.006,-0.003,0.05,0.006,0.006,0.03,0.006,0.006,0.17,0,0};
-	RH_M249_RecoilProne[] = {0,0.005,0.002,0.07,0.005,-0.0015,0.12,0,0};
-	RH_Mk48_Recoil[] = {0,0.01,0.002,0.05,0.01,0.003,0.04,0.006,0.02,0.17,0,0};
-	RH_Mk48_RecoilProne[] = {0,0.01,0.0012,0.09,0.009,-0.001,0.15,0,0};
-};
-class CfgAmmo
-{
-	class Default;
-	class BulletCore;
-	class BulletBase;
-	class B_9x21_Ball;
-	class B_556x45_Ball;
-	class B_65x39_Caseless;
-	class B_762x51_Ball;
-	class RH_9x19_B_M822: B_9x21_Ball
-	{
-		hit = 5.3592143;
-		typicalSpeed = 423;
-		airFriction = -0.002393437;
-		caliber = 0.531;
-		deflecting = 28;
-		cartridge = "FxCartridge_65_caseless";
-	};
-	class RH_9x19_B_HP: B_9x21_Ball
-	{
-		hit = 8.790348;
-		typicalSpeed = 416;
-		airFriction = -0.002440235;
-		caliber = 0.385;
-		deflecting = 25;
-		cartridge = "FxCartridge_65_caseless";
-	};
-	class RH_9x19_B_HPSB: B_9x21_Ball
-	{
-		hit = 7.6707625;
-		typicalSpeed = 333;
-		airFriction = -0.00145426;
-		caliber = 0.334;
-		deflecting = 21;
-		visibleFire = 1;
-		audibleFire = 2;
-		cartridge = "FxCartridge_65_caseless";
-	};
-	class RH_556x45_B_M855A1: B_556x45_Ball
-	{
-		hit = 8.606374;
-		typicalSpeed = 960.12;
-		airFriction = -0.0011336141;
-		caliber = 0.901;
-		deflecting = 21;
-		visibleFire = 3;
-		audibleFire = 6;
-		cartridge = "FxCartridge_65_caseless";
-		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
-		nvgOnly = 0;
-	};
-	class RH_556x45_B_Mk318: B_556x45_Ball
-	{
-		hit = 10.073716;
-		typicalSpeed = 955.2432;
-		airFriction = -0.0011487255;
-		caliber = 0.734;
-		deflecting = 18;
-		visibleFire = 3;
-		audibleFire = 5.5;
-		cartridge = "FxCartridge_65_caseless";
-		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
-		nvgOnly = 0;
-	};
-	class RH_556x45_B_Mk262: B_556x45_Ball
-	{
-		hit = 11.570251;
-		typicalSpeed = 868.68;
-		airFriction = -0.0010867938;
-		caliber = 0.615;
-		deflecting = 16;
-		visibleFire = 2.5;
-		audibleFire = 5;
-		cartridge = "FxCartridge_65_caseless";
-		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
-		nvgOnly = 0;
-	};
-	class RH_68x43_B_FMJ: B_65x39_Caseless
-	{
-		hit = 9.842114;
-		typicalSpeed = 806.196;
-		airFriction = -0.001338856;
-		caliber = 0.675;
-		deflecting = 23;
-		cartridge = "FxCartridge_65_caseless";
-		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
-	};
-	class RH_68x43_B_Match: B_65x39_Caseless
-	{
-		hit = 11.822756;
-		typicalSpeed = 715.0608;
-		airFriction = -0.000839079;
-		caliber = 0.359;
-		deflecting = 18;
-		cartridge = "FxCartridge_65_caseless";
-		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
-	};
-	class RH_762x35_B_FMJ: B_65x39_Caseless
-	{
-		hit = 7.798408;
-		typicalSpeed = 565;
-		airFriction = -0.001105223;
-		caliber = 0.615;
-		deflecting = 20;
-		cartridge = "FxCartridge_65_caseless";
-		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
-	};
-	class RH_762x35_B_Match: B_65x39_Caseless
-	{
-		hit = 10.052622;
-		typicalSpeed = 608;
-		airFriction = -0.001152804;
-		caliber = 0.417;
-		deflecting = 17;
-		cartridge = "FxCartridge_65_caseless";
-		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
-	};
-	class RH_762x35_B_MSB: B_65x39_Caseless
-	{
-		hit = 6.3931146;
-		typicalSpeed = 290;
-		airFriction = -0.00028133;
-		caliber = 0.602;
-		deflecting = 14;
-		visibleFire = 1.25;
-		audibleFire = 2.5;
-		cartridge = "FxCartridge_65_caseless";
-		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
-	};
-	class RH_762x51_B_M80A1: B_762x51_Ball
-	{
-		hit = 9.696762;
-		typicalSpeed = 906.78;
-		airFriction = -0.00085536;
-		caliber = 1.075;
-		deflecting = 21;
-		visibleFire = 3.15;
-		audibleFire = 6.2;
-		cartridge = "FxCartridge_65_caseless";
-		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
-	};
-	class RH_762x51_B_Mk316LR: B_762x51_Ball
-	{
-		hit = 14.890331;
-		typicalSpeed = 790.956;
-		airFriction = -0.00077634;
-		caliber = 0.449;
-		deflecting = 18;
-		visibleFire = 3.1;
-		audibleFire = 6.15;
-		cartridge = "FxCartridge_65_caseless";
-		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
-	};
-	class RH_762x51_B_Mk319: B_762x51_Ball
-	{
-		hit = 14.553685;
-		typicalSpeed = 896.7216;
-		airFriction = -0.00111169;
-		caliber = 0.794;
-		deflecting = 18;
-		visibleFire = 3.25;
-		audibleFire = 6.3;
-		cartridge = "FxCartridge_65_caseless";
-		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
-	};
-	class RH_762x51_B_LFMJSB: B_762x51_Ball
-	{
-		hit = 5.4738483;
-		typicalSpeed = 339.852;
-		airFriction = -0.00049784;
-		caliber = 0.649;
-		deflecting = 15;
-		visibleFire = 1.1;
-		audibleFire = 2.2;
-		cartridge = "FxCartridge_65_caseless";
-		model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
-	};
-};
+
+#define	STRNAME(NAME)	displayName = "NAME";displayNameShort = "NAME_short";descriptionShort = "NAME_desc";
+#define STRNAME2(NAME)	displayname = "NAME";descriptionShort = "NAME_desc";
+
+#define SOUND_M4
+#define SOUND_M4_SD
+#define SOUND_M16
+#define SOUND_M16_SD
+#define SOUND_M16_BURST
+#define SOUND_M16_BURST_SD
+#define SOUND_MK12
+#define SOUND_MK12_SD
+
+#define	SOUND_GL
+#define	SOUND_GL_RELOAD
+
+
+
 class CfgMagazines
 {
 	class Default;
