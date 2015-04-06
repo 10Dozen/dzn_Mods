@@ -336,5 +336,12 @@
 		<English>Semi-auto shotgun&lt;br /&gt;Cartridge: .12 Gauge&lt;br /&gt;Feed: 10 round magazine.</English>
 		<Russian>Самозарядное ружье&lt;br /&gt;Боеприпас: 12 кал.&lt;br /&gt;Питание: Магазин на 10 патронов.</Russian>
 	</Key>
+	
+	<!--
+		STR_xdzn_ak_ak12_gl
+		STR_xdzn_ak_ak12u
+		STR_xdzn_ak_rpk12
+	
+	-->
   </Package>
 </Project>
