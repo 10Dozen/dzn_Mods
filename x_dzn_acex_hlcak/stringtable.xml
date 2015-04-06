@@ -170,6 +170,87 @@
 		<Russian>ВОГ-25</Russian>
 	</Key>	
 	
+	<Key ID='STR_xdzn_ak_GRD_White'>
+		<English>40mm VDG-40 (white)</English>
+		<Russian>40мм ВДГ-40 (белый)</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_GRD_White_desc'>
+		<English>Caliber: 40mm Smoke Grenade Round&lt;br /&gt;Rounds: 1&lt;br /&gt;Used in: GP-25, GP-30</English>
+		<Russian>Калибр: 40мм дымовая граната&lt;br /&gt;Патронов: 1&lt;br /&gt;Используется в: ГП-25, ГП-30</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_GRD_White_short'>
+		<English>White Smoke</English>
+		<Russian>Белый дым</Russian>
+	</Key>	
+	
+	<Key ID='STR_xdzn_ak_GRD_Red'>
+		<English>40mm VDG-40 (red)</English>
+		<Russian>40мм ВДГ-40 (красный)</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_GRD_Red_desc'>
+		<English>Caliber: 40mm Smoke Grenade Round&lt;br /&gt;Rounds: 1&lt;br /&gt;Used in: GP-25, GP-30</English>
+		<Russian>Калибр: 40мм дымовая граната&lt;br /&gt;Патронов: 1&lt;br /&gt;Используется в: ГП-25, ГП-30</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_GRD_Red_short'>
+		<English>Red Smoke</English>
+		<Russian>Красный дым</Russian>
+	</Key>	
+	
+	<Key ID='STR_xdzn_ak_GRD_Green'>
+		<English>40mm VDG-40 (green)</English>
+		<Russian>40мм ВДГ-40 (зеленый)</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_GRD_Green_desc'>
+		<English>Caliber: 40mm Smoke Grenade Round&lt;br /&gt;Rounds: 1&lt;br /&gt;Used in: GP-25, GP-30</English>
+		<Russian>Калибр: 40мм дымовая граната&lt;br /&gt;Патронов: 1&lt;br /&gt;Используется в: ГП-25, ГП-30</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_GRD_Green_short'>
+		<English>Green Smoke</English>
+		<Russian>Зеленый дым</Russian>
+	</Key>	
+	
+	<Key ID='STR_xdzn_ak_GRD_Yellow'>
+		<English>40mm VDG-40 (yellow)</English>
+		<Russian>40мм ВДГ-40 (желтый)</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_GRD_Yellow_desc'>
+		<English>Caliber: 40mm Smoke Grenade Round&lt;br /&gt;Rounds: 1&lt;br /&gt;Used in: GP-25, GP-30</English>
+		<Russian>Калибр: 40мм дымовая граната&lt;br /&gt;Патронов: 1&lt;br /&gt;Используется в: ГП-25, ГП-30</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_GRD_Yellow_short'>
+		<English>Yellow Smoke</English>
+		<Russian>Желтый дым</Russian>
+	</Key>	
+	
+	<Key ID='STR_xdzn_ak_GRD_Orange'>
+		<English>40mm VDG-40 (orange)</English>
+		<Russian>40мм ВДГ-40 (оранж.)</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_GRD_Orange_desc'>
+		<English>Caliber: 40mm Smoke Grenade Round&lt;br /&gt;Rounds: 1&lt;br /&gt;Used in: GP-25, GP-30</English>
+		<Russian>Калибр: 40мм дымовая граната&lt;br /&gt;Патронов: 1&lt;br /&gt;Используется в: ГП-25, ГП-30</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_GRD_Orange_short'>
+		<English>Orange Smoke</English>
+		<Russian>Оранж. дым</Russian>
+	</Key>	
+	
+	<Key ID='STR_xdzn_ak_GRD_Purple'>
+		<English>40mm VDG-40 (purple)</English>
+		<Russian>40мм ВДГ-40 (пурпурный)</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_GRD_Purple_desc'>
+		<English>Caliber: 40mm Smoke Grenade Round&lt;br /&gt;Rounds: 1&lt;br /&gt;Used in: GP-25, GP-30</English>
+		<Russian>Калибр: 40мм дымовая граната&lt;br /&gt;Патронов: 1&lt;br /&gt;Используется в: ГП-25, ГП-30</Russian>
+	</Key>
+	<Key ID='STR_xdzn_ak_GRD_Purple_short'>
+		<English>Purple Smoke</English>
+		<Russian>Пурпурный дым</Russian>
+	</Key>
+	
+	
+	
+	
 	<Key ID='STR_xdzn_ak_opt_pso1'>
 		<English>PSO-1M</English>
 		<Russian>ПСО-1М</Russian>
