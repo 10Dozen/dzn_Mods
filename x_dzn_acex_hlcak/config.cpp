@@ -523,7 +523,7 @@ class CfgWeapons
 	
 	class hlc_rifle_akm: hlc_rifle_ak47
 	{
-		STRNAME("$STR_xdzn_ak_akm)
+		STRNAME("$STR_xdzn_ak_akm")
 		class FullAuto: Mode_FullAuto
 		{
 			class BaseSoundModeType;
