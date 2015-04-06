@@ -5,7 +5,7 @@
 //Class hlc_wp_ak : config.bin{
 class CfgPatches
 {
-	class x_dzn_hlcak
+	class x_dzn_acex_hlcak
 	{
 		units[] = {};
 		weapons[] = {};		
