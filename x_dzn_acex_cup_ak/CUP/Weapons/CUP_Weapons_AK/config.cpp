@@ -24,12 +24,12 @@ class CfgPatches
 
 
 // AK 74 **************************************
-#define SOUND_AK74				begin1[] = {"\x_dzn_acex_rhsru\acex_sound\ak74_fire1.wss",1.77828,1,1100};begin2[] = {"\x_dzn_acex_rhsru\acex_sound\ak74_fire2.wss",1.77828,1,1100};begin3[] = {"\x_dzn_acex_rhsru\acex_sound\ak74_fire3.wss",1.77828,1,1100};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
-#define SOUND_AK74_SD			begin1[] = {"\x_dzn_acex_rhsru\acex_sound\aks74un_fire.wss",1,1,80};begin2[] = {"\x_dzn_acex_rhsru\acex_sound\aks74un_fire.wss",1,0.97,80};begin3[] = {"\x_dzn_acex_rhsru\acex_sound\aks74un_fire.wss",1,1.016,80};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
-#define SOUND_AK74_BURST		begin1[] = {"\x_dzn_acex_rhsru\acex_sound\ak74_fire1.wss",1.77828,1,1100};begin2[] = {"\x_dzn_acex_rhsru\acex_sound\ak74_fire2.wss",1.77828,1,1100};begin3[] = {"\x_dzn_acex_rhsru\acex_sound\ak74_fire3.wss",1.77828,1,1100};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
+#define SOUND_AK74				begin1[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\ak74_fire1.wss",1.77828,1,1100};begin2[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\ak74_fire2.wss",1.77828,1,1100};begin3[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\ak74_fire3.wss",1.77828,1,1100};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
+#define SOUND_AK74_SD			begin1[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\aks74un_fire.wss",1,1,80};begin2[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\aks74un_fire.wss",1,0.97,80};begin3[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\aks74un_fire.wss",1,1.016,80};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
+#define SOUND_AK74_BURST		begin1[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\ak74_fire1.wss",1.77828,1,1100};begin2[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\ak74_fire2.wss",1.77828,1,1100};begin3[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\ak74_fire3.wss",1.77828,1,1100};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
 #define SOUND_AK74_BURST_SD		SOUND_AK74_SD
-#define SOUND_AK74_FA			begin1[] = {"\x_dzn_acex_rhsru\acex_sound\ak74_fire1.wss",1.77828,1,1100};begin2[] = {"\x_dzn_acex_rhsru\acex_sound\ak74_fire2.wss",1.77828,1,1100};begin3[] = {"\x_dzn_acex_rhsru\acex_sound\ak74_fire3.wss",1.77828,1,1100};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
-#define SOUND_AK74_FA_SD		begin1[] = {"\x_dzn_acex_rhsru\acex_sound\aks74un_fire.wss",1,1,80};begin2[] = {"\x_dzn_acex_rhsru\acex_sound\aks74un_fire.wss",1,0.97,80};begin3[] = {"\x_dzn_acex_rhsru\acex_sound\aks74un_fire.wss",1,1.016,80};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
+#define SOUND_AK74_FA			begin1[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\ak74_fire1.wss",1.77828,1,1100};begin2[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\ak74_fire2.wss",1.77828,1,1100};begin3[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\ak74_fire3.wss",1.77828,1,1100};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
+#define SOUND_AK74_FA_SD		begin1[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\aks74un_fire.wss",1,1,80};begin2[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\aks74un_fire.wss",1,0.97,80};begin3[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\aks74un_fire.wss",1,1.016,80};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
 
 #define SOUND_AEK				SOUND_AK74
 #define SOUND_AEK_SD			SOUND_AK74_SD
@@ -46,11 +46,11 @@ class CfgPatches
 #define SOUND_AK12_BURST_SD		SOUND_AK74_FA_SD
 
 // AKS 74 U / Carbine *************************
-#define SOUND_AKSU				begin1[] = {"\x_dzn_acex_rhsru\acex_sound\aks74u_fire1.wss",1.77828,1,1100};begin2[] = {"\x_dzn_acex_rhsru\acex_sound\aks74u_fire2.wss",1.77828,1,1100};begin3[] = {"\x_dzn_acex_rhsru\acex_sound\aks74u_fire3.wss",1.77828,1,1100};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
-#define SOUND_AKSU_SD			begin1[] = {"\x_dzn_acex_rhsru\acex_sound\aks74un_fire",1,1,80};begin2[]={"\x_dzn_acex_rhsru\acex_sound\aks74un_fire",1,0.97,80};begin3[]={"\x_dzn_acex_rhsru\acex_sound\aks74un_fire",1,1.016,80};soundBegin[]={"begin1",0.33,"begin2",0.33,"begin3",0.33};
-#define SOUND_AKSU_BURST		begin1[] = {"\x_dzn_acex_rhsru\acex_sound\aks74u_fire1.wss",1.77828,1,1100};begin2[] = {"\x_dzn_acex_rhsru\acex_sound\aks74u_fire2.wss",1.77828,1,1100};begin3[] = {"\x_dzn_acex_rhsru\acex_sound\aks74u_fire3.wss",1.77828,1,1100};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
+#define SOUND_AKSU				begin1[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\aks74u_fire1.wss",1.77828,1,1100};begin2[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\aks74u_fire2.wss",1.77828,1,1100};begin3[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\aks74u_fire3.wss",1.77828,1,1100};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
+#define SOUND_AKSU_SD			begin1[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\aks74un_fire",1,1,80};begin2[]={"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\aks74un_fire",1,0.97,80};begin3[]={"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\aks74un_fire",1,1.016,80};soundBegin[]={"begin1",0.33,"begin2",0.33,"begin3",0.33};
+#define SOUND_AKSU_BURST		begin1[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\aks74u_fire1.wss",1.77828,1,1100};begin2[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\aks74u_fire2.wss",1.77828,1,1100};begin3[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\aks74u_fire3.wss",1.77828,1,1100};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
 #define SOUND_AKSU_BURST_SD		SOUND_AKSU_SD
-#define SOUND_AKSU_FA			begin1[] = {"\x_dzn_acex_rhsru\acex_sound\aks74u_fire1.wss",1.77828,1,1100};begin2[] = {"\x_dzn_acex_rhsru\acex_sound\aks74u_fire2.wss",1.77828,1,1100};begin3[] = {"\x_dzn_acex_rhsru\acex_sound\aks74u_fire3.wss",1.77828,1,1100};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
+#define SOUND_AKSU_FA			begin1[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\aks74u_fire1.wss",1.77828,1,1100};begin2[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\aks74u_fire2.wss",1.77828,1,1100};begin3[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\aks74u_fire3.wss",1.77828,1,1100};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
 #define SOUND_AKSU_FA_SD		SOUND_AKSU_SD
 
 #define SOUND_AK12U				SOUND_AKSU
@@ -61,11 +61,11 @@ class CfgPatches
 #define SOUND_AK12U_FA_SD		SOUND_AKSU_FA_SD
 
 // AKM ****************************************
-#define SOUND_AKM				begin1[] = {"\x_dzn_acex_rhsru\acex_sound\akm_fire1.wss",1.77828,1,1700};begin2[] = {"\x_dzn_acex_rhsru\acex_sound\akm_fire2.wss",1.77828,1,1700};begin3[] = {"\x_dzn_acex_rhsru\acex_sound\akm_fire2.wss",1.77828,1.027,1700};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
+#define SOUND_AKM				begin1[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\akm_fire1.wss",1.77828,1,1700};begin2[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\akm_fire2.wss",1.77828,1,1700};begin3[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\akm_fire2.wss",1.77828,1.027,1700};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
 #define SOUND_AKM_SD			SOUND_AK74_SD
-#define SOUND_AKM_BURST			begin1[] = {"\x_dzn_acex_rhsru\acex_sound\akm_fire1.wss",1.77828,1,1700};begin2[] = {"\x_dzn_acex_rhsru\acex_sound\akm_fire2.wss",1.77828,1,1700};begin3[] = {"\x_dzn_acex_rhsru\acex_sound\akm_fire2.wss",1.77828,1.027,1700};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
+#define SOUND_AKM_BURST			begin1[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\akm_fire1.wss",1.77828,1,1700};begin2[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\akm_fire2.wss",1.77828,1,1700};begin3[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\akm_fire2.wss",1.77828,1.027,1700};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
 #define SOUND_AKM_BURST_SD		SOUND_AK74_BURST_SD
-#define SOUND_AKM_FA			begin1[] = {"\x_dzn_acex_rhsru\acex_sound\akm_fire1.wss",1.77828,1,1700};begin2[] = {"\x_dzn_acex_rhsru\acex_sound\akm_fire2.wss",1.77828,1,1700};begin3[] = {"\x_dzn_acex_rhsru\acex_sound\akm_fire2.wss",1.77828,1.027,1700};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
+#define SOUND_AKM_FA			begin1[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\akm_fire1.wss",1.77828,1,1700};begin2[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\akm_fire2.wss",1.77828,1,1700};begin3[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\akm_fire2.wss",1.77828,1.027,1700};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
 #define SOUND_AKM_FA_SD			SOUND_AK74_FA_SD
 
 // RPK 762 ************************************
@@ -75,11 +75,11 @@ class CfgPatches
 #define SOUND_RPK_FA_SD			SOUND_AKM_FA_SD
 
 // RPK74 **************************************
-#define SOUND_RPK74				begin1[] = {"\x_dzn_acex_rhsru\acex_sound\rpk74_fire1.wss",1.77828,1,1100};begin2[] = {"\x_dzn_acex_rhsru\acex_sound\rpk74_fire2.wss",1.77828,1,1100};begin3[] = {"\x_dzn_acex_rhsru\acex_sound\rpk74_fire3.wss",1.77828,1,1100};soundBegin[] = {"begin1",0.33,"begin2",0.34,"begin3",0.33};
+#define SOUND_RPK74				begin1[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\rpk74_fire1.wss",1.77828,1,1100};begin2[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\rpk74_fire2.wss",1.77828,1,1100};begin3[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\rpk74_fire3.wss",1.77828,1,1100};soundBegin[] = {"begin1",0.33,"begin2",0.34,"begin3",0.33};
 #define SOUND_RPK74_SD			SOUND_AK74_SD
 #define SOUND_RPK74_BURST		SOUND_RPK74
 #define SOUND_RPK74_BURST_SD	SOUND_AK74_SD
-#define SOUND_RPK74_FA			begin1[] = {"\x_dzn_acex_rhsru\acex_sound\rpk74_fire1.wss",1.77828,1,1100};begin2[] = {"\x_dzn_acex_rhsru\acex_sound\rpk74_fire2.wss",1.77828,1,1100};begin3[] = {"\x_dzn_acex_rhsru\acex_sound\rpk74_fire3.wss",1.77828,1,1100};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
+#define SOUND_RPK74_FA			begin1[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\rpk74_fire1.wss",1.77828,1,1100};begin2[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\rpk74_fire2.wss",1.77828,1,1100};begin3[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\rpk74_fire3.wss",1.77828,1,1100};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
 #define SOUND_RPK74_FA_SD		SOUND_AK74_FA_SD
 
 
@@ -91,7 +91,7 @@ class CfgPatches
 #define SOUND_RPK12_FA_SD		SOUND_RPK74_FA_SD
 
 // PKM/PKP ************************************
-#define SOUND_PKM				begin1[] = {"\x_dzn_acex_rhsru\acex_sound\pkm_fire1.wss",1.77828,1,1700};begin2[] = {"\x_dzn_acex_rhsru\acex_sound\pkm_fire2.wss",1.77828,1,1700};begin3[] = {"\x_dzn_acex_rhsru\acex_sound\pkm_fire3.wss",1.77828,1,1700};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
+#define SOUND_PKM				begin1[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\pkm_fire1.wss",1.77828,1,1700};begin2[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\pkm_fire2.wss",1.77828,1,1700};begin3[] = {"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\pkm_fire3.wss",1.77828,1,1700};soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
 #define SOUND_PKM_SD			SOUND_PKM
 
 #define SOUND_PKP				SOUND_PKM
@@ -100,8 +100,8 @@ class CfgPatches
 #define SOUND_PKP_FA_SD			SOUND_PKM
 
 // GP-25/30 ***********************************
-#define	SOUND_GP				sound[]={"\x_dzn_acex_rhsru\acex_sound\gp30_fire.wss",1,1,100};
-#define	SOUND_GP_RELOAD			reloadMagazineSound[]={"\x_dzn_acex_rhsru\acex_sound\gp30_reload.wss",0.0316228,1,20};
+#define	SOUND_GP				sound[]={"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\gp30_fire.wss",1,1,100};
+#define	SOUND_GP_RELOAD			reloadMagazineSound[]={"\x_dzn_acex_cup_ak\CUP\Weapons\CUP_Weapons_AK\acex_sound\gp30_reload.wss",0.0316228,1,20};
 
 
 
