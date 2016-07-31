@@ -14,7 +14,7 @@ class CfgPatches
 		magazines[] = {};
 		ammo[] = {};
 		
-		version = "V0.1";
+		version = "V0.2";
 		author = "10Dozen";
 	};
 };
@@ -101,6 +101,8 @@ class CfgPatches
 #define	SOUND_GP_RELOAD			reloadMagazineSound[]={"\x_dzn_acex_rhsru\acex_sound\gp30_reload.wss",0.0316228,1,20};
 
 
+// SVD ***************************************
+#define SOUND_SVD 				begin1[] = {"\x_dzn_acex_rhsru\acex_sound\svd_fire1.wss",1.77828,1,1700};begin2[] = {"\x_dzn_acex_rhsru\acex_sound\svd_fire2.wss",1.77828,1,1700}; begin3[] = {"\x_dzn_acex_rhsru\acex_sound\svd_fire3.wss",1.77828,1,1700}; soundBegin[] = {"begin1",0.33,"begin2",0.33,"begin3",0.33};
 
 
 class Mode_SemiAuto;
@@ -127,10 +129,12 @@ class cfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_AK74
 			};
 			class SilencedSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_AK74_SD
 			};
 		};
@@ -139,10 +143,12 @@ class cfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_AK74_FA
 			};
 			class SilencedSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_AK74_FA_SD
 			};
 		};
@@ -155,10 +161,12 @@ class cfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_AKM
 			};
 			class SilencedSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_AKM_SD
 			};
 		};
@@ -167,10 +175,12 @@ class cfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_AKM_FA
 			};
 			class SilencedSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_AKM_FA_SD
 			};
 		};
@@ -183,10 +193,12 @@ class cfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_AKM
 			};
 			class SilencedSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_AKM_SD
 			};
 		};
@@ -195,10 +207,12 @@ class cfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_AKM_FA
 			};
 			class SilencedSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_AKM_FA_SD
 			};
 		};
@@ -215,10 +229,12 @@ class cfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_PKP
 			};
 			class SilencedSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_PKP_SD
 			};
 		};
@@ -227,10 +243,12 @@ class cfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_PKP_FA
 			};
 			class SilencedSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_PKP_FA_SD
 			};
 		};
@@ -243,6 +261,7 @@ class cfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_RPK74
 			};
 		};
@@ -251,6 +270,7 @@ class cfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_RPK74_FA
 			};
 		};
@@ -258,18 +278,52 @@ class cfgWeapons
 	class PKT;
 	class rhs_weap_pkt: PKT
 	{
-		class StandardSound
-		{
-			SOUND_PKM
-		};
 		class manual: MGun
 		{
 			class StandardSound
 			{
+				delete soundSetShot;
 				SOUND_PKM
 			};
 		};
 	};	
+	
+	class rhs_weap_svd: rhs_weap_ak74m
+	{
+		class Single: Mode_SemiAuto
+		{
+			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				delete soundSetShot;
+				SOUND_SVD				
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				delete soundSetShot;
+				SOUND_SVD
+			};
+		};
+		
+	};
+	class rhs_weap_svdp: rhs_weap_svd
+	{
+		class Single: Mode_SemiAuto
+		{
+			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				delete soundSetShot;
+				SOUND_SVD				
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				delete soundSetShot;
+				SOUND_SVD
+			};
+		};
+		
+	};
 	
 };
 //};
