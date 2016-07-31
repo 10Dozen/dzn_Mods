@@ -9,12 +9,12 @@ class CfgPatches
 	{
 		units[] = {};
 		weapons[] = {};
-		requiredVersion = 1.32;
+		requiredVersion = 1.0;
 		requiredAddons[] = {"rhsusf_c_weapons","rhsusf_c_heavyweapons","rhsusf_sounds"};		
 		magazines[] = {};
 		ammo[] = {};
 		
-		version = "V0.1";
+		version = "V0.2";
 		author = "10Dozen";
 	};
 };
@@ -100,32 +100,41 @@ class cfgWeapons
 	class LMG_M200;
 	class MGun;
 	class LMG_RCWS;
-	class rhs_M249_base: LMG_Mk200_F
+	
+	
+	
+	// M240 origin and classes
+	
+	class rhs_weap_M249_base: LMG_Mk200_F
 	{
 		class FullAuto: Mode_FullAuto
 		{
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_M249
 			};
 			class SilencedSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_M249_SD
 			};
 		};
-	};
-	class weap_m240_base: rhs_M249_base
+	};	
+	class rhs_weap_m240_base: rhs_weap_M249_base
 	{
 		class manual: Mode_FullAuto
 		{
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_M240
 			};
 			class SilencedSound: BaseSoundModeType
 			{
+				
 				SOUND_M240_SD
 			};
 		};
@@ -140,6 +149,31 @@ class cfgWeapons
 			};
 		};
 	};
+	
+	
+	// M249 origin and classes
+	class rhs_weap_saw_base;
+	class rhs_weap_lmg_minimipara: rhs_weap_saw_base
+	{
+		class FullAuto: Mode_FullAuto
+		{
+			class BaseSoundModeType;
+			class StandardSound: BaseSoundModeType
+			{
+				delete soundSetShot;
+				SOUND_M249
+			};
+			class SilencedSound: BaseSoundModeType
+			{
+				delete soundSetShot;
+				SOUND_M249_SD
+			};
+		};
+	};
+	
+	
+	// M4 origin and classes
+	
 	class rhs_weap_m4_Base: arifle_MX_Base_F
 	{
 		class Single: Mode_SemiAuto
@@ -147,10 +181,12 @@ class cfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_M4
 			};
 			class SilencedSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_M4_SD
 			};
 		};
@@ -159,10 +195,12 @@ class cfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_M4_BURST
 			};
 			class SilencedSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_M4_BURST_SD
 			};
 		};
@@ -171,10 +209,12 @@ class cfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_M4_FA
 			};
 			class SilencedSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_M4_FA_SD
 			};
 		};
@@ -203,10 +243,12 @@ class cfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_M16
 			};
 			class SilencedSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_M16_SD
 			};
 		};
@@ -216,10 +258,12 @@ class cfgWeapons
 			class BaseSoundModeType;
 			class StandardSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_M16_BURST
 			};
 			class SilencedSound: BaseSoundModeType
 			{
+				delete soundSetShot;
 				SOUND_M16_BURST_SD
 			};
 		};
