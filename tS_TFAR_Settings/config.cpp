@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class dzn_ts_tfar_settings
+	class tS_TFAR_Settings
 	{		
 		units[] = {};
 		weapons[] = {};
@@ -12,7 +12,7 @@ class CfgPatches
 
 class Extended_PostInit_EventHandlers
 {
-	class dzn_ts_tfar_settings
+	class tS_TFAR_Settings
 	{
 		init = "call ('\tS_TFAR_Settings\init.sqf' call SLX_XEH_COMPILE)";
 	};
