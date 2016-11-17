@@ -15,7 +15,7 @@
 			|| tf_give_microdagr_to_soldier
 			)
 			&& !tS_TFAR_Disable
-			&& time < 10
+			&& time < 30
 		) then {
 			tf_no_auto_long_range_radio = true; 
 			
