@@ -5,7 +5,7 @@ class CfgPatches
 	{
 		units[] = {};
 		weapons[] = {};
-		requiredVersion = 1.0;
+		requiredVersion = 0.1;
 		requiredAddons[] = {"ace_ai"};
 		author[] = {"10Dozen"};
 	};
