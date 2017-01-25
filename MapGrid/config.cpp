@@ -8,7 +8,17 @@ class CfgPatches
 		units[] = {};
 		weapons[] = {};
 		requiredVersion = 0.1;
-		requiredAddons[] = {"A3_Map_Altis","A3_Map_Stratis","Chernarus","CUP_Worlds_Lighting","CUP_Worlds","smd_sahrani_a3","A3_Map_Abramia","A3_Map_IslaDuala3","PRA3_Kz"};
+		requiredAddons[] = {
+				"A3_Map_Altis"
+				,"A3_Map_Stratis"
+				,"Chernarus"
+				,"Chernarus_winter"
+				,"CUP_Worlds_Lighting"
+				,"CUP_Worlds","smd_sahrani_a3"
+				,"A3_Map_Abramia"
+				,"A3_Map_IslaDuala3"
+				,"PRA3_Kz"
+		};
 	};
 };
 
@@ -189,5 +199,8 @@ class CfgWorlds
 	{
 		TS_GRID_SETTINGS
 	};
-	
+	class Chernarus_winter: CAWorld
+	{
+		TS_GRID_SETTINGS
+	};
 };
