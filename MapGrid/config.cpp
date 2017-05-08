@@ -12,7 +12,7 @@ class CfgPatches
 				"A3_Map_Altis"
 				,"A3_Map_Stratis"
 				,"Chernarus"
-				//,"Chernarus_winter"
+				,"Chernarus_winter"
 				,"CUP_Worlds_Lighting"
 				,"CUP_Worlds","smd_sahrani_a3"
 				,"A3_Map_Abramia"
