@@ -18,6 +18,8 @@ class CfgPatches
 				,"A3_Map_Abramia"
 				,"A3_Map_IslaDuala3"
 				,"PRA3_Kz"
+				,"dingor"
+				,"lingor"
 		};
 	};
 };
@@ -200,6 +202,16 @@ class CfgWorlds
 		TS_GRID_SETTINGS
 	};
 	class Chernarus_winter: CAWorld
+	{
+		TS_GRID_SETTINGS
+	};
+	
+	// Lingor/Dingor
+	class dingor: CAWorld
+	{
+		TS_GRID_SETTINGS
+	};
+	class lingor3: CAWorld
 	{
 		TS_GRID_SETTINGS
 	};
