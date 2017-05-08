@@ -18,8 +18,8 @@ class CfgPatches
 				,"A3_Map_Abramia"
 				,"A3_Map_IslaDuala3"
 				,"PRA3_Kz"
-				,"dingor"
-				,"lingor"
+				,"A3_Map_dingor"
+				,"A3_Map_lingor3"
 		};
 	};
 };
