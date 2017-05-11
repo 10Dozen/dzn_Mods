@@ -9,6 +9,9 @@
 		,"CUP_B_M1128_MGS_Desert"
 		
 		,"CUP_GAZ_Vodnik_BPPU_Base"
+		
+		,"rhs_btr80a_msv","rhs_btr80a_vdv","rhs_btr80a_vv","rhs_btr80a_vmf"
+		
 	];
 	
 	private _nonCoockingVehicles = [
@@ -30,6 +33,11 @@
 		,"CUP_B_LAV25_HQ_USMC"
 		,"CUP_StrykerBase"
 		,"CUP_FV432_Bulldog_Base"
+		
+		,"rhs_btr_base"
+		,"rhsusf_m113tank_base"
+		,"rg33_base"
+		
 	];
 	
 	while { true } do {
