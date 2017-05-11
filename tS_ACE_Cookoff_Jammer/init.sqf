@@ -31,8 +31,7 @@
 		,"CUP_FV432_Bulldog_Base"		
 		,"rhs_btr_base"
 		,"rhsusf_m113tank_base"
-		,"rg33_base"
-		
+		,"rhsusf_rg33_base"		
 	];
 	
 	while { true } do {
@@ -53,15 +52,3 @@
 		sleep 30;
 	};
 };
-
-/*
-	private _listOfNonCookingVehicles = [	
-		"CUP_StrykerBase"
-		,"RG31_BASE"
-		,"CUP_B_LAV25M240_USMC"
-		,"CUP_B_LAV25_HQ_USMC"
-		,"Mastiff_Base"		
-	];
-	
-	
-*/
