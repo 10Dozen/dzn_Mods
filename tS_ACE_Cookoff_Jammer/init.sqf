@@ -1,7 +1,16 @@
 // Loop throu all vehicles and set cookoff variable to false
 [] spawn {
 	private _listOfNonCookingVehicles = [
-
+	
+		/* CUP */
+		"CUP_StrykerBase"
+		,"RG31_BASE"
+		,"CUP_B_LAV25M240_USMC"
+		,"CUP_B_LAV25_HQ_USMC"
+		,"Mastiff_Base"
+		
+		/* RHS */
+		
 	];
 	
 	while { true } do {
