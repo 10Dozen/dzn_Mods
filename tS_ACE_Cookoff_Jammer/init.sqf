@@ -14,7 +14,10 @@
 			private _v = _x;			
 			if (
 				(
-					({ _v isKindOf _x } count _cookingVehicles) == 0
+					(
+						({ _v isKindOf _x } count _cookingVehicles) == 0 
+						&& ({ _v isKindOf _x } count _nonCoockingVehicles) > 0
+					)
 					|| ({ _v isKindOf _x } count _nonCoockingVehicles) > 0
 				)
 				&& !isNil {_v getVariable "ace_cookoff_enable"}
