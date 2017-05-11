@@ -15,6 +15,6 @@ class Extended_PostInit_EventHandlers
 {
 	class tS_ACE_Cookoff_Jammer
 	{
-		init = "call ('\tS_ACE_Cookoff_Jammer\init.sqf' call SLX_XEH_COMPILE)";
+		serverInit = "call ('\tS_ACE_Cookoff_Jammer\init.sqf' call SLX_XEH_COMPILE)";
 	};
 };
