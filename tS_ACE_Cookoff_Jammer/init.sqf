@@ -2,11 +2,17 @@
 [] spawn {
 	private _cookingVehicles = [
 		"Tank_F"
-		,"CUP_BMP1_base","CUP_BMP1P_base","CUP_BMP2_base"
+		,"CUP_BMP1_base","CUP_BMP1P_base","CUP_BMP2_base","CUP_BMP3_Base"
+		,"CUP_BRDM2_ATGM_Base"
+		,"CUP_M163_Base"
+		
 	];
 	
 	private _nonCoockingVehicles = [
 		"CUP_BMP2_HQ_Base", CUP_BMP2_Ambul_Base
+		,"CUP_BRDM2_Base"
+		,"CUP_M113_Base"
+		,"BTR40_MG_Base", "CUP_BTR60_Base"
 	];
 	
 	while { true } do {
