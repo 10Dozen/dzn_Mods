@@ -8,18 +8,28 @@
 		,"CUP_B_M1135_ATGMV_Desert"
 		,"CUP_B_M1128_MGS_Desert"
 		
+		,"CUP_GAZ_Vodnik_BPPU_Base"
 	];
 	
 	private _nonCoockingVehicles = [
-		"CUP_BMP2_HQ_Base", CUP_BMP2_Ambul_Base
+		"CUP_BMP2_HQ_Base"
+		,"CUP_BMP2_Ambul_Base"
 		,"CUP_BRDM2_Base"		
-		,"BTR40_MG_Base", "CUP_BTR60_Base"
+		,"CUP_BTR40_MG_Base"
+		,"CUP_BTR60_Base"
+		,"CUP_GAZ_Vodnik_Base"
+		
 		
 		,"CUP_M113_Base"
-		,"CUP_AAV_Base"
-		
-		,"CUP_BAF_Jackal2_BASE_D", "CUP_Mastiff_Base", "CUP_RG31_BASE", 
-		,"CUP_B_LAV25M240_USMC", "B_LAV25_HQ_USMC"
+		,"CUP_AAV_Base"		
+		,"CUP_BAF_Jackal2_BASE_D"
+		,"CUP_Mastiff_Base"
+		,"CUP_RG31_BASE"
+		,"CUP_Ridgback_Base"
+		,"CUP_B_LAV25M240_USMC"
+		,"CUP_B_LAV25_HQ_USMC"
+		,"CUP_StrykerBase"
+		,"CUP_FV432_Bulldog_Base"
 	];
 	
 	while { true } do {
