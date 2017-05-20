@@ -3,7 +3,7 @@
 
 class CfgPatches
 {
-	class ts_MapGrid
+	class tS_MapGrid
 	{
 		units[] = {};
 		weapons[] = {};
