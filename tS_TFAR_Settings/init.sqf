@@ -27,4 +27,7 @@
 			tf_give_microdagr_to_soldier = false;
 		};
 	}] call BIS_fnc_addStackedEventHandler;
+	
+	TFAR_fnc_onSwTangentPressed = compile preprocessFileLineNumbers "\tS_TFAR_Settings\fn\fn_onSwTangentPressed.sqf";
+	TFAR_fnc_onSwTangentReleased = compile preprocessFileLineNumbers "\tS_TFAR_Settings\fn\fn_onSwTangentReleased.sqf";
 };
