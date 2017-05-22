@@ -17,3 +17,17 @@ class Extended_PostInit_EventHandlers
 		init = "call ('\tS_TFAR_Settings\init.sqf' call SLX_XEH_COMPILE)";
 	};
 };
+
+class CfgFunctions
+{
+	class TFAR
+	{
+		class Radio
+		{
+			file="tS_TFAR_Settings\fn";
+			class onSwTangentPressed;
+			class onSwTangentReleased;
+			class dznTFAR;
+		};
+	};	
+};
