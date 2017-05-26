@@ -10,14 +10,21 @@ class CfgPatches
 	};
 };
 
-class SmokeShellWhiteEffect
-{
-	class SmokeShell
-	{
-		type = "SmokeShellWhite";
-	};
-	class SmokeShell2
-	{
-		type = "SmokeShellWhite2";
-	};
-};
+// Hand Smoke Grenades
+#define EFFECT_HANDGRENADE(color) class SmokeShell##color##Effect: SmokeShellWhiteEffect { \
+    class SmokeShell: SmokeShell { \
+        type = "SmokeShellWhite"; \
+    }; \
+    class SmokeShell2 \
+    { \
+        type = "SmokeShellWhite2"; \
+    }; \
+}
+
+EFFECT_HANDGRENADE(White)
+EFFECT_HANDGRENADE(Red);
+EFFECT_HANDGRENADE(Green);
+EFFECT_HANDGRENADE(Yellow);
+EFFECT_HANDGRENADE(Purple);
+EFFECT_HANDGRENADE(Orange);
+EFFECT_HANDGRENADE(Blue);
