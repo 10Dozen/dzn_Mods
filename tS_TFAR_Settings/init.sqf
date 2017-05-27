@@ -8,8 +8,7 @@
 		tf_same_lr_frequencies_for_side 		= true; 
 		tf_same_dd_frequencies_for_side 		= true;	
 		tf_give_personal_radio_to_regular_soldier 	= false; 
-		tf_give_microdagr_to_soldier			= false;
-			
+		tf_give_microdagr_to_soldier			= false;			
 	
 		if (
 			!tS_TFAR_Disable			
