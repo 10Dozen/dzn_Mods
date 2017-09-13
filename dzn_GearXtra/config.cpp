@@ -16,7 +16,7 @@ class CfgPatches
 
 class Extended_PostInit_EventHandlers
 {
-	class dzn_helmet_faceguard
+	class dzn_gearXtra
 	{
 		clientInit = "call ('\dzn_GearXtra\init.sqf' call SLX_XEH_COMPILE)";
 	};
