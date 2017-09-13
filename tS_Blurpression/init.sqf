@@ -4,12 +4,14 @@
 	sleep 1;
 	LOO = [];
 	LOO2 = [];
+	LOO3 = [];
 	while { true } do {
 		private _a = nearestObjects [(getPos player), [], 15];
 		{
 			if !(str(_x) in LOO) then { 
 				LOO pushBack str(_x);
 				LOO2 pushBack (typeOf _x);
+				LOO3 pushBack (_x isKindOf "BulletBase");
 			};
 		} forEach _a;
 	};
