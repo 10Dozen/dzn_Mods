@@ -14,12 +14,21 @@ class CfgAmmo
 {
 	class FlareCore;
 	class FlareBase;
+	// 82mm
 	class Flare_82mm_AMOS_White : FlareCore
 	{
 		timeToLive = 30;
         	brightness = 200;
         	intensity  = 1000000;
 	};
+	
+	// 120mm 
+	class rhs_ammo_s463 : Flare_82mm_AMOS_White
+	{
+		timeToLive = 30;
+		brightness = 300;
+	};
+	
 	
 	/*
 	rhs_ammo_3WS23 : Flare_82mm_AMOS_White
