@@ -21,22 +21,31 @@ class CfgAmmo
         	brightness = 200;
         	intensity  = 1000000;
 	};
+	// rhs_ammo_3vs25m : Flare_82mm_AMOS_White
+	// rhs_ammo_3WS23 : Flare_82mm_AMOS_White
+	
+	// 105mm
+	class rhs_ammo_m314_ilum : Flare_82mm_AMOS_White
+	{
+		timeToLive = 30;
+		brightness = 270;
+	};
+	class CUP_Sh_105_ILLUM : Flare_82mm_AMOS_White
+	{
+		timeToLive = 30;
+		brightness = 270;
+	};
+	
 	
 	// 120mm 
 	class rhs_ammo_s463 : Flare_82mm_AMOS_White
 	{
 		timeToLive = 30;
-		brightness = 300;
+		brightness = 350;
 	};
-	
-	
-	/*
-	rhs_ammo_3WS23 : Flare_82mm_AMOS_White
-	rhs_ammo_s463 : Flare_82mm_AMOS_White
-	rhs_ammo_3vs25m : Flare_82mm_AMOS_White
-	rhs_ammo_m314_ilum : Flare_82mm_AMOS_White
-	CUP_Sh_105_ILLUM : Flare_82mm_AMOS_White
-	CUP_Sh_122_ILLUM : Flare_82mm_AMOS_White
-	
-	*/
+	class CUP_Sh_122_ILLUM : Flare_82mm_AMOS_White
+	{
+		timeToLive = 30;
+		brightness = 350;
+	};	
 };
