@@ -18,57 +18,64 @@ class Extended_PreInit_EventHandlers
 	};
 };
 
+#define SET_MORTAR_EH	class tS_Flare_MEH { init = "[_this, 'mortar'] spawn dzn_fnc_setFlareEffectGlobal;"; };
+#define SET_HOWITZER_EH	class tS_Flare_HEH { init = "[_this, 'howitzer'] spawn dzn_fnc_setFlareEffectGlobal;"; };
+
 class Extended_Init_EventHandlers 
 {
-	class Flare_82mm_AMOS_White 
-	{
-		class tS_Flare_EH
-		{
-			init = "[_this, 'mortar'] spawn dzn_fnc_setFlareEffect;";
-		};
-	};
-
+	// 82mm
+	class Flare_82mm_AMOS_White { SET_MORTAR_EH };
+	class rhs_ammo_3vs25m { SET_MORTAR_EH };
+	class rhs_ammo_3WS23 { SET_MORTAR_EH };
+	
+	// 105mm
+	class rhs_ammo_m314_ilum { SET_HOWITZER_EH };
+	class CUP_Sh_105_ILLUM { SET_HOWITZER_EH };
+	
+	// 120mm 
+	class rhs_ammo_s463 { SET_HOWITZER_EH };
+	class CUP_Sh_122_ILLUM { SET_HOWITZER_EH };
 };
-/*
+
+#define	SET_TTL	timeToLive = 50
 class CfgAmmo
 {
 	class FlareCore;
 	class FlareBase;
+	
 	// 82mm
 	class Flare_82mm_AMOS_White : FlareCore
 	{
-		
-	
-		timeToLive = 30;
-		brightness = 400;
-		intensity  = 1000000;
+		SET_TTL;
 	};
-	// rhs_ammo_3vs25m : Flare_82mm_AMOS_White
-	// rhs_ammo_3WS23 : Flare_82mm_AMOS_White
+	class rhs_ammo_3vs25m : Flare_82mm_AMOS_White
+	{
+		SET_TTL;
+	};
+	class rhs_ammo_3WS23 : Flare_82mm_AMOS_White
+	{
+		SET_TTL;
+	};
 	
 	// 105mm
 	class rhs_ammo_m314_ilum : Flare_82mm_AMOS_White
 	{
-		timeToLive = 30;
-		brightness = 500;
+		SET_TTL;
 	};
 	class CUP_Sh_105_ILLUM : Flare_82mm_AMOS_White
 	{
-		timeToLive = 30;
-		brightness = 500;
+		SET_TTL;
 	};
 	
 	
 	// 120mm 
 	class rhs_ammo_s463 : Flare_82mm_AMOS_White
 	{
-		timeToLive = 30;
-		brightness = 750;
+		SET_TTL;
 	};
 	class CUP_Sh_122_ILLUM : Flare_82mm_AMOS_White
 	{
-		timeToLive = 30;
-		brightness = 750;
+		SET_TTL;
 	};	
 };
-*/
+
