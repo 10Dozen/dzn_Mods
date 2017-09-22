@@ -11,18 +11,33 @@
 ["dzn_flares_howitzer_intensityDeviation", "SLIDER", "[Howitzer] Intensity deviation %", "tS Flares", [0, 100, 10, 0], true] call CBA_Settings_fnc_init;
 
 
+dzn_flares_roundList = [
+	"Flare_82mm_AMOS_White"
+	,"rhs_ammo_3vs25m"
+	,"rhs_ammo_3WS23"
+	,"rhs_ammo_m314_ilum"
+	,"CUP_Sh_105_ILLUM"
+	,"rhs_ammo_s463"
+	,"CUP_Sh_122_ILLUM"
+];
+
 // Functions
-dzn_fnc_setFlareEffectGlobal = {
-	_this remoteExec ["dzn_fnc_setFlareEffect", 0];
+dzn_fnc_flares_setFlareEffectGlobal = {
+	params["_feh","_type"];
+
+	if ( local (_feh select 5) && ((_feh select 4) in dzn_flares_roundList) ) then {
+		[(_feh select 5), _type] remoteExec ["dzn_fnc_flares_setFlareEffect", 0];
+	};
 };
 
-dzn_fnc_setFlareEffect = {
+dzn_fnc_flares_setFlareEffect = {
 	params["_o","_type"];
 	
 	private _color = [1,1,1];
 	private _range = 0;
 	private _intensity = 0;
-	private _enabled = false;
+	private _deviation = 0;
+	private _enabled = false;	
 	
 	switch toLower(_type) do {
 		case "mortar": {
