@@ -19,8 +19,12 @@ dzn_flares_roundList = [
 	,"CUP_Sh_105_ILLUM"
 	,"rhs_ammo_s463"
 	,"CUP_Sh_122_ILLUM"
+	,"CUP_Sh_127_ILLUM"
 ];
 
+// Alternate check:
+//	(_feh select 4) isKindOf "FlareCore"
+//	getText(configFile >> "CfgAmmo" >> (_feh select 4) >> "simulation") == "shotIlluminating"
 // Functions
 dzn_fnc_flares_setFlareEffectGlobal = {
 	params["_feh","_type"];
