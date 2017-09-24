@@ -85,3 +85,86 @@ dzn_fnc_flares_setFlareEffect = {
 };
 
 // this addEventHandler ["Fired",{ [_this select 6, 'mortar'] spawn dzn_fnc_setFlareEffect; }];
+
+
+
+/*
+ventHandler ["Fired",{ [_this select 6, "mortar"] spawn "dzn_fnc_flare_setFlareEffect2"}];
+
+this addEventHandler ["Fired",{
+	_this call dzn_fnc_flare_EHcode
+}];
+
+Working stuff below
+
+M1 = true;
+
+
+dzn_fnc_flare_EHcode = { 
+	X = _this;
+	
+	if !((_this select 6) isKindOf "FlareCore") exitWith {};
+	private _anchor = "Land_HelipadEmpty_F" createVehicle [0,0,0];
+	_anchor attachTo [_this select 6, [0,0,0]];
+	AN = _anchor;
+	publicVariable "AN";
+	
+	if (M1) then {
+		[[_this select 6, "mortar"], "dzn_fnc_flare_setFlareEffect2", true, true] spawn BIS_fnc_MP;
+	} else {
+		[_anchor, "mortar"] remoteExec ["dzn_fnc_flare_setFlareEffect2",0,true];
+	};
+};
+
+
+dzn_fnc_flare_setFlareEffect2 = {
+	params["_o","_type"];
+	
+	A = _this;
+	
+		private _enabled = false;
+		private _color = [1,1,1];
+		private _range = 0;
+		private _intensity = 0;
+		private _deviation = 0;
+		
+		switch toLower(_type) do {
+			case "mortar": {
+				_enabled = true;
+				_color = [1,1,0];
+				_range = 450;
+				_intensity = 20;
+				_deviation = 10;
+			};
+			case "howitzer": {
+				_enabled = true;
+				_color = [1,1,0];
+				_range = 750;
+				_intensity = 25;
+				_deviation = 10;
+			}
+		};
+		
+		if !(_enabled) exitWith {};
+	
+		waitUntil { velocity _o select 2 < 0 };
+		waitUntil { sleep 1; getPos _o select 2 < 240 };
+		
+		private _flare = "#lightpoint" createVehicleLocal (getPosVisual _o);
+		B = _flare;
+		_flare setLightAmbient _color;  
+		_flare setLightColor _color;
+		_flare setLightIntensity _intensity;
+		_flare setLightUseFlare false;
+		_flare setLightAttenuation [_range, 1, 100, 0, 50, (_range - 10)]; 
+		_flare setLightDayLight false;
+		
+		_flare attachTo [_o, [0,0,0]];
+		
+		format ["Bomp %1", netId player] remoteExec ["hint",0];
+		
+		waitUntil {sleep 1; (getPos _o select 2) < 0.2};
+		deleteVehicle _flare;
+};
+
+*/
