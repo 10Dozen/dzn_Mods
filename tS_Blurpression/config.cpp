@@ -12,5 +12,5 @@ class CfgPatches
 
 class Extended_PreInit_EventHandlers
 {
-	IWBSettings = call compile preprocessFileLineNumbers "\tS_Blurpression\Init.sqf";
+	tS_BlurpressionXEH = call compile preprocessFileLineNumbers "\tS_Blurpression\Init.sqf";
 };

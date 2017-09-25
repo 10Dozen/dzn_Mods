@@ -1,8 +1,8 @@
 if !(hasInterface) exitWith {};
 
 // Settings
-["dzn_blurpress_Enabled", "CHECKBOX", "Enabled", "tS Blurpression", true, true] call CBA_Settings_fnc_init;
-["dzn_blurpress_Radius", "SLIDER", "Radius affected", "tS Blurpression", [1, 25, 5, 0], true] call CBA_Settings_fnc_init;
+["dzn_blurpress_Enabled", "CHECKBOX", "Enabled", "tS Blurpression", true, false] call CBA_Settings_fnc_init;
+["dzn_blurpress_Radius", "SLIDER", "Radius affected", "tS Blurpression", [1, 25, 5, 0], false] call CBA_Settings_fnc_init;
 dzn_blurpress_renew = true;
 
 // Functions
@@ -13,11 +13,11 @@ dzn_fnc_blurpress_supressEffect = {
 		dzn_blurpress_PP_blur = ppEffectCreate ["RadialBlur", 100];
 		dzn_blurpress_PP_blur ppEffectEnable true;
 		dzn_blurpress_PP_blur ppEffectForceInNVG true;
-		dzn_blurpress_PP_blur ppEffectAdjust [0.05, 0.05, 0.35, 0.35];
+		dzn_blurpress_PP_blur ppEffectAdjust [0.05, 0.05, 0.38, 0.38];
 		dzn_blurpress_PP_blur ppEffectCommit 1;
 		dzn_blurpress_renew = false;		
 	} else {
-		dzn_blurpress_PP_blur ppEffectAdjust [0.05, 0.05, 0.25, 0.25];
+		dzn_blurpress_PP_blur ppEffectAdjust [0.05, 0.05, 0.32, 0.32];
 		dzn_blurpress_PP_blur ppEffectCommit 0.2;	
 	};
 	
@@ -25,7 +25,7 @@ dzn_fnc_blurpress_supressEffect = {
 	
 	sleep 1.5;
 	if (_effectLastID == dzn_blurpress_EffectID) then {
-		dzn_blurpress_PP_blur ppEffectAdjust [0.05, 0.05, 0.35, 0.35];
+		dzn_blurpress_PP_blur ppEffectAdjust [0.05, 0.05, 0.38, 0.38];
 		dzn_blurpress_PP_blur ppEffectCommit 0.5;	
 	};	
 	sleep 0.8;
@@ -51,6 +51,7 @@ dzn_fnc_blurpress_supressEffect = {
 
 	while { true } do {
 		if (!dzn_blurpress_Enabled) exitWith {};
+		if (vehicle player != player) exitWith {};
 		
 		if (
 			( { 
