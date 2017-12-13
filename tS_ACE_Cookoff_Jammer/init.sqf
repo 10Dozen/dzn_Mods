@@ -45,6 +45,36 @@
 				&& isNil {_v getVariable "ace_cookoff_enable"}
 			) then {
 				_v setVariable ["ace_cookoff_enable", false, true];
+				_v addEventHandler ["HandleDamage", {
+					params ["_vehicle", "", "_damage", "_source", "_ammo", "_hitIndex", "_shooter"];
+					
+					if (damage _vehicle >= 1) exitWith {};
+					// get hitpoint name
+					private _hitpoint = "#structural";
+
+					if (_hitIndex != -1) then {
+					    _hitpoint = toLower ((getAllHitPointsDamage _vehicle param [0, []]) select _hitIndex);
+					};
+
+					// get change in damage
+					private _oldDamage = if (_hitpoint isEqualTo "#structural") then {
+					     damage _vehicle;
+					} else {
+					    _oldDamage = _vehicle getHitIndex _hitIndex;
+					};
+					private _newDamage = _damage - _oldDamage;
+					
+					if (_hitpoint in ["hithull", "hitfuel", "#structural"]) then {
+						_damage min 0.89
+						// There should be delay before blowup if damage > 0.9
+					} else {
+						if (_hitpoint isEqualTo "hitengine" && {_damage > 0.9}) then {
+						    _vehicle call ace_cookoff_fnc_engineFire;
+						};
+						_damage
+					};
+				}];
+				
 				sleep .01;
 			};
 		} forEach vehicles;
