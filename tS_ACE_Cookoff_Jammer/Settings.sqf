@@ -8,14 +8,22 @@
 [SETNAME("TimeoutMin"), "SLIDER", ["Burning out timeout (min)", "Disabled if > then Max"], TITLE, [5, 240, 45, 0], true
 	, {
 		if (_this <= (tS_ACE_Cookoff_Jammer_timeoutRange select 1)) then {
-			tS_ACE_Cookoff_Jammer_timeoutRange = [_this, tS_ACE_Cookoff_Jammer_timeoutRange select 1];
+			tS_ACE_Cookoff_Jammer_timeoutRange = [
+				_this
+				, floor( (_this + (tS_ACE_Cookoff_Jammer_timeoutRange select 1))/2 )
+				, tS_ACE_Cookoff_Jammer_timeoutRange select 1
+			];
 		};
 	}
 ] call CBA_Settings_fnc_init;
 [SETNAME("TimeoutMax"), "SLIDER", ["Burning out timeout (min)", "Disabled if < then Min"], TITLE, [5, 240, 45, 0], true
 	, {
 		if ((tS_ACE_Cookoff_Jammer_timeoutRange select 0) <= _this) then {
-			tS_ACE_Cookoff_Jammer_timeoutRange = [tS_ACE_Cookoff_Jammer_timeoutRange select 0, _this];
+			tS_ACE_Cookoff_Jammer_timeoutRange = [
+				tS_ACE_Cookoff_Jammer_timeoutRange select 0
+				, floor( ((tS_ACE_Cookoff_Jammer_timeoutRange select 0) + _this)/2 )
+				, _this
+			];
 		};
 	}
 ] call CBA_Settings_fnc_init;
