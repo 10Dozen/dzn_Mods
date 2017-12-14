@@ -45,35 +45,7 @@
 				&& isNil {_v getVariable "ace_cookoff_enable"}
 			) then {
 				_v setVariable ["ace_cookoff_enable", false, true];
-				_v addEventHandler ["HandleDamage", {
-					params ["_vehicle", "", "_damage", "_source", "_ammo", "_hitIndex", "_shooter"];
-					
-					if (damage _vehicle >= 1) exitWith {};
-					// get hitpoint name
-					private _hitpoint = "#structural";
-
-					if (_hitIndex != -1) then {
-					    _hitpoint = toLower ((getAllHitPointsDamage _vehicle param [0, []]) select _hitIndex);
-					};
-
-					// get change in damage
-					private _oldDamage = if (_hitpoint isEqualTo "#structural") then {
-					     damage _vehicle;
-					} else {
-					    _oldDamage = _vehicle getHitIndex _hitIndex;
-					};
-					private _newDamage = _damage - _oldDamage;
-					
-					if (_hitpoint in ["hithull", "hitfuel", "#structural"]) then {
-						_damage min 0.89
-						// There should be delay before blowup if damage > 0.9
-					} else {
-						if (_hitpoint isEqualTo "hitengine" && {_damage > 0.9}) then {
-						    _vehicle call ace_cookoff_fnc_engineFire;
-						};
-						_damage
-					};
-				}];
+				_v addEventHandler ["HandleDamage", { _this call dzn_handle2}];
 				
 				sleep .01;
 			};
@@ -81,4 +53,67 @@
 
 		sleep 30;
 	};
+};
+
+AlogId2 = 0;
+Alog2 = [];
+Afinal2 = 0;
+Ahit2 = "";
+dzn_handle2 = {
+	params ["_vehicle", "", "_damage", "_source", "_ammo", "_hitIndex", "_shooter", "_hitpoint"];
+	
+	Ahit2 = _this;
+	
+	if (damage _vehicle >= 1) exitWith {};
+	
+	if (_hitIndex == -1) then {
+		_hitpoint = "#structural";
+	};
+	
+	AlogId2 = AlogId2 + 1;
+	Alog2 pushBack format ["Log Id %1", AlogId2];
+	Alog2 pushBack _hitpoint;
+	Alog2 pushBack ["hit index", _hitIndex];
+	Alog2 pushBack ["damage", _damage];
+	
+	private _finalDamage = switch toLower(_hitpoint) do {
+		case "hitengine";
+		case "hitfuel": {
+			Alog2 pushBack "Engine/Fuel damage";
+			
+			if (_damage > 0.9 && !(_vehicle getVariable ["ace_cookoff_infire",false])) then {
+				_vehicle call ace_cookoff_fnc_engineFire;
+				_vehicle setVariable ["ace_cookoff_infire", true, true];
+				_vehicle setVariable ["ace_cookoff_fireStarted", time, true];
+				_vehicle spawn {
+					waitUntil {
+						sleep 1; 
+						(_this getVariable "ace_cookoff_fireStarted") + 45 < time
+					};
+					
+					_this setDamage 1;				
+				};
+				Alog2 pushBack "Engine fire";
+			};
+			_damage
+		};
+		
+		case "hithull";
+		case "#structural": {
+			Alog2 pushBack "Structural hit";
+			_damage min 0.89
+		};
+		
+		default {
+			
+			_vehicle setHitPointDamage [_hitpoint, _damage];
+			Alog2 pushBack ["Non-structural hit", _hitpoint, _damage, "Final hitpoint damage:", _vehicle getHitPointDamage _hitpoint];
+			_damage
+		};
+	};
+	
+	Afinal = _finalDamage;
+	Alog2 pushBack ["Final damage", _finalDamage];
+	
+	_finalDamage
 };
