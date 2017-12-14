@@ -59,11 +59,19 @@ tS_ACE_Cookoff_Jammer_fnc_addDamageHandler = {
 						_vehicle spawn {
 							private _timeout = floor random tS_ACE_Cookoff_Jammer_timeoutRange;
 							
+							private _crew = crew _this;
+							{
+								if !(isPlayer _x) then {
+									(group _x) leaveVehicle _this;
+									moveOut _x;
+								};
+							} forEach _crew;
+							
 							waitUntil {
 								sleep 1; 
 								(_this getVariable "ace_cookoff_fireStarted") + _timeout < time
 							};
-					
+							
 							_this setDamage 1;				
 						};
 					};
