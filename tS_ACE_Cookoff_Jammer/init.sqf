@@ -36,6 +36,8 @@ tS_ACE_Cookoff_Jammer_cookingVehicles = [
 // CBA Settings
 #include "Settings.sqf"
 
+if (!tS_ACE_Cookoff_Jammer_Enabled) exitWith {};
+
 // Functions
 tS_ACE_Cookoff_Jammer_fnc_addDamageHandler = {
 	_this addEventHandler [
@@ -65,6 +67,8 @@ tS_ACE_Cookoff_Jammer_fnc_addDamageHandler = {
 									(group _x) leaveVehicle _this;
 									moveOut _x;
 								};
+								
+								_x doMove (_this getPos [random (360), 75]);								
 							} forEach _crew;
 							
 							waitUntil {
@@ -95,11 +99,11 @@ tS_ACE_Cookoff_Jammer_fnc_addDamageHandler = {
 
 // Loop throu all vehicles and set cookoff variable to false
 [] spawn {
-	while { true } do {
+	while { true } do {		
 		{
 			private _v = _x;
-			private _isCooking = ({ _v isKindOf _x } count _cookingVehicles) > 0;
-			private _isNotCoocking = ({ _v isKindOf _x } count _nonCookingVehicles) > 0;
+			private _isCooking = ({ _v isKindOf _x } count tS_ACE_Cookoff_Jammer_cookingVehicles) > 0;
+			private _isNotCoocking = ({ _v isKindOf _x } count tS_ACE_Cookoff_Jammer_nonCookingVehicles) > 0;
 			if (
 				!_isCooking 
 				&& _isNotCoocking
