@@ -34,6 +34,10 @@
 		,"rhsusf_rg33_base"		
 	];
 	
+	ts_ace_cookoff_jammer_fnc_addDamageHandler = {
+		// remoteExec here
+	};
+	
 	while { true } do {
 		{
 			private _v = _x;
