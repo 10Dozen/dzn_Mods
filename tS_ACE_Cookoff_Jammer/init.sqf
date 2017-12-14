@@ -117,7 +117,7 @@ tS_ACE_Cookoff_Jammer_fnc_addDamageHandler = {
 				_v setVariable ["ace_cookoff_enable", false, true];
 				_v remoteExec ["tS_ACE_Cookoff_Jammer_fnc_addDamageHandler", 0];
 				
-				sleep .01;
+				sleep .25;
 			};
 		} forEach vehicles;
 
