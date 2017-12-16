@@ -39,63 +39,7 @@ tS_ACE_Cookoff_Jammer_cookingVehicles = [
 if (!tS_ACE_Cookoff_Jammer_Enabled) exitWith {};
 
 // Functions
-tS_ACE_Cookoff_Jammer_fnc_addDamageHandler = {
-	_this addEventHandler [
-		"HandleDamage"
-		, { 
-			params ["_vehicle", "", "_damage", "_source", "_ammo", "_hitIndex", "_shooter", "_hitpoint"];
-			if (damage _vehicle >= 1) exitWith {};
-			
-			if (_hitIndex == -1) then { _hitpoint = "#structural"; };
-			
-			switch toLower(_hitpoint) do {
-				case "hitengine";
-				case "hitfuel": {
-					if (
-						_damage > 0.9 
-						&& !(_vehicle getVariable ["ace_cookoff_infire",false])
-					) then {
-						_vehicle call ace_cookoff_fnc_engineFire;
-						_vehicle setVariable ["ace_cookoff_infire", true, true];
-						_vehicle setVariable ["ace_cookoff_fireStarted", time, true];
-						_vehicle spawn {
-							private _timeout = floor random tS_ACE_Cookoff_Jammer_timeoutRange;
-							
-							private _crew = crew _this;
-							{
-								if !(isPlayer _x) then {
-									(group _x) leaveVehicle _this;
-									moveOut _x;
-								};
-								
-								_x doMove (_this getPos [random (360), 75]);								
-							} forEach _crew;
-							
-							waitUntil {
-								sleep 1; 
-								(_this getVariable "ace_cookoff_fireStarted") + _timeout < time
-							};
-							
-							_this setDamage 1;				
-						};
-					};
-					
-					_damage
-				};
-				
-				case "hithull";
-				case "#structural": {
-					_damage min 0.89
-				};
-
-				default {
-					// _vehicle setHitPointDamage [_hitpoint, _damage];
-					_damage
-				};
-			}
-		}
-	];
-};
+#include "Functions.sqf"
 
 // Loop throu all vehicles and set cookoff variable to false
 [] spawn {
