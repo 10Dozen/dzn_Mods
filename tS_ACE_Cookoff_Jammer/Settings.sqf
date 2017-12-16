@@ -13,6 +13,15 @@
 ] call CBA_Settings_fnc_init;
 
 [
+	SETNAME("CheckTimeout")
+	, "SLIDER"
+	, "Vehicle check loop timeout"
+	, TITLE
+	, [1, 240, 30, 0]
+	, true
+] call CBA_Settings_fnc_init;
+
+[
 	SETNAME("TimeoutMin")
 	, "SLIDER"
 	, ["Burning out timeout (min)", "Disabled if > then Max"]
