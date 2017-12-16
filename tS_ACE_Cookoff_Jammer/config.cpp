@@ -8,6 +8,7 @@ class CfgPatches
 		requiredVersion = 0.1;
 		requiredAddons[] = {"CBA_MAIN"};
 		author[] = {"10Dozen"};
+		version = "2";
 	};
 };
 
