@@ -44,6 +44,7 @@ if (!tS_ACE_Cookoff_Jammer_Enabled) exitWith {};
 // Loop throu all vehicles and set cookoff variable to false
 [] spawn {
 	publicVariable "tS_ACE_Cookoff_Jammer_fnc_addDamageHandler";
+	publicVariable "tS_ACE_Cookoff_Jammer_fnc_setEffectFire ";
 	publicVariable "tS_ACE_Cookoff_Jammer_timeoutRange";
 	publicVariable "tS_ACE_Cookoff_Jammer_nonCookingVehicles";
 	publicVariable "tS_ACE_Cookoff_Jammer_cookingVehicles";
@@ -65,6 +66,6 @@ if (!tS_ACE_Cookoff_Jammer_Enabled) exitWith {};
 			};
 		} forEach vehicles;
 
-		sleep 30;
+		sleep tS_ACE_Cookoff_Jammer_CheckTimeout;
 	};
 };
