@@ -5,7 +5,7 @@
 
 #### Scope:
 <br/>:white_square_button: Settings to adjust loop timeout
-<br/>:white_large_square: Settings for non-cooking vehicles
+<br/>:white_square_button: Settings for non-cooking vehicles
 <br/>:white_square_button: Fire effect on vehicle engine/fuel critical damage
 <br/>:white_square_button: Vehicles can be disabled (not destroyed) by getting large structural damage
 <br/>:white_square_button: Configurable max. structural damage for vehicles class
