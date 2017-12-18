@@ -12,8 +12,8 @@
 <br/>:white_check_mark: Crew notification about engine fire
 <br/>:white_check_mark: Crew notification about transmition destruction (vehicle disabled scenario)
 <br/>:white_check_mark: Deal damage to crew after flame spreads from engine to other vehicle parts
-<br/>:white_square_button: PP Smoke effect for crew
-<br/>:white_square_button: MP compatibility
+<br/>:white_large_square: PP Smoke effect for crew
+<br/>:white_large_square: MP compatibility
 
 <br />
 <br />
