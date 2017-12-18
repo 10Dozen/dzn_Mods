@@ -59,11 +59,15 @@
 [
 	SETNAME("NonCookingList")
 	, "EDITBOX"
-	, ["Non-cooking off vehicles", "APC vehicles that should not cookoff"]
+	, ["Non-cooking off vehicles", "APC vehicles that should not cookoff, in format [@Class, @StructuralDamage], e.g. ['CUP_btr_base', 15]"]
 	, TITLE
-	, tS_ACE_Cookoff_Jammer_nonCookingVehicles joinString ", "
+	, str(tS_ACE_Cookoff_Jammer_nonCookingVehicles) select [1, count str(tS_ACE_Cookoff_Jammer_nonCookingVehicles) -2]
+	// tS_ACE_Cookoff_Jammer_nonCookingVehicles joinString ", "
 	, true
-	, { tS_ACE_Cookoff_Jammer_nonCookingVehicles = _this splitString ", "; }
+	, {
+	    tS_ACE_Cookoff_Jammer_nonCookingVehicles = call compile format ["[%1]", _this];
+	    //tS_ACE_Cookoff_Jammer_nonCookingVehicles = _this splitString ", ";
+	 }
 ] call CBA_Settings_fnc_init;
 
 [
