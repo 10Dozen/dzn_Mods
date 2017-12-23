@@ -4,11 +4,40 @@ class CfgPatches
 	{
 		units[] = {};
 		weapons[] = {};
+		version = "2";
+		author = "10Dozen";
 		requiredVersion = 0.1;
 		requiredAddons[] = {
-			"Chernarus"
-			,"CUP_Worlds_Lighting"
-			,"CUP_Worlds"
+			"CUP_Afghan_Config"
+			, "Mountains_ACR"			
+			, "CUP_Bohemia_Config"
+			, "Woodland_ACR"			
+			, "CUP_Bootcamp_acr_Config"
+			, "Bootcamp_ACR"			
+			, "CUP_Chernarus_Config"
+			, "Chernarus"			
+			, "CUP_Chernarus_Summer_Config"
+			, "Chernarus_Summer"			
+			, "CUP_Desert_Config"
+			, "Desert"			
+			, "CUP_Desert_e_Config"
+			, "Desert_E"			
+			, "CUP_Desert2_Config"
+			, "Porto"			
+			, "CUP_Sara_Config"
+			, "Sara"			
+			, "CUP_Sara_dbe1_Config"
+			, "Sara_dbe1"			
+			, "CUP_Saralite_Config"
+			, "SaraLite"			
+			, "CUP_Shapur_baf_Config"
+			, "Shapur_BAF"			
+			, "CUP_Takistan_Config"
+			, "Takistan"			
+			, "CUP_Utes_Config"
+			, "Utes"			
+			, "CUP_Zargabad_Config"
+			, "zargabad"
 		};
 	};
 };
@@ -18,35 +47,13 @@ class CfgPatches
 class CfgWorlds
 {
 	class DefaultLighting;
-	class DefaultWorld
-	{
-		class Weather;
-	};
+	class DefaultWorld;
 	class CAWorld: DefaultWorld
 	{
 		class Grid;
-		class Lighting;
-		class DayLightingBrightAlmost;
-		class DayLightingRainy;
-		class Weather: Weather
-		{
-			class Overcast
-			{
-				class Weather1;
-				class Weather2;
-				class Weather3;
-				class Weather4;
-				class Weather5;
-			};
-		};
-		class WaterExPars;
 	};
 	
-	//	CUP Terrains	
-	class Abel: CAWorld 
-	{
-		TS_GRID_SETTINGS
-	};
+	//	CUP Terrains
 	class Mountains_ACR: CAWorld
 	{
 		TS_GRID_SETTINGS
@@ -59,10 +66,6 @@ class CfgWorlds
 	{
 		TS_GRID_SETTINGS
 	};
-	class Cain: CAWorld
-	{
-		TS_GRID_SETTINGS
-	};	
 	class Chernarus: CAWorld
 	{
 		TS_GRID_SETTINGS
@@ -79,19 +82,7 @@ class CfgWorlds
 	{
 		TS_GRID_SETTINGS
 	};		
-	class Porto: CAWorld
-	{
-		TS_GRID_SETTINGS
-	};
-	class Eden: CAWorld
-	{
-		TS_GRID_SETTINGS
-	};
-	class Desert_Island: CAWorld
-	{
-		TS_GRID_SETTINGS
-	};	
-	class Noe: CAWorld
+	class porto: CAWorld
 	{
 		TS_GRID_SETTINGS
 	};

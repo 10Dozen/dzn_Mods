@@ -1,18 +1,18 @@
 class CfgPatches
 {
-	class tS_MapGrid_Core
+	class tS_MapGrid_CUPTerrains_CWA
 	{
 		units[] = {};
 		weapons[] = {};
-		version = "2";
+		version = "1";
 		author = "10Dozen";
 		requiredVersion = 0.1;
 		requiredAddons[] = {
-			"A3_Map_Altis"
-			,"A3_Map_Stratis"
-			,"A3_Map_Malden"
-			,"A3_Map_Tanoabuka"
-			,"A3_Map_Tanoabuka_Data"
+			"CUP_Terrains_Abel"
+			,"CUP_Terrains_Cain"
+			,"CUP_Terrains_Eden"
+			,"CUP_Terrains_Noe"
+			,"CUP_Intro_Config"
 		};
 	};
 };
@@ -22,49 +22,31 @@ class CfgPatches
 class CfgWorlds
 {
 	class DefaultLighting;
-	class DefaultWorld
-	{
-		class Weather;
-	};
+	class DefaultWorld;
 	class CAWorld: DefaultWorld
 	{
 		class Grid;
-		class Lighting;
-		class DayLightingBrightAlmost;
-		class DayLightingRainy;
-		class Weather: Weather
-		{
-			class Overcast
-			{
-				class Weather1;
-				class Weather2;
-				class Weather3;
-				class Weather4;
-				class Weather5;
-			};
-		};
-		class WaterExPars;
 	};
 	
-	// Arma 3
-	class Altis: CAWorld
+	//	CUP Terrains	
+	class Abel: CAWorld 
 	{
 		TS_GRID_SETTINGS
 	};
-	class Stratis: CAWorld
+	class Eden: CAWorld
 	{
 		TS_GRID_SETTINGS
 	};
-	class VR: CAWorld
+	class Cain: CAWorld
+	{
+		TS_GRID_SETTINGS
+	};	
+	class Noe: CAWorld
 	{
 		TS_GRID_SETTINGS
 	};
-	class Malden: CAWorld
+	class Desert_Island: CAWorld
 	{
 		TS_GRID_SETTINGS
-	};
-	class Tanoa: CAWorld
-	{
-		TS_GRID_SETTINGS
-	};
+	};	
 };
