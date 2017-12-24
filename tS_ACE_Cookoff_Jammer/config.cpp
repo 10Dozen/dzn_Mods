@@ -8,7 +8,7 @@ class CfgPatches
 		requiredVersion = 0.1;
 		requiredAddons[] = {"CBA_MAIN"};
 		author[] = {"10Dozen"};
-		version = "2";
+		version = "3";
 	};
 };
 
@@ -16,6 +16,6 @@ class Extended_PostInit_EventHandlers
 {
 	class tS_ACE_Cookoff_Jammer
 	{
-		serverInit = "call ('\tS_ACE_Cookoff_Jammer\init.sqf' call SLX_XEH_COMPILE)";
+		serverInit = "call ('\tS_ACE_Cookoff_Jammer\Init.sqf' call SLX_XEH_COMPILE)";
 	};
 };

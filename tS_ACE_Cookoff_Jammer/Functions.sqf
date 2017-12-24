@@ -1,6 +1,22 @@
-// Functions
+#include "macro.hpp";
 
-tS_ACE_Cookoff_Jammer_fnc_addDamageHandler = {
+#define	DEBUG	false
+
+// Functions
+GVAR(fnc_public) = {
+	// Public functions that may be remoteExecuted by mod
+	publicVariable SVAR(fnc_addDamageHandler);
+	publicVariable SVAR(fnc_setDisabled);
+	publicVariable SVAR(fnc_setOnFire);
+	publicVariable SVAR(fnc_leaveVehicle);
+	publicVariable SVAR(fnc_informPlayers);
+	publicVariable SVAR(fnc_damageCrewLoop);
+	publicVariable SVAR(fnc_setEffectFire);
+	publicVariable SVAR(fnc_showCrewSmokeEffect);
+	publicVariable SVAR(timeoutRange);
+};
+
+GVAR(fnc_addDamageHandler) = {
 	_this addEventHandler [
 		"HandleDamage"
 		, {
@@ -12,7 +28,7 @@ tS_ACE_Cookoff_Jammer_fnc_addDamageHandler = {
 			switch toLower(_hitpoint) do {
 				case "hitengine";
 				case "hitfuel": {
-					[_vehicle,_damage] call tS_ACE_Cookoff_Jammer_fnc_setOnFire;
+					[_vehicle,_damage] call GVAR(fnc_setOnFire);
 					_damage
 				};
 
@@ -27,15 +43,13 @@ tS_ACE_Cookoff_Jammer_fnc_addDamageHandler = {
 					];
 
 					if (_structuralDamage > (_vehicle getVariable "ace_cookoff_structuralDamageMax")) then {
-						// _vehicle setDamage 1;
-						_vehicle call tS_ACE_Cookoff_Jammer_fnc_setDisabled;
+						_vehicle call GVAR(fnc_setDisabled);
 					};
 
 					_damage min 0.89
 				};
 
 				default {
-					// _vehicle setHitPointDamage [_hitpoint, _damage];
 					_damage
 				};
 			}
@@ -43,8 +57,8 @@ tS_ACE_Cookoff_Jammer_fnc_addDamageHandler = {
 	];
 };
 
-tS_ACE_Cookoff_Jammer_fnc_setDisabled = {
-    // Make unit disabled (to simulate hull/transmission destruction)
+GVAR(fnc_setDisabled) = {
+	// Make unit disabled (to simulate hull/transmission destruction)
 	private _vehicle = _this;
 
 	if (_vehicle getVariable ["ace_cookoff_disabled", false]) exitWith {};
@@ -52,20 +66,11 @@ tS_ACE_Cookoff_Jammer_fnc_setDisabled = {
 	_vehicle setFuel 0.00001;
 	_vehicle setVariable ["ace_cookoff_disabled", true, true];
 
-	[_vehicle, 50] spawn tS_ACE_Cookoff_Jammer_fnc_leaveVehicle;
-	[_vehicle, 5, "disabled"] spawn tS_ACE_Cookoff_Jammer_fnc_informPlayers;
+	[_vehicle, 50] spawn GVAR(fnc_leaveVehicle);
+	[_vehicle, 5, "disabled"] spawn GVAR(fnc_informPlayers);
 };
 
-tS_fnc_log = {
-    params["_thread", "_msg", ["_params",[]], ["_restart", false]];
-    if (isNil "OnFireThread" || _restart) then {
-        OnFireThread = [time];
-    };
-
-    OnFireThread pushBack format ["%1 (+%2) [%3] %4 //Params: %5", time, time - (OnFireThread select 0), _thread, _msg, _params];
-};
-
-tS_ACE_Cookoff_Jammer_fnc_setOnFire = {
+GVAR(fnc_setOnFire) = {
     // Check unit damage to Engine/Fuel and start fire on vehicle
 	params ["_vehicle", "_damage"];
 
@@ -80,9 +85,9 @@ tS_ACE_Cookoff_Jammer_fnc_setOnFire = {
 		_vehicle setVariable ["ace_cookoff_infire", true, true];
 		_vehicle setVariable ["ace_cookoff_fireStarted", time, true];
 		_vehicle setVariable ["ace_cookoff_allowCrewDamage", false, true];
-		[_vehicle] spawn tS_ACE_Cookoff_Jammer_fnc_damageCrewLoop;
+		[_vehicle] spawn GVAR(fnc_damageCrewLoop);
 
-		private _timeout = floor random tS_ACE_Cookoff_Jammer_timeoutRange;
+		private _timeout = floor random GVAR(timeoutRange);
 
 		/*
 		 *  Timeline:
@@ -96,11 +101,9 @@ tS_ACE_Cookoff_Jammer_fnc_setOnFire = {
 		 *  1T+5s           - vehicle destroyed
 		 */
 
-        ["Main", "Initialized", [time, _timeout, time+_timeout]] call tS_fnc_log;
 		// Thread to spawn visual Fire effect
 		[_vehicle, _timeout] spawn {
 			params["_v","_t"];
-			["Fire_Effect", "Started w. ", _this] call tS_fnc_log;
 
 			private _pos = _v modelToWorld (
 				(["motor","engine"] apply { _v selectionPosition _x }) select { !(_x isEqualTo [0,0,0]) } select 0
@@ -120,87 +123,67 @@ tS_ACE_Cookoff_Jammer_fnc_setOnFire = {
 				, [ [selectRandom[1,-1]*random(_width), 0, _pos select 2], (_t/(5 + random (2))) ]
 			];
 
-            ["Fire_Effect", "Loop start // Path ->", _path] call tS_fnc_log;
-
 			private _soundSource = createSoundSource ["Sound_Fire", _v, [], 0];
 			{
 				sleep (_x select 1);
-				["Fire_Effect", "Loop, particle added after timeout", [_x select 1]] call tS_fnc_log;
 
 				if (_forEachIndex != 0) then {
 					private _p = _path select (_forEachIndex - 1);
-					[
-						_v, _p select 0, _t - (_p select 1)
-						, [0.5,0.5,0.5], [2, 20, 2, 1, 2, 5.4]
-					] call tS_ACE_Cookoff_Jammer_fnc_setEffectFire;
+					[_v, _p select 0, _t - (_p select 1), [0.5,0.5,0.5], [2, 20, 2, 1, 2, 5.4]] remoteExec [SVAR(fnc_setEffectFire), 0];
 				};
-
-				[_v, _x select 0, _t - (_x select 1)] call tS_ACE_Cookoff_Jammer_fnc_setEffectFire;
+				
+				[_v, _x select 0, _t - (_x select 1)] remoteExec [SVAR(fnc_setEffectFire), 0];
 
 				if ((_forEachIndex + 1) == count _path) then {
 					sleep (_t);
 					deleteVehicle _soundSource;
 				};
 			} forEach _path;
-
-			["Fire_Effect", "Done"] call tS_fnc_log;
 		};
 
 		// Thread to Destroy vehicle
 		[_vehicle, _timeout] spawn {
 			params["_v","_t"];
-			["Destroy", "Started w.", _this] call tS_fnc_log;
 
 			sleep (_t/2);
 			if !(_v getVariable "ace_cookoff_allowCrewDamage") then { _v setVariable ["ace_cookoff_allowCrewDamage", true, true]; };
 
-            ["Destroy", "Damage to crew allowed after", [_t/2]] call tS_fnc_log;
-
 			sleep (_t/2);
-			[_v, [0,0,-1.25], 240, [0.5,0.5,0.5], [4, 20, 4, 1, 4, 5.4]] call tS_ACE_Cookoff_Jammer_fnc_setEffectFire;
-
-             ["Destroy", "Fire effect after", [_t/2]] call tS_fnc_log;
+			[_v, [0,0,-1.25], 240, [0.5,0.5,0.5], [4, 20, 4, 1, 4, 5.4]] remoteExec [SVAR(fnc_setEffectFire), 0];
 
 			sleep 5;
 			_v setDamage 1;
 			_v setDamage 0;
 			_v setDamage 1;
-
-			 ["Destroy", "Wreck. Thread done"] call tS_fnc_log;
 		};
 
 		// Thread to manage crew
 		[_vehicle, _timeout] spawn {
 			params["_v","_t"];
-			["Crew", "started w.", _this] call tS_fnc_log;
 
-            // Inform crew after 0.5T
-			[_v, _t/2, "fire"] spawn tS_ACE_Cookoff_Jammer_fnc_informPlayers;
-			["Crew", "Notification thread started with timeout", [_t/2]] call tS_fnc_log;
+			// Inform crew after 0.5T
+			[_v, _t/2, "fire"] spawn GVAR(fnc_informPlayers);
 
-            // Disembark AI crew after 0.25T
-            sleep (0.25*_t);
-			[_v, 75] spawn tS_ACE_Cookoff_Jammer_fnc_leaveVehicle;
-			["Crew", " Leave vehicle for AI after", [0.25*_t]] call tS_fnc_log;
-
-            // Start PP effects for player crew after 0.33T
+			// Disembark AI crew after 0.25T
+			sleep (0.25*_t);
+			[_v, 75] spawn GVAR(fnc_leaveVehicle);
+			
+			// Start PP effects for player crew after 0.33T
 			sleep (0.33*_t - 0.25*_t);
-			["Crew", " Smoke PP effect after", [0.33*_t - 0.25*_t]] call tS_fnc_log;
-            _v spawn {
-                private _v = _this;
-                while {alive _v} do {
-                    sleep 1;
-                    {
-                        [] remoteExec ["tS_ACE_Cookoff_Jammer_fnc_showCrewSmokeEffect", _x];
-                    } forEach ((crew _v) select { isPlayer _x && !(_x getVariable ["ace_cookoff_ppSmokeAssigned",false]) });
-                };
-            };
-            ["Crew", "Done"] call tS_fnc_log;
+			_v spawn {
+				private _v = _this;
+				while {alive _v} do {
+					sleep 1;
+					{
+						[] remoteExec [SVAR(fnc_showCrewSmokeEffect), _x];
+					} forEach ((crew _v) select { isPlayer _x && !(_x getVariable ["ace_cookoff_ppSmokeAssigned",false]) });
+				};
+			};
 		};
 	};
 };
 
-tS_ACE_Cookoff_Jammer_fnc_leaveVehicle = {
+GVAR(fnc_leaveVehicle) = {
 	// Force AI to leave vehicle after critical damage was taken
 	params["_v", ["_d", 75]];
 
@@ -220,23 +203,23 @@ tS_ACE_Cookoff_Jammer_fnc_leaveVehicle = {
 	_crew apply { _x doMove (_v getPos [random (360), _d]); true };
 };
 
-tS_ACE_Cookoff_Jammer_fnc_informPlayers = {
+GVAR(fnc_informPlayers) = {
 	// Shows hint to inform crew about fire/vehicle disabled
 	params["_v","_t","_reason"];
 	private _text = "";
 	private _sound = "";
 	switch _reason do {
 		case "fire": {
-			_text = parseText "<t color='#ff0000' size='2'>ПОЖАР!</t>";
+			_text = parseText "<t color='#ff0000' size='2'>ПОЖАР</t>";
 			_sound = "Fire";
 		};
 		case "disabled": {
-			_text = parseText "<t color='#eeee00' size='1.5'>ПОЛОМКА ТРАНСМИССИИ!</t>";
+			_text = parseText "<t color='#eeee00' size='1.5'>ПОЛОМКА ТРАНСМИССИИ</t>";
 			_sound = "";
 		};
 	};
 
-    sleep _t;
+	sleep _t;
 	{
 		if (isPlayer _x) then {
 			_text remoteExec ["hint", _x];
@@ -245,7 +228,7 @@ tS_ACE_Cookoff_Jammer_fnc_informPlayers = {
 	} forEach (crew _v);
 };
 
-tS_ACE_Cookoff_Jammer_fnc_damageCrewLoop = {
+GVAR(fnc_damageCrewLoop) = {
 	params["_v",["_damage", 0.05], ["_loopTime",1]];
 
 	waitUntil { _v getVariable ["ace_cookoff_allowCrewDamage", false] };
@@ -255,12 +238,16 @@ tS_ACE_Cookoff_Jammer_fnc_damageCrewLoop = {
 		if (isNil "ace_medical_fnc_addDamageToUnit") then {
 			{ _x setDamage ((damage _v)+_damage) } forEach (crew _v);
 		} else {
-			{ [_x, _damage, selectRandom ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"]] call ace_medical_fnc_addDamageToUnit } forEach (crew _v);
+			{ 
+				[
+					_x, _damage, selectRandom ["head", "body", "hand_l", "hand_r", "leg_l", "leg_r"]
+				] remoteExec ["ace_medical_fnc_addDamageToUnit", _x];			
+			} forEach (crew _v);
 		}
 	};
 };
 
-tS_ACE_Cookoff_Jammer_fnc_setEffectFire = {
+GVAR(fnc_setEffectFire) = {
 	// Add flame effect on vehicle
 	params[
 		"_obj"
@@ -335,7 +322,7 @@ tS_ACE_Cookoff_Jammer_fnc_setEffectFire = {
 	};
 };
 
-tS_ACE_Cookoff_Jammer_fnc_showCrewSmokeEffect = {
+GVAR(fnc_showCrewSmokeEffect) = {
 	if (vehicle player == player || player getVariable ["ace_cookoff_ppSmokeAssigned", false]) exitWith {};
 	private _v = vehicle player;
 	private _pp = ppEffectCreate ["colorCorrections", 1501];

@@ -1,4 +1,6 @@
 // CBA Settings
+#include "macro.hpp";
+
 #define		TITLE		"tS ACE Cookoff Jammer"
 #define		SETNAME(X)	format["tS_ACE_Cookoff_Jammer_%1", X]
 
@@ -26,14 +28,14 @@
 	, "SLIDER"
 	, ["Burning out timeout (min)", "Disabled if > then Max"]
 	, TITLE
-	, [5, 240, tS_ACE_Cookoff_Jammer_timeoutRange select 0, 0]
+	, [5, 240, GVAR(timeoutRange) select 0, 0]
 	, true
 	, {
-		if (_this <= (tS_ACE_Cookoff_Jammer_timeoutRange select 2)) then {
-			tS_ACE_Cookoff_Jammer_timeoutRange = [
+		if (_this <= (GVAR(timeoutRange) select 2)) then {
+			GVAR(timeoutRange) = [
 				_this
-				, floor( (_this + (tS_ACE_Cookoff_Jammer_timeoutRange select 2))/2 )
-				, tS_ACE_Cookoff_Jammer_timeoutRange select 2
+				, floor( (_this + (GVAR(timeoutRange) select 2))/2 )
+				, GVAR(timeoutRange) select 2
 			];
 		};
 	}
@@ -43,13 +45,13 @@
 	, "SLIDER"
 	, ["Burning out timeout (min)", "Disabled if < then Min"]
 	, TITLE
-	, [5, 240, tS_ACE_Cookoff_Jammer_timeoutRange select 2, 0]
+	, [5, 240, GVAR(timeoutRange) select 2, 0]
 	, true
 	, {
-		if ((tS_ACE_Cookoff_Jammer_timeoutRange select 0) <= _this) then {
-			tS_ACE_Cookoff_Jammer_timeoutRange = [
-				tS_ACE_Cookoff_Jammer_timeoutRange select 0
-				, floor( ((tS_ACE_Cookoff_Jammer_timeoutRange select 0) + _this)/2 )
+		if ((GVAR(timeoutRange) select 0) <= _this) then {
+			GVAR(timeoutRange) = [
+				GVAR(timeoutRange) select 0
+				, floor( ((GVAR(timeoutRange) select 0) + _this)/2 )
 				, _this
 			];
 		};
@@ -61,13 +63,11 @@
 	, "EDITBOX"
 	, ["Non-cooking off vehicles", "APC vehicles that should not cookoff, in format [@Class, @StructuralDamage], e.g. ['CUP_btr_base', 15]"]
 	, TITLE
-	, str(tS_ACE_Cookoff_Jammer_nonCookingVehicles) select [1, count str(tS_ACE_Cookoff_Jammer_nonCookingVehicles) -2]
-	// tS_ACE_Cookoff_Jammer_nonCookingVehicles joinString ", "
+	, str(GVAR(nonCookingVehicles)) select [1, count str(GVAR(nonCookingVehicles)) -2]
 	, true
 	, {
-	    tS_ACE_Cookoff_Jammer_nonCookingVehicles = call compile format ["[%1]", _this];
-	    //tS_ACE_Cookoff_Jammer_nonCookingVehicles = _this splitString ", ";
-	 }
+	    GVAR(nonCookingVehicles) = call compile format ["[%1]", _this];
+	}
 ] call CBA_Settings_fnc_init;
 
 [
@@ -75,7 +75,7 @@
 	, "EDITBOX"
 	, ["Cooking off vehicles", "APCs of the same family as non-cooking off ones that can cookoff (e.g. BTR-82A)"]
 	, TITLE
-	, tS_ACE_Cookoff_Jammer_cookingVehicles joinString ", "
+	, GVAR(cookingVehicles) joinString ", "
 	, true
-	, { tS_ACE_Cookoff_Jammer_cookingVehicles = _this splitString ", "; }
+	, { GVAR(cookingVehicles) = _this splitString ", "; }
 ] call CBA_Settings_fnc_init;
