@@ -2,6 +2,7 @@
 
 - Disable cookoff for APC vehicles with MG only (e.g. BRDM/BTR w.KPVT)
 - Added engine fire and explosion after engine/fuel was hit after some timeout for non-cooking off vehicles (NCOV)
+- Added PP effect, notification and damage to crew when vehicle is on fire
 
 #### Scope:
 <br/>:white_check_mark: Settings to adjust loop timeout
