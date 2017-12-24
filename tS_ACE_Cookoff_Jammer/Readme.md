@@ -5,15 +5,15 @@
 
 #### Scope:
 <br/>:white_check_mark: Settings to adjust loop timeout
-<br/>:white_square_button: Settings for non-cooking vehicles
+<br/>:white_check_mark: Settings for non-cooking vehicles
 <br/>:white_check_mark: Fire effect on vehicle engine/fuel critical damage
-<br/>:white_square_button: Vehicles can be disabled (not destroyed) by getting large structural damage
+<br/>:white_check_mark: Vehicles can be disabled (not destroyed) by getting large structural damage
 <br/>:white_check_mark: Configurable max. structural damage for vehicles class
 <br/>:white_check_mark: Crew notification about engine fire
 <br/>:white_check_mark: Crew notification about transmition destruction (vehicle disabled scenario)
 <br/>:white_check_mark: Deal damage to crew after flame spreads from engine to other vehicle parts
-<br/>:white_large_square: PP Smoke effect for crew
-<br/>:white_large_square: MP compatibility
+<br/>:white_check_mark: PP Smoke effect for crew
+<br/>:white_check_mark: MP compatibility
 
 <br />
 <br />
