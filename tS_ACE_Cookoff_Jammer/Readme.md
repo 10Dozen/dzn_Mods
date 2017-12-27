@@ -23,4 +23,10 @@
 <br />:white_check_mark: - done; :white_square_button: - in test; :white_large_square: - in design.
 
 
+##### Diagnostics
+- V getVariable "ace_cookoff_enable"
+- format ["InFire: %1 | FireStarted: %2 | DamageCrew: %3", V getVariable "ace_cookoff_infire" , V getVariable "ace_cookoff_fireStarted", V getVariable "ace_cookoff_allowCrewDamage"]   
+- format ["Disabled: %1 | Damage: %2 | Limit: %3"  , V getVariable "ace_cookoff_disabled" , V getVariable "ace_cookoff_overallStructuralDamage" , V getVariable "ace_cookoff_structuralDamageMax" ]
+
+##### Other
 https://community.bistudio.com/wiki/BIS_fnc_flamesEffect
