@@ -21,3 +21,6 @@
 <br />
 <br />
 <br />:white_check_mark: - done; :white_square_button: - in test; :white_large_square: - in design.
+
+
+https://community.bistudio.com/wiki/BIS_fnc_flamesEffect
