@@ -2,9 +2,9 @@ private ["_radio"];
 if ((TF_tangent_sw_pressed) and {alive TFAR_currentUnit}) then {
 	_radio = call TFAR_fnc_activeSwRadio;
 	
-	if (!isNil { player getVariable "dzn_TFAR_CurrentRadioVolume" }) then {
-		[_radio, player getVariable "dzn_TFAR_CurrentRadioVolume"] call TFAR_fnc_setSwVolume;
-		player setVariable ["dzn_TFAR_CurrentRadioVolume",nil];
+	if (!isNil { player getVariable "dzn_TFAR_CurrentSWRadioVolume" }) then {
+		[_radio, player getVariable "dzn_TFAR_CurrentSWRadioVolume"] call TFAR_fnc_setSwVolume;
+		player setVariable ["dzn_TFAR_CurrentSWRadioVolume",nil];
 	};
 	
 	["OnBeforeTangent", TFAR_currentUnit, [TFAR_currentUnit, _radio, 0, false, false]] call TFAR_fnc_fireEventHandlers;

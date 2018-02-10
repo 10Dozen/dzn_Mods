@@ -8,7 +8,7 @@ if (time - TF_last_lr_tangent_press > 0.5) then {
 			if ([TFAR_currentUnit, TFAR_currentUnit call TFAR_fnc_vehicleIsIsolatedAndInside, [TFAR_currentUnit call TFAR_fnc_vehicleIsIsolatedAndInside, _depth] call TFAR_fnc_canSpeak, _depth] call TFAR_fnc_canUseSWRadio) then {
 				_radio = call TFAR_fnc_activeSwRadio;
 				
-				player setVariable ["dzn_TFAR_CurrentRadioVolume",_radio call TFAR_fnc_getSwVolume];
+				player setVariable ["dzn_TFAR_CurrentSWRadioVolume",_radio call TFAR_fnc_getSwVolume];
 				[_radio, 0] call TFAR_fnc_setSwVolume;
 				
 				["OnBeforeTangent", TFAR_currentUnit, [TFAR_currentUnit, _radio, 0, false, true]] call TFAR_fnc_fireEventHandlers;

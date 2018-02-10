@@ -6,6 +6,10 @@ if (!(TF_tangent_lr_pressed) and {alive TFAR_currentUnit} and {call TFAR_fnc_hav
 		if ([TFAR_currentUnit, TFAR_currentUnit call TFAR_fnc_vehicleIsIsolatedAndInside, TFAR_currentUnit call TFAR_fnc_eyeDepth] call TFAR_fnc_canUseLRRadio) then {
 			_radio = call TFAR_fnc_activeLrRadio;			
 			if ((_radio call TFAR_fnc_getAdditionalLrChannel) > -1) then {
+			
+				player setVariable ["dzn_TFAR_CurrentLRRadioVolume",_radio call TFAR_fnc_getLrVolume];
+				[_radio select 0, _radio select 1, 0] call TFAR_fnc_setLrVolume;
+			
 				_freq = [_radio, (_radio call TFAR_fnc_getAdditionalLrChannel) + 1] call TFAR_fnc_GetChannelFrequency;
 				["OnBeforeTangent", TFAR_currentUnit, [TFAR_currentUnit, _radio, 1, true, true]] call TFAR_fnc_fireEventHandlers;
 				[format[localize "STR_additional_transmit",format ["%1<img size='1.5' image='%2'/>",[_radio select 0, "displayName"] call TFAR_fnc_getLrRadioProperty, getText(configFile >> "CfgVehicles"  >> typeof (_radio select 0) >> "picture")], (_radio call TFAR_fnc_getAdditionalLrChannel) + 1, _freq],

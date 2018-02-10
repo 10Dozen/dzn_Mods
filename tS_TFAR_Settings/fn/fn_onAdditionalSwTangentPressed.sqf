@@ -9,6 +9,9 @@ if (!(TF_tangent_sw_pressed) and {alive TFAR_currentUnit} and {call TFAR_fnc_hav
 			_radio = call TFAR_fnc_activeSwRadio;
 			
 			if ((_radio call TFAR_fnc_getAdditionalSwChannel) > -1) then {
+				player setVariable ["dzn_TFAR_CurrentSWRadioVolume",_radio call TFAR_fnc_getSwVolume];
+				[_radio, 0] call TFAR_fnc_setSwVolume;
+				
 				_freq = [_radio, (_radio call TFAR_fnc_getAdditionalSwChannel) + 1] call TFAR_fnc_GetChannelFrequency;
 				["OnBeforeTangent", TFAR_currentUnit, [TFAR_currentUnit, _radio, 0, true, true]] call TFAR_fnc_fireEventHandlers;
 				[format[localize "STR_additional_transmit",format ["%1<img size='1.5' image='%2'/>", getText (ConfigFile >> "CfgWeapons" >> _radio >> "displayName"), getText(configFile >> "CfgWeapons"  >> _radio >> "picture")], (_radio call TFAR_fnc_getAdditionalSwChannel) + 1, _freq],

@@ -3,6 +3,12 @@ if ((TF_tangent_lr_pressed) and {alive TFAR_currentUnit}) then {
 	private "_radio";
 	_radio = call TFAR_fnc_activeLrRadio;
 	if ((_radio call TFAR_fnc_getAdditionalLrChannel) > -1) then {
+		
+		if (!isNil { player getVariable "dzn_TFAR_CurrentLRRadioVolume" }) then {
+			[_radio select 0, _radio select 1, player getVariable "dzn_TFAR_CurrentLRRadioVolume"] call TFAR_fnc_setLrVolume;
+			player setVariable ["dzn_TFAR_CurrentLRRadioVolume",nil];
+		};
+		
 		_freq = [_radio, (_radio call TFAR_fnc_getAdditionalLrChannel) + 1] call TFAR_fnc_GetChannelFrequency;
 	
 		["OnBeforeTangent", TFAR_currentUnit, [TFAR_currentUnit, _radio, 1, true, false]] call TFAR_fnc_fireEventHandlers;
