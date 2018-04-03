@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project name="dzn_pook">
+	<Package name="Weapons">
+		<Container name="Grenade launchers">
+			<Key ID="STR_dzn_pook_GM94">
+				<Original>GM-94</Original>				
+				<Russian>ГМ-94</Russian>
+			</Key>
+			<Key ID="STR_dzn_pook_GM94_desc">
+				<Original>GM-94 43mm pump-action grenade launcher</Original>				
+				<Russian>ГМ-94 43мм помповый гранатомет</Russian>
+			</Key>
+			<Key ID="STR_dzn_pook_GM94_3Rnd_Mag">
+				<Original>43mm HE grenade pack"</Original>
+				<Russian>43мм Фугасные</Russian>
+			</Key>
+			<Key ID="STR_dzn_pook_GM94_3Rnd_Mag_desc">
+				<Original>3x 43mm VGM93.100 grenades for GM-94</Original>
+				<Russian>3х гранаты 43мм ВГМ93.100 (фугасные) для ГМ-94</Russian>
+			</Key>
+		</Container>
+	</Package>
+</Project>
