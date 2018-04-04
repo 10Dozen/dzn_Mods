@@ -9,7 +9,7 @@ class CfgPatches
 		units[] = {};
 		weapons[] = {"dzn_weapon_GM94"};
 		requiredVersion = 0.1;
-		requiredAddons[] = {"CUP_Weapons_GrenadeLaunchers","rhsusf_c_weapons","rhs_c_weapons"};
+		requiredAddons[] = {"CUP_Weapons_GrenadeLaunchers","rhs_c_weapons"};
 		magazines[] = {};
 		ammo[] = {};
 		
