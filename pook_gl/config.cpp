@@ -99,7 +99,7 @@ class CfgMagazines
 	class CA_LauncherMagazine;
 	class 1Rnd_HE_Grenade_shell;
 	class 1Rnd_Smoke_Grenade_shell;
-	class rhs_mag_m4009;
+	class rhs_VG40SZ;
 	
 	class dzn_3Rnd_VGM93_100_Mag: 1Rnd_HE_Grenade_shell
 	{
@@ -119,9 +119,8 @@ class CfgMagazines
 		descriptionShort = "$STR_dzn_pook_GM94_3Rnd_Smoke_Mag_desc";
 		picture = "\pook_gl\data\icon\vgm93_300.paa";
 	};
-	class dzn_3Rnd_VGM93_400_Mag: rhs_mag_m4009
+	class dzn_3Rnd_VGM93_400_Mag: rhs_VG40SZ
 	{
-		ammo = "rhs_g_vg40sz"
 		mass = 13;
 		count = 3;
 		displayName = "$STR_dzn_pook_GM94_3Rnd_Stun_Mag";
