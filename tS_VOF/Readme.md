@@ -1,10 +1,9 @@
 ## tS Vehicle On Fire
 
 #### Version: 3
-<br />Mod prevents APC (and any other vehicles that can be configured in mod's settings) from instant destruction in the fireball and adds vehicle fire, that burns vehicle after some time
+#### Requirement: CBA_A3, ACE3
+Mod prevents APC (and any other vehicles that can be configured in mod's settings) from instant destruction in the fireball and adds vehicle fire, that burns vehicle after some time
 <br />The mod is compatible & depends on ACE Cookoff module; the mod is configured to be compatible with vehicles of APC class from RHS AFRF, RHS USAF and CUP Vehicles.
-<br />Requirement: CBA_A3, ACE3
-
 
 <br />Features:
 - Prevents instant explosion and adds engine fire after engine/fuel critical hit
