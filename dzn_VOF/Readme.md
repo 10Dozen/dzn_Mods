@@ -13,7 +13,7 @@ Mod prevents APC (and any other vehicles that can be configured in mod's setting
 
 <br />Usage:
 - Install the mod to your client or dedicated server only
-- Check mod settings in the ((Settings -> Addon Configuration))
+- Check mod settings in the ((Settings -> Addon Options -> dzn Vehicle On Fire))
 - If needed - update the list of the classes that should NOT cook-off, but burn in the "Non-cooking off vehicles" in format [@Classname, @DamageLimit], where @Classname is a class of vehicle or it's parent, and @DamageLimit is number of damage that vehicle can take before immobilization; you can define any vehicle class or even root classes, like Car_F
 - If needed - update the list of the classes that are sub-classes of "Non-cooking off vehicles", but should cook-ff (e.g. BTR-82A) in the "Cooking off vehicles"
 - Start the game and have fun!
