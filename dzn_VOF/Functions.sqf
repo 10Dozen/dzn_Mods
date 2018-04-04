@@ -34,15 +34,15 @@ GVAR(fnc_addDamageHandler) = {
 
 				case "hithull";
 				case "#structural": {
-					private _structuralDamage = _damage + (_vehicle getVariable "tS_VOF_overallStructuralDamage");
+					private _structuralDamage = _damage + (_vehicle getVariable "dzn_VOF_overallStructuralDamage");
 
 					_vehicle setVariable [
-						"tS_VOF_overallStructuralDamage"
+						"dzn_VOF_overallStructuralDamage"
 						, _structuralDamage
 						, true
 					];
 
-					if (_structuralDamage > (_vehicle getVariable "tS_VOF_structuralDamageMax")) then {
+					if (_structuralDamage > (_vehicle getVariable "dzn_VOF_structuralDamageMax")) then {
 						_vehicle call GVAR(fnc_setDisabled);
 					};
 
@@ -80,11 +80,11 @@ GVAR(fnc_setOnFire) = {
 			|| _vehicle getHitPointDamage "HitFuel" > 0.9
 			|| _vehicle getHitPointDamage "HitEngine" > 0.9
 		)
-		&& !(_vehicle getVariable ["tS_VOF_infire",false])
+		&& !(_vehicle getVariable ["dzn_VOF_infire",false])
 	) then {
-		_vehicle setVariable ["tS_VOF_infire", true, true];
-		_vehicle setVariable ["tS_VOF_fireStarted", time, true];
-		_vehicle setVariable ["tS_VOF_allowCrewDamage", false, true];
+		_vehicle setVariable ["dzn_VOF_infire", true, true];
+		_vehicle setVariable ["dzn_VOF_fireStarted", time, true];
+		_vehicle setVariable ["dzn_VOF_allowCrewDamage", false, true];
 		[_vehicle] spawn GVAR(fnc_damageCrewLoop);
 
 		private _timeout = floor random GVAR(timeoutRange);
@@ -146,7 +146,7 @@ GVAR(fnc_setOnFire) = {
 			params["_v","_t"];
 
 			sleep (_t/2);
-			if !(_v getVariable "tS_VOF_allowCrewDamage") then { _v setVariable ["tS_VOF_allowCrewDamage", true, true]; };
+			if !(_v getVariable "dzn_VOF_allowCrewDamage") then { _v setVariable ["dzn_VOF_allowCrewDamage", true, true]; };
 
 			sleep (_t/2);
 			[_v, [0,0,-1.25], 240, [0.5,0.5,0.5], [4, 20, 4, 1, 4, 5.4]] remoteExec [SVAR(fnc_setEffectFire), 0];
@@ -176,7 +176,7 @@ GVAR(fnc_setOnFire) = {
 					sleep 1;
 					{
 						[] remoteExec [SVAR(fnc_showCrewSmokeEffect), _x];
-					} forEach ((crew _v) select { isPlayer _x && !(_x getVariable ["tS_VOF_ppSmokeAssigned",false]) });
+					} forEach ((crew _v) select { isPlayer _x && !(_x getVariable ["dzn_VOF_ppSmokeAssigned",false]) });
 				};
 			};
 		};
@@ -231,7 +231,7 @@ GVAR(fnc_informPlayers) = {
 GVAR(fnc_damageCrewLoop) = {
 	params["_v",["_damage", 0.05], ["_loopTime",1]];
 
-	waitUntil { _v getVariable ["tS_VOF_allowCrewDamage", false] };
+	waitUntil { _v getVariable ["dzn_VOF_allowCrewDamage", false] };
 	while { alive _v } do {
 		sleep _loopTime;
 
@@ -323,12 +323,12 @@ GVAR(fnc_setEffectFire) = {
 };
 
 GVAR(fnc_showCrewSmokeEffect) = {
-	if (vehicle player == player || player getVariable ["tS_VOF_ppSmokeAssigned", false]) exitWith {};
+	if (vehicle player == player || player getVariable ["dzn_VOF_ppSmokeAssigned", false]) exitWith {};
 	private _v = vehicle player;
 	private _pp = ppEffectCreate ["colorCorrections", 1501];
 	private _c = 0;
 
-	player setVariable ["tS_VOF_ppSmokeAssigned", true];
+	player setVariable ["dzn_VOF_ppSmokeAssigned", true];
 
 	while { _v != player && alive player } do {
 		_c = (floor random(50))/100;
@@ -340,7 +340,7 @@ GVAR(fnc_showCrewSmokeEffect) = {
 		sleep 3;
 	};
 
-	player setVariable ["tS_VOF_ppSmokeAssigned", false];
+	player setVariable ["dzn_VOF_ppSmokeAssigned", false];
 	_pp ppEffectAdjust [1.0, 1.0, 0.0, [0, 0, 0, 0], [0.0, 1.0, 1.0, 1.0], [0.4, 0.587, 0.114, 0.0]];
 	_pp ppEffectCommit 2;
 	sleep 3;

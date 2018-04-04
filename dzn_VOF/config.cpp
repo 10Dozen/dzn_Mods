@@ -1,6 +1,6 @@
 class CfgPatches
 {
-	class tS_VOF
+	class dzn_VOF
 	{
 		units[] = {};
 		weapons[] = {};
@@ -13,8 +13,8 @@ class CfgPatches
 
 class Extended_PostInit_EventHandlers
 {
-	class tS_VOF
+	class dzn_VOF
 	{
-		serverInit = "call ('\tS_VOF\Init.sqf' call SLX_XEH_COMPILE)";
+		serverInit = "call ('\dzn_VOF\Init.sqf' call SLX_XEH_COMPILE)";
 	};
 };

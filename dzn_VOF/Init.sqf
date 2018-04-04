@@ -74,9 +74,9 @@ if (!GVAR(Enabled)) exitWith {};
 				&& isNil {_v getVariable "ace_cookoff_enable"}
 			) then {
 				_v setVariable ["ace_cookoff_enable", false, true];
-				_v setVariable ["tS_VOF_overallStructuralDamage", damage _v, true];
+				_v setVariable ["dzn_VOF_overallStructuralDamage", damage _v, true];
 				_v setVariable [
-					"tS_VOF_structuralDamageMax"
+					"dzn_VOF_structuralDamageMax"
 					, _vehicleNonCookoffSettings select 0 select 1
 					, true
 				];

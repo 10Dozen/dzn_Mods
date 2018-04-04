@@ -10,7 +10,7 @@
 ["dzn_flares_howitzer_range", "SLIDER"	, "[Howitzer] Range (m)", "tS Flares", [100, 1500, 600, 0], true] call CBA_Settings_fnc_init;
 ["dzn_flares_howitzer_intensityDeviation", "SLIDER", "[Howitzer] Intensity deviation %", "tS Flares", [0, 100, 10, 0], true] call CBA_Settings_fnc_init;
 
-// ["dzn_flares_debug", "CHECKBOX", "[DEBUG] Enabled", "tS Flares", false, false] call CBA_Settings_fnc_init;
+["dzn_flares_debug", "CHECKBOX", "[DEBUG] Enabled", "tS Flares", false, false] call CBA_Settings_fnc_init;
 
 // Functions
 dzn_fnc_flares_setFlareEffectGlobal = {
@@ -67,7 +67,7 @@ dzn_fnc_flare_setFlareEffect = {
 	_range = _range / 2 / 240;
 
 	while { _h > 1  } do {
-		// if (dzn_flares_debug) then { hint format ["H: %1 , R: %2", _h, 2*_h*_range]; };
+		if (dzn_flares_debug) then { hint format ["H: %1 , R: %2", _h, 2*_h*_range]; };
 
 		sleep ((random 0.01) + 0.05);
 		_flare setLightIntensity (_intensity + random (_intensity*_deviation/100));

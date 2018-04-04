@@ -1,0 +1,10 @@
+name = "dzn Vehicle on Fire";
+actionName = "WEBSITE";
+action = "";
+tooltip = "dzn VOF";
+overview = "";
+author = "10Dozen";
+description = "dzn VOF - Version 3.0";
+logo = "mod.paa";
+logoOver = "mod.paa";
+overviewPicture = "mod.paa";

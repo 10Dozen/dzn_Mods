@@ -1,8 +1,8 @@
 // CBA Settings
 #include "macro.hpp";
 
-#define		TITLE		"tS Vehicle On Fire"
-#define		SETNAME(X)	format["tS_VOF_%1", X]
+#define		TITLE		"dzn Vehicle On Fire"
+#define		SETNAME(X)	format["dzn_VOF_%1", X]
 
 [
 	SETNAME("Enabled")
