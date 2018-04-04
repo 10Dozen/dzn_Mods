@@ -7,9 +7,9 @@ class CfgPatches
 	class pook_gl
 	{
 		units[] = {};
-		weapons[] = {};
+		weapons[] = {"dzn_weapon_GM94"};
 		requiredVersion = 0.1;
-		requiredAddons[] = {"CUP_Weapons_GrenadeLaunchers"};
+		requiredAddons[] = {"CUP_Weapons_GrenadeLaunchers","rhsusf_c_weapons","rhs_c_weapons"};
 		magazines[] = {};
 		ammo[] = {};
 		
@@ -66,7 +66,7 @@ class cfgWeapons
 			reloadTime = 0.75;
 			magazineReloadTime = 7;
 		};
-		magazines[] = {"dzn_3Rnd_HE_GM94"};
+		magazines[] = {"dzn_3Rnd_VGM93_100_Mag","dzn_3Rnd_VGM93_300_Mag","dzn_3Rnd_VGM93_400_Mag"};
 		magazineReloadTime = 7;
 		//reloadMagazineSound[] = {"\pook_gl\data\sound\gm94_reload.ogg",1.77828,1,1100};
 	};
@@ -74,8 +74,8 @@ class cfgWeapons
 
 class CfgAmmo
 {
-	class G_40mm_HE;	
-	class dzn_43mm_HE: G_40mm_HE
+	class G_40mm_HE;
+	class dzn_43mm_VGM93_100: G_40mm_HE
 	{
 		indirectHitRange = 5;
 		aiAmmoUsageFlags = "64 + 128";
@@ -83,7 +83,14 @@ class CfgAmmo
 		minRange = 10;
 		midRange = 150;
 		maxRange = 400;
+		fuseDistance = 10
+		
+		ace_frag_enabled = 0;
+		ace_frag_force = 0;
+		ace_frag_skip = 1;
+		initTime = 0.12;
 	};
+	
 };
 
 class CfgMagazines
@@ -91,14 +98,35 @@ class CfgMagazines
 	class CA_Magazine;
 	class CA_LauncherMagazine;
 	class 1Rnd_HE_Grenade_shell;
+	class 1Rnd_Smoke_Grenade_shell;
+	class rhs_mag_m4009;
 	
-	class dzn_3Rnd_HE_GM94: 1Rnd_HE_Grenade_shell
+	class dzn_3Rnd_VGM93_100_Mag: 1Rnd_HE_Grenade_shell
 	{
-		ammo = "dzn_43mm_HE";
+		ammo = "dzn_43mm_VGM93_100";
 		displayName = "$STR_dzn_pook_GM94_3Rnd_Mag";
 		descriptionShort = "$STR_dzn_pook_GM94_3Rnd_Mag_desc";
 		mass = 13;
 		count = 3;
 		picture = "\pook_gl\data\icon\vgm93_100.paa";
+	};
+	class dzn_3Rnd_VGM93_300_Mag:  1Rnd_Smoke_Grenade_shell 
+	{
+		ammo = "G_40mm_Smoke";
+		mass = 13;
+		count = 3;
+		displayName = "$STR_dzn_pook_GM94_3Rnd_Smoke_Mag";
+		descriptionShort = "$STR_dzn_pook_GM94_3Rnd_Smoke_Mag_desc";
+		picture = "\pook_gl\data\icon\vgm93_300.paa";
+	};
+	class dzn_3Rnd_VGM93_400_Mag: rhs_mag_m4009
+	{
+		ammo = "rhs_g_vg40sz"
+		mass = 13;
+		count = 3;
+		displayName = "$STR_dzn_pook_GM94_3Rnd_Stun_Mag";
+		descriptionShort = "$STR_dzn_pook_GM94_3Rnd_Stun_Mag_desc";
+		picture = "\pook_gl\data\icon\vgm93_400.paa";
+	
 	};
 };
