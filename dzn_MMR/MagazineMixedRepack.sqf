@@ -80,7 +80,7 @@ player addAction ["Test case: Mk17", {
 */
 
 
-
+dzn_MMR_RepackLoggingInfo = [];
 
 dzn_MMR_Map = [
 	["CUP_20Rnd_762x51_B_SCAR", "hlc_20rnd_762x51_b_G3","Some_Other_Class"]
@@ -106,7 +106,19 @@ dzn_MMR_fnc_Convert = {
 	player removeMagazines _mag;
 	
 	{
-		player addMagazine [	_convertedMag, _x select 1 ];
+		private _magAmmo = _x select 1;
+		private _convertMagAmmo = getNumber (configFile >> "CfgMagazines" >> _convertedMag>> "count");
+		private _count = ceil (_magAmmo / _convertMagAmmo);
+		
+		for "_i" from 1 to _count do {
+			if ( _convertMagAmmo > _magAmmo) then {
+				player addMagazine [_convertedMag, _magAmmo];
+				_magAmmo = 0;
+			} else {
+				player addMagazine [_convertedMag, _convertMagAmmo];
+				_magAmmo = _magAmmo - _convertMagAmmo;
+			};
+		};
 	} forEach _mags;
 	
 	hint parseText format [
@@ -122,6 +134,7 @@ dzn_MMR_fnc_Action = {
 	
 	private _primaryWeaponAllMags = getArray (configFile >> "CfgWeapons" >> primaryWeapon player >> "magazines");
 	private _showNoRepackHint = true;
+	dzn_MMR_RepackLoggingInfo = [];
 	
 	{
 		private _mag = _x;
@@ -143,13 +156,41 @@ dzn_MMR_fnc_Action = {
 	} forEach _mags;
 	
 	if (_showNoRepackHint) then {
+		dzn_MMR_RepackLoggingInfo pushBack 
 		hint parseText format [
 			"<t color='#86CC5E'>No mags to repack for</t> %1"
 			, getText (configFile >> "CfgWeapons" >> primaryWeapon player >> "displayName")
 		];
 	};
 };
+
+
+/*
+dzn_MMR_fnc_AddLogLine = {
+	dzn_MMR_RepackLoggingInfo pushBack _this;
+};
+
+
+
+dzn_MMR_fnc_ShowHint = {
+	private _hint = "<t size='1.5' color='#ffdd32'>Mixed-mod Repack</t>";
+	private _arr = dzn_MMR_RepackLoggingInfo call BIS_fnc_consolidateArray;
+
+	{ 
+		private _line = format [
+			"<t color='#86CC5E'>Repacked </t> %1x %2 <t color='#86CC5E'>to</t> %3x %4"
+			, _x select 1
+			, getText (configFile >> "CfgMagazines" >> _x select 0 select 0  >> "displayName")
+			, 
+			, getText (configFile >> "CfgMagazines" >> _convertedMag >> "displayName")
+		];
+		
+		_hint = format ["%1<br />%2", _hint, _x]; 		
+	} forEach _arr;
 	
+	hint parseText _hint;
+};
+	*/
 	
 	/*
 		- Get mags types that player have (Mag1, Mag2)
