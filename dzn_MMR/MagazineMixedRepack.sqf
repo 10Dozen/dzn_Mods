@@ -98,10 +98,23 @@ dzn_MMR_fnc_GetMapped = {
 	}
 };
 
+dzn_MMR_fnc_Convert2 = {
+	params["_mag","_convertedMag"];
+	
+	private _mags = (magazinesAmmoFull player) select { _mag in _x };
+	private _totalAmmo = 0;
+	{ _totalAmmo = _totalAmmo + (_x select 1); } forEach _mags;
+	
+	player removeMagazines _mag;
+};
+
+
 dzn_MMR_fnc_Convert = {
 	params["_mag","_convertedMag"];
 	
 	private _mags = (magazinesAmmoFull player) select { _mag in _x };
+	private _magCount = count _mags;
+	private _convertedMagCount = 0;
 	
 	player removeMagazines _mag;
 	
@@ -109,6 +122,7 @@ dzn_MMR_fnc_Convert = {
 		private _magAmmo = _x select 1;
 		private _convertMagAmmo = getNumber (configFile >> "CfgMagazines" >> _convertedMag>> "count");
 		private _count = ceil (_magAmmo / _convertMagAmmo);
+		_convertedMagCount = _convertedMagCount + _count;
 		
 		for "_i" from 1 to _count do {
 			if ( _convertMagAmmo > _magAmmo) then {
@@ -121,11 +135,7 @@ dzn_MMR_fnc_Convert = {
 		};
 	} forEach _mags;
 	
-	hint parseText format [
-		"<t color='#86CC5E'>Repacked from</t> %1 <t color='#86CC5E'>to</t> %2"
-		, getText (configFile >> "CfgMagazines" >> _mag >> "displayName")
-		, getText (configFile >> "CfgMagazines" >> _convertedMag >> "displayName")
-	];
+	[_mag, _convertedMag, _magCount, _convertedMagCount] call dzn_MMR_fnc_AddLogLine;
 };
 
 dzn_MMR_fnc_Action = {	
@@ -161,36 +171,36 @@ dzn_MMR_fnc_Action = {
 			"<t color='#86CC5E'>No mags to repack for</t> %1"
 			, getText (configFile >> "CfgWeapons" >> primaryWeapon player >> "displayName")
 		];
+	} else {
+		call dzn_MMR_fnc_ShowHint;
 	};
 };
 
 
-/*
+
 dzn_MMR_fnc_AddLogLine = {
-	dzn_MMR_RepackLoggingInfo pushBack _this;
+	params ["_mag", "_convertedMag", "_count", "_convertedMagCount"];
+	
+	
+	dzn_MMR_RepackLoggingInfo pushBack format [
+		"<t color='#86CC5E'>Repacked </t> %1x %2 <t color='#86CC5E'>to</t> %3x %4"
+		, _count
+		, getText (configFile >> "CfgMagazines" >> _mag >> "displayName")
+		, _convertedMagCount
+		, getText (configFile >> "CfgMagazines" >> _convertedMag >> "displayName")
+	];
 };
-
-
 
 dzn_MMR_fnc_ShowHint = {
 	private _hint = "<t size='1.5' color='#ffdd32'>Mixed-mod Repack</t>";
 	private _arr = dzn_MMR_RepackLoggingInfo call BIS_fnc_consolidateArray;
 
 	{ 
-		private _line = format [
-			"<t color='#86CC5E'>Repacked </t> %1x %2 <t color='#86CC5E'>to</t> %3x %4"
-			, _x select 1
-			, getText (configFile >> "CfgMagazines" >> _x select 0 select 0  >> "displayName")
-			, 
-			, getText (configFile >> "CfgMagazines" >> _convertedMag >> "displayName")
-		];
-		
 		_hint = format ["%1<br />%2", _hint, _x]; 		
-	} forEach _arr;
+	} forEach dzn_MMR_RepackLoggingInfo;
 	
 	hint parseText _hint;
 };
-	*/
 	
 	/*
 		- Get mags types that player have (Mag1, Mag2)
