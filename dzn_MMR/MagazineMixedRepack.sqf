@@ -75,20 +75,35 @@ player addAction ["Test case: Mk17", {
 }];
 
 /*
-[["hlc_rifle_g3a3","CUP_arifle_Mk17_STD_SFG"],[1,1]]
-[["hlc_20rnd_762x51_b_G3","hlc_20rnd_762x51_T_G3","CUP_20Rnd_TE1_Green_Tracer_762x51_SCAR","CUP_20Rnd_762x51_B_SCAR"],[7,4,6,1]]
+	[@Magazine		@ListOfConversionOptions]
+	or
+	[@Magazine, @ConversionOption1, @ConversionOption2 ... @ConversionOptionN]
+
 */
+dzn_MMR_Map = [
+	  ["CUP_20Rnd_762x51_B_SCAR"					, "hlc_20rnd_762x51_b_G3","Some_Other_Class"]
+	, ["hlc_20rnd_762x51_b_G3"						, "CUP_20Rnd_762x51_B_SCAR","Some_Other_Class"]
+	, ["Some_Other_Class"							, "CUP_20Rnd_762x51_B_SCAR","hlc_20rnd_762x51_b_G3"]	
+	, ["CUP_20Rnd_762x51_B_SCAR"					, "hlc_20rnd_762x51_b_G3","Some_Other_Class"]
+	, ["CUP_20Rnd_TE1_Green_Tracer_762x51_SCAR"		, "hlc_20rnd_762x51_T_G3","Some_Other_Class"]
+];
 
 
 dzn_MMR_RepackLoggingInfo = [];
 
-dzn_MMR_Map = [
-	["CUP_20Rnd_762x51_B_SCAR", "hlc_20rnd_762x51_b_G3","Some_Other_Class"]
-	,["CUP_20Rnd_TE1_Green_Tracer_762x51_SCAR", "hlc_20rnd_762x51_T_G3","Some_Other_Class"]
-];
-
 dzn_MMR_fnc_GetMapped = {
 	/* @MappedMagazinesList = @Magazine call dzn_MMR_GetMapped */
+	private _mapped = dzn_MMR_Map select { _this == (_x select 0) };
+	
+	if (count _mapped > 0) then {
+		_mapped select 0
+	} else {
+		[]
+	}
+};
+
+dzn_MMR_fnc_GetMapped2 = {
+	/* @MappedMagazinesList = @Magazine call dzn_MMR_GetMapped2 */
 	private _mapped = dzn_MMR_Map select { _this in _x };
 	
 	if (count _mapped > 0) then {
@@ -175,8 +190,6 @@ dzn_MMR_fnc_Action = {
 		call dzn_MMR_fnc_ShowHint;
 	};
 };
-
-
 
 dzn_MMR_fnc_AddLogLine = {
 	params ["_mag", "_convertedMag", "_count", "_convertedMagCount"];
