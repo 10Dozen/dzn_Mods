@@ -67,27 +67,25 @@ dzn_MMR_fnc_getAllMagazinesFromConfig = {
 */
 
 player addAction ["Mixed Repack (Primary Weapon)", { call dzn_MMR_fnc_Action }];
-player addAction ["Test case: G3", {
+player addAction ["Test case: AK74", {
 	removeAllWeapons player;
 	(magazines player) apply { player removeMagazines (_x) };
 	
-	player addWeapon "hlc_rifle_g3a3";
-	player addMagazines ["hlc_20rnd_762x51_b_G3", 2];
-	player addMagazines ["CUP_20Rnd_TE1_Green_Tracer_762x51_SCAR", 3];
-	player addMagazines ["CUP_20Rnd_762x51_B_SCAR", 3];
+	player addWeapon "rhs_weap_ak74mr_grip1";
+	player addMagazines ["CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M", 4];
 	
-	hint "G3 ADDED";
+	hint "AK74 ADDED";
 }];
-player addAction ["Test case: Mk17", {
+player addAction ["Test case: AK74 Random", {
 	removeAllWeapons player;
 	(magazines player) apply { player removeMagazines (_x) };
 	
-	player addWeapon "CUP_arifle_Mk17_STD_SFG";
-	player addMagazines ["CUP_20Rnd_762x51_B_SCAR", 2];
-	player addMagazines ["hlc_20rnd_762x51_T_G3", 3];
-	player addMagazines ["hlc_20rnd_762x51_b_G3", 3];
+	player addWeapon "rhs_weap_ak74mr_grip1";
+	for "_i" from 0 to 3 do {
+		player addMagazine ["CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M", 10 + ceil(random(60))];
+	};
 	
-	hint "Mk17 ADDED";
+	hint "AK74 w. random ADDED";
 }];
 
 /*
@@ -99,16 +97,23 @@ player addAction ["Test case: Mk17", {
 dzn_MMR_RepackLoggingInfo = [];
 
 dzn_MMR_Map = [
-	["CUP_20Rnd_762x51_B_SCAR", "hlc_20rnd_762x51_b_G3","Some_Other_Class"]
-	,["CUP_20Rnd_TE1_Green_Tracer_762x51_SCAR", "hlc_20rnd_762x51_T_G3","Some_Other_Class"]
-	,["7.62x39mm AK", 				"30Rnd_762x39_Mag_F", "CUP_30Rnd_762x39_AK47_M", "CUP_30Rnd_Sa58_M", "rhs_30Rnd_762x39mm"]
-	,["7.62x39mm Green Tracer AK", 		"30Rnd_762x39_Mag_Tracer_Green_F", "CUP_30Rnd_762x39_AK47_M", "CUP_30Rnd_Sa58_M_TracerG", "rhs_30Rnd_762x39mm_tracer"]
-	,["7.62x39mm Green Reload Tracer AK", 	"30Rnd_762x39_Mag_Green_F", "CUP_30Rnd_762x39_AK47_M", "CUP_30Rnd_Sa58_M_TracerG", "rhs_30Rnd_762x39mm_tracer"]
-	,["7.62x39mm Yellow Tracer AK", 		"30Rnd_762x39_Mag_Tracer_F", "CUP_30Rnd_762x39_AK47_M", "CUP_30Rnd_Sa58_M_TracerY", "rhs_30Rnd_762x39mm_tracer"]
-	,["7.62x39mm Red Tracer AK", 		"30Rnd_762x39_Mag_Tracer_F", "CUP_30Rnd_762x39_AK47_M", "CUP_30Rnd_Sa58_M_TracerR", "rhs_30Rnd_762x39mm_tracer"]
+	#include "MMR Mapping.sqf"
 ];
 
+
 dzn_MMR_fnc_GetMapped = {
+	/* @MappedMagazinesList = @Magazine call dzn_MMR_GetMapped */
+	private _mapped = dzn_MMR_Map select { toLower(_this) == toLower(_x select 0) };
+	
+	if (count _mapped > 0) then {
+		(_mapped select 0) apply { toLower(_this) }
+	} else {
+		[]
+	}
+};
+
+
+dzn_MMR_fnc_GetMapped2 = {
 	/* @MappedMagazinesList = @Magazine call dzn_MMR_GetMapped */
 	private _mapped = dzn_MMR_Map select { _this in _x };
 	
@@ -141,12 +146,12 @@ dzn_MMR_fnc_Convert = {
 	
 	{
 		private _magAmmo = _x select 1;
-		private _convertMagAmmo = getNumber (configFile >> "CfgMagazines" >> _convertedMag>> "count");
+		private _convertMagAmmo = getNumber (configFile >> "CfgMagazines" >> _convertedMag >> "count");
 		private _count = ceil (_magAmmo / _convertMagAmmo);
 		_convertedMagCount = _convertedMagCount + _count;
 		
 		for "_i" from 1 to _count do {
-			if ( _convertMagAmmo > _magAmmo) then {
+			if ( _convertMagAmmo >= _magAmmo) then {
 				player addMagazine [_convertedMag, _magAmmo];
 				_magAmmo = 0;
 			} else {
@@ -163,7 +168,7 @@ dzn_MMR_fnc_Action = {
 	private _mags = [];
 	{ _mags pushBackUnique _x; } forEach (magazines player);
 	
-	private _primaryWeaponAllMags = getArray (configFile >> "CfgWeapons" >> primaryWeapon player >> "magazines");
+	private _primaryWeaponAllMags = (getArray (configFile >> "CfgWeapons" >> primaryWeapon player >> "magazines")) apply { toLower(_x) };
 	private _showNoRepackHint = true;
 	dzn_MMR_RepackLoggingInfo = [];
 	
@@ -171,7 +176,7 @@ dzn_MMR_fnc_Action = {
 		private _mag = _x;
 		
 		if !(_mag in _primaryWeaponAllMags) then {
-			_mapped = _mag call dzn_MMR_fnc_GetMapped;
+			_mapped = (_mag call dzn_MMR_fnc_GetMapped) apply { toLower(_x) };
 			
 			if !((_primaryWeaponAllMags select { _x in _mapped}) isEqualTo []) then {
 				_targetMag = (_mapped - [_mag] - (_mapped - [_mag] - _primaryWeaponAllMags)) select 0;
