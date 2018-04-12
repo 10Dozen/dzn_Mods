@@ -1,3 +1,19 @@
+dzn_MMR_fnc_getAllMagazinesFromConfig = {
+	private _allMags = "getNumber (_x >> 'scope') == 2" configClasses (configFile >> "CfgMagazines");
+	private _list = [];
+	
+	{
+		_list pushBack (format [
+			"%1 @ %2 @ %3"
+			, getText (configFile >> "CfgMagazines" >> configName _x >> "displayName")
+			, configName _x
+			, getText (configFile >> "CfgMagazines" >> configName _x >> "dlc")
+		]);	
+	} forEach _allMags;
+	
+	_list
+};
+
 /*
 	magazinesAmmo player 
 	
@@ -75,35 +91,25 @@ player addAction ["Test case: Mk17", {
 }];
 
 /*
-	[@Magazine		@ListOfConversionOptions]
-	or
-	[@Magazine, @ConversionOption1, @ConversionOption2 ... @ConversionOptionN]
-
+[["hlc_rifle_g3a3","CUP_arifle_Mk17_STD_SFG"],[1,1]]
+[["hlc_20rnd_762x51_b_G3","hlc_20rnd_762x51_T_G3","CUP_20Rnd_TE1_Green_Tracer_762x51_SCAR","CUP_20Rnd_762x51_B_SCAR"],[7,4,6,1]]
 */
-dzn_MMR_Map = [
-	  ["CUP_20Rnd_762x51_B_SCAR"					, "hlc_20rnd_762x51_b_G3","Some_Other_Class"]
-	, ["hlc_20rnd_762x51_b_G3"						, "CUP_20Rnd_762x51_B_SCAR","Some_Other_Class"]
-	, ["Some_Other_Class"							, "CUP_20Rnd_762x51_B_SCAR","hlc_20rnd_762x51_b_G3"]	
-	, ["CUP_20Rnd_762x51_B_SCAR"					, "hlc_20rnd_762x51_b_G3","Some_Other_Class"]
-	, ["CUP_20Rnd_TE1_Green_Tracer_762x51_SCAR"		, "hlc_20rnd_762x51_T_G3","Some_Other_Class"]
-];
 
 
 dzn_MMR_RepackLoggingInfo = [];
 
+dzn_MMR_Map = [
+	["CUP_20Rnd_762x51_B_SCAR", "hlc_20rnd_762x51_b_G3","Some_Other_Class"]
+	,["CUP_20Rnd_TE1_Green_Tracer_762x51_SCAR", "hlc_20rnd_762x51_T_G3","Some_Other_Class"]
+	,["7.62x39mm AK", 				"30Rnd_762x39_Mag_F", "CUP_30Rnd_762x39_AK47_M", "CUP_30Rnd_Sa58_M", "rhs_30Rnd_762x39mm"]
+	,["7.62x39mm Green Tracer AK", 		"30Rnd_762x39_Mag_Tracer_Green_F", "CUP_30Rnd_762x39_AK47_M", "CUP_30Rnd_Sa58_M_TracerG", "rhs_30Rnd_762x39mm_tracer"]
+	,["7.62x39mm Green Reload Tracer AK", 	"30Rnd_762x39_Mag_Green_F", "CUP_30Rnd_762x39_AK47_M", "CUP_30Rnd_Sa58_M_TracerG", "rhs_30Rnd_762x39mm_tracer"]
+	,["7.62x39mm Yellow Tracer AK", 		"30Rnd_762x39_Mag_Tracer_F", "CUP_30Rnd_762x39_AK47_M", "CUP_30Rnd_Sa58_M_TracerY", "rhs_30Rnd_762x39mm_tracer"]
+	,["7.62x39mm Red Tracer AK", 		"30Rnd_762x39_Mag_Tracer_F", "CUP_30Rnd_762x39_AK47_M", "CUP_30Rnd_Sa58_M_TracerR", "rhs_30Rnd_762x39mm_tracer"]
+];
+
 dzn_MMR_fnc_GetMapped = {
 	/* @MappedMagazinesList = @Magazine call dzn_MMR_GetMapped */
-	private _mapped = dzn_MMR_Map select { _this == (_x select 0) };
-	
-	if (count _mapped > 0) then {
-		_mapped select 0
-	} else {
-		[]
-	}
-};
-
-dzn_MMR_fnc_GetMapped2 = {
-	/* @MappedMagazinesList = @Magazine call dzn_MMR_GetMapped2 */
 	private _mapped = dzn_MMR_Map select { _this in _x };
 	
 	if (count _mapped > 0) then {
@@ -190,6 +196,8 @@ dzn_MMR_fnc_Action = {
 		call dzn_MMR_fnc_ShowHint;
 	};
 };
+
+
 
 dzn_MMR_fnc_AddLogLine = {
 	params ["_mag", "_convertedMag", "_count", "_convertedMagCount"];
