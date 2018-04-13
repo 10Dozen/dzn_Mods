@@ -16,12 +16,14 @@
 	[ 
 		@CLASS
 		, [
-			["driver", ????, @ModelPosition]
-		
-		
-		
+			[@PositionName, @SeatIndex, @ModelPosition]
+			...
 		]		
 	]
+	
+	@PositionNames:	"cargo", "driver", "turret"
+	@SeatIndex: Cargo index or turret path
+	@ModelPosition: model relative (worldToModelVisual)
 */
 
 dzn_ABME_fnc_getVehicleClasses = {
