@@ -71,7 +71,7 @@ dzn_ABME_fnc_collectData = {
 		_v allowDamage false;
 		
 		private _seats = (_v call dzn_ABME_fnc_getSeats);
-		ssss
+		
 		if ((_seats select 0) > 0) then {
 			hint format ["%1 has seats", _vClass];
 			
