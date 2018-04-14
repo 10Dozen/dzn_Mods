@@ -26,6 +26,14 @@
 	@ModelPosition: model relative (worldToModelVisual)
 */
 
+dzn_ABME_fnc_get = {
+	[_this, (_this call dzn_ABME_fnc_getSeats) select 0 ] call dzn_ABME_fnc_addFullCrew;
+	_result = _this call dzn_ABME_fnc_getData;
+	_this spawn dzn_ABME_fnc_removeAllCrew;
+	
+	ABM_trainedVeh  pushBack _result;	
+};
+
 dzn_ABME_fnc_getVehicleClasses = {
 	(
 		'isClass _x 
@@ -76,6 +84,84 @@ dzn_ABME_fnc_removeAllCrew = {
 	{ moveOut _x; sleep 0.001; deleteVehicle _x; } forEach _crew;
 };
 
+/*
+	bbxc = boundingCenter vehicle player;
+	bbx = boundingBoxReal vehicle player;
+	dX = abs ((bbx select 0 select 0) - (bbx select 1 select 0));
+	dY = abs ((bbx select 0 select 1) - (bbx select 1 select 1));
+	dZ = abs ((bbx select 0 select 2) - (bbx select 1 select 2));
+
+	Driver Position:
+		a) 1/2 of 1/3 dY, left
+		b) 1/2 of 1/3 dY, right:
+						player setPosATL (V modelToWorld [
+							0.75 * (bbx select 1 select 0)
+							,(bbx select 1 select 1)*0.75 (APCs) *0.25 (tanks)
+							, -1*(bbxc select 2)
+						])
+		c) front (max dY), center:	V modelToWorld [0, 1 (APC) or 0.75(for tanks)(bbx select 1 select 1), -1*(bbxc select 2)]
+*/
+dzn_ABME_fnc_getTankDriverPositions = {
+	private _v = _this;
+	private _bbx = boundingBoxReal _v;
+	private _h = ((_v worldToModel (getPos _v)) select 2) + 1.25;
+
+	private _centralPos = [0, 0.75 * (_bbx select 1 select 1), _h] apply { [_x,3] call BIS_fnc_cutDecimals };
+	private _rightPos = [0.5 * (_bbx select 1 select 0), 0.5 * (_bbx select 1 select 1), _h] apply { [_x,3] call BIS_fnc_cutDecimals };
+	private _leftPos = [-0.5 * (_bbx select 1 select 0), 0.5 * (_bbx select 1 select 1), _h] apply { [_x,3] call BIS_fnc_cutDecimals };
+
+	[
+		["driver", -1, _centralPos]
+		,["driver", -1, _rightPos]
+		,["driver", -1, _leftPos]
+	]
+};
+
+dzn_ABME_fnc_getTankTurretPositions = {
+	params["_v",["_gunnerTurretPath", []], ["_commanderTurretPath", []]];
+	private _bbx = boundingBoxReal _v;
+	private _h = ((_v worldToModel (getPos _v)) select 2) + 1.25;
+
+	private _turretGunnerLeft = [-0.5 * (_bbx select 1 select 0), 0.5, _h] apply { [_x,3] call BIS_fnc_cutDecimals };
+	private _turretGunnerRight = [0.5 * (_bbx select 1 select 0), 0.5, _h] apply { [_x,3] call BIS_fnc_cutDecimals };
+	private _turretCommanderLeft = [-0.5 * (_bbx select 1 select 0), -0.15, _h] apply { [_x,3] call BIS_fnc_cutDecimals };
+	private _turretCommanderRight = [0.5 * (_bbx select 1 select 0), -0.15, _h] apply { [_x,3] call BIS_fnc_cutDecimals };
+
+	private _data = [];
+
+	if !(_gunnerTurretPath isEqualTo []) then {
+		{ _data pushBack ["turret", _gunnerTurretPath, _x]; } forEach [_turretGunnerLeft, _turretGunnerRight];
+	};
+
+	if !(_gunnerTurretPath isEqualTo []) then {
+		{ _data pushBack ["turret", _commanderTurretPath, _x]; } forEach [_turretCommanderLeft, _turretCommanderRight];
+	};
+
+	_data
+};
+
+dzn_ABME_fnc_getTankCargoPosition = {
+	private _v = _this;
+	private _bbx = boundingBoxReal _v;
+	private _h = ((_v worldToModel (getPos _v)) select 2) + 1.25;
+
+	private _cargoPosBack = [0, 0.5*(_bbx select 0 select 1), _h] apply { [_x,3] call BIS_fnc_cutDecimals };
+
+	["cargo", -1, _cargoPosBack]
+};
+
+dzn_ABME_fnc_tGetTankData = {
+	params["_v", "_gunnerTurret", "_commanderTurret", ["_hasCargo", false]];
+
+	private _data = []
+		+ (_v call dzn_ABME_fnc_getTankDriverPositions)
+		+ ([_v, _gunnerTurret, _commanderTurret] call dzn_ABME_fnc_getTankTurretPositions);
+
+	if (_hasCargo) then { _data = _data + [ (_v call dzn_ABME_fnc_getTankCargoPosition) ]; };
+
+	[ typeOf _v, _data ]
+};
+
 dzn_ABME_fnc_getData = {
 	private _v = _this;
 	private _crew = fullCrew _v;
@@ -83,19 +169,39 @@ dzn_ABME_fnc_getData = {
 	
 	{
 		_x params ["_u", "_role", "_cargoIndex", "_turretPath"];
-		
-		_role = if (toLower(_role) in ["driver","turret","cargo"]) then { toLower(_role) } else { "turret" };		
-		
-		
-		
-		
+		_role = if (toLower(_role) in ["driver","turret","cargo"]) then { toLower(_role) } else { "turret" };
+		private _pos = (_v worldToModelVisual (getPos _u)) apply { [_x, 3] call BIS_fnc_cutDecimals };
+
+		if (_role == "driver" && _v isKindOf "Tank") then {
+
+
+		};
+
+
 		_data pushBack [
 			_role
 			, if (_role == "turret") then { _turretPath } else { _cargoIndex }
-			, _v worldToModelVisual (getPos _u)
+			,(_v worldToModelVisual (getPos _u)) apply { [_x, 3] call BIS_fnc_cutDecimals }
 		];
 	} forEach _crew;
-	
+
+	{
+		// [@Role, @Path, @Position]
+		_x params ["_role", "", "_relPos"];
+		if (_v isKindOf "Tank") then {
+			switch (_role) do {
+				case "driver": {
+
+
+				}
+
+			}
+
+		};
+	} forEach _data;
+
+
+
 	[typeOf _v, _data]
 /*
 Driver_
@@ -105,6 +211,8 @@ SelectionPosition
 
 	
 	[_x,3] call BIS_fnc_cutDecimals // rounding to 3 digits
+	
+	
 	
 	BoundingBoxes for vehicles with [0,0,0] position:
 	
