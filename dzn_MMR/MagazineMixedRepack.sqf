@@ -67,6 +67,7 @@ dzn_MMR_fnc_getAllMagazinesFromConfig = {
 */
 
 player addAction ["Mixed Repack (Primary Weapon)", { call dzn_MMR_fnc_Action }];
+player addAction ["TEST Mixed Repack (Primary Weapon)", { [] spawn dzn_MMR_Test1 }];
 player addAction ["Test case: AK74", {
 	removeAllWeapons player;
 	(magazines player) apply { player removeMagazines (_x) };
@@ -87,6 +88,30 @@ player addAction ["Test case: AK74 Random", {
 	
 	hint "AK74 w. random ADDED";
 }];
+
+dzn_MMR_Test1 = {
+	removeAllWeapons player;
+	(magazines player) apply { player removeMagazines (_x) };
+	
+	player addWeapon "rhs_weap_ak74mr_grip1";
+	for "_i" from 0 to 3 do {
+		player addMagazine ["CUP_75Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M", 10 + ceil(random(60))];
+	};
+	
+	hint "AK74 w. random ADDED";
+	
+	private _totalAmmo = 0;
+	{ _totalAmmo = _totalAmmo + (_x select 1); } forEach (magazinesAmmoFull player);
+	
+	sleep 1;
+	
+	call dzn_MMR_fnc_Action;
+	
+	private _totalAmmo2 = 0;
+    { _totalAmmo2 = _totalAmmo2 + (_x select 1); } forEach (magazinesAmmoFull player);
+
+	hint format["Before: %1 vs %2 :After => %3", _totalAmmo, _totalAmmo2, _totalAmmo == _totalAmmo2];
+};
 
 /*
 [["hlc_rifle_g3a3","CUP_arifle_Mk17_STD_SFG"],[1,1]]
