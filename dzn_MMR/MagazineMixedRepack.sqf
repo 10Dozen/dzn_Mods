@@ -68,6 +68,7 @@ dzn_MMR_fnc_getAllMagazinesFromConfig = {
 
 player addAction ["Mixed Repack (Primary Weapon)", { call dzn_MMR_fnc_Action }];
 player addAction ["TEST Mixed Repack (Primary Weapon)", { [] spawn dzn_MMR_Test1 }];
+
 player addAction ["Test case: AK74", {
 	removeAllWeapons player;
 	(magazines player) apply { player removeMagazines (_x) };
@@ -108,7 +109,7 @@ dzn_MMR_Test1 = {
 	call dzn_MMR_fnc_Action;
 	
 	private _totalAmmo2 = 0;
-    { _totalAmmo2 = _totalAmmo2 + (_x select 1); } forEach (magazinesAmmoFull player);
+	{ _totalAmmo2 = _totalAmmo2 + (_x select 1); } forEach (magazinesAmmoFull player);
 
 	hint format["Before: %1 vs %2 :After => %3", _totalAmmo, _totalAmmo2, _totalAmmo == _totalAmmo2];
 };
@@ -120,6 +121,8 @@ dzn_MMR_Test1 = {
 
 
 dzn_MMR_RepackLoggingInfo = [];
+dzn_MMR_Log = [];
+
 
 dzn_MMR_Map = [
 	#include "MMR Mapping.sqf"
@@ -131,7 +134,7 @@ dzn_MMR_fnc_GetMapped = {
 	private _mapped = dzn_MMR_Map select { toLower(_this) == toLower(_x select 0) };
 	
 	if (count _mapped > 0) then {
-		(_mapped select 0) apply { toLower(_this) }
+		(_mapped select 0) apply { toLower(_x) }
 	} else {
 		[]
 	}
@@ -163,9 +166,16 @@ dzn_MMR_fnc_Convert2 = {
 dzn_MMR_fnc_Convert = {
 	params["_mag","_convertedMag"];
 	
-	private _mags = (magazinesAmmoFull player) select { _mag in _x };
+	private _mags = (magazinesAmmoFull player) select { _mag == toLower(_x select 0) };
 	private _magCount = count _mags;
 	private _convertedMagCount = 0;
+	
+	dzn_MMR_Log pushBack [
+		"Conversion started for mag: "
+		, _mag
+		, "Mag count"
+		, _magCount
+	];
 	
 	player removeMagazines _mag;
 	
@@ -175,13 +185,18 @@ dzn_MMR_fnc_Convert = {
 		private _count = ceil (_magAmmo / _convertMagAmmo);
 		_convertedMagCount = _convertedMagCount + _count;
 		
+		dzn_MMR_Log pushBack ["For mag", _x, "Mag Ammo", _magAmmo, "Conver Mag Ammo ", _convertMagAmmo, "Count ", _count, "ConvertedMagCount", _convertedMagCount];
+		
 		for "_i" from 1 to _count do {
 			if ( _convertMagAmmo >= _magAmmo) then {
+				dzn_MMR_Log pushBack ["Adding mag ", _convertedMag, _magAmmo];
 				player addMagazine [_convertedMag, _magAmmo];
 				_magAmmo = 0;
 			} else {
+				
 				player addMagazine [_convertedMag, _convertMagAmmo];
 				_magAmmo = _magAmmo - _convertMagAmmo;
+				dzn_MMR_Log pushBack ["Adding mag ", _convertedMag, _convertMagAmmo, "Ammo left", _magAmmo];
 			};
 		};
 	} forEach _mags;
@@ -190,18 +205,29 @@ dzn_MMR_fnc_Convert = {
 };
 
 dzn_MMR_fnc_Action = {	
+	
+	
 	private _mags = [];
-	{ _mags pushBackUnique _x; } forEach (magazines player);
+	{ _mags pushBackUnique toLower(_x); } forEach (magazines player);
+	
 	
 	private _primaryWeaponAllMags = (getArray (configFile >> "CfgWeapons" >> primaryWeapon player >> "magazines")) apply { toLower(_x) };
 	private _showNoRepackHint = true;
 	dzn_MMR_RepackLoggingInfo = [];
 	
+	dzn_MMR_Log = [];
+	dzn_MMR_Log pushBack format ["Mags in inventory: %1", str(_mags)];
+	dzn_MMR_Log pushBack ["Primary weapon mags", _primaryWeaponAllMags];
+	
 	{
 		private _mag = _x;
+		dzn_MMR_Log pushBack ["Check mag", _mag];
 		
 		if !(_mag in _primaryWeaponAllMags) then {
-			_mapped = (_mag call dzn_MMR_fnc_GetMapped) apply { toLower(_x) };
+			_mapped = _mag call dzn_MMR_fnc_GetMapped;
+			
+			dzn_MMR_Log pushBack ["Mapped mags",_mapped];			
+			dzn_MMR_Log pushBack format ["Found in any primary mag in mapped?: %1", !((_primaryWeaponAllMags select { _x in _mapped}) isEqualTo [])];			
 			
 			if !((_primaryWeaponAllMags select { _x in _mapped}) isEqualTo []) then {
 				_targetMag = (_mapped - [_mag] - (_mapped - [_mag] - _primaryWeaponAllMags)) select 0;
@@ -209,6 +235,7 @@ dzn_MMR_fnc_Action = {
 				player sideChat format ["Conversation of %1 to %2", _mag, _targetMag];
 				_showNoRepackHint = false;
 				
+				dzn_MMR_Log pushBack ["Convert", _mag, _targetMag];
 				[_mag, _targetMag] call dzn_MMR_fnc_Convert;
 			} else {
 				player sideChat format ["No conversation target for %1", _mag];
