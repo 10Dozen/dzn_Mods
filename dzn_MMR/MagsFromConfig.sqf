@@ -16,7 +16,9 @@
 ,"6.5mm 30Rnd Mag @ 30Rnd_65x39_caseless_green @ "
 ,"6.5mm 30Rnd Tracer Mag @ 30Rnd_65x39_caseless_mag_Tracer @ "
 ,"6.5 mm 30Rnd Tracer (Green) Caseless Mag @ 30Rnd_65x39_caseless_green_mag_Tracer @ "
+
 ,"7.62mm 20Rnd Mag @ 20Rnd_762x51_Mag @ "
+
 ,".408 7Rnd Mag @ 7Rnd_408_Mag @ "
 ,"12.7mm 5Rnd Mag @ 5Rnd_127x108_Mag @ "
 ,"6.5mm 100Rnd Mag @ 100Rnd_65x39_caseless_mag @ "
@@ -98,6 +100,8 @@
 ,"30Rnd. AK-74 (yellow) @ CUP_30Rnd_TE1_Yellow_Tracer_545x39_AK_M @ "
 ,"30Rnd. AK-74 (subsonic) @ CUP_30Rnd_Subsonic_545x39_AK_M @ "
 ,"30Rnd. AK-47 @ CUP_30Rnd_762x39_AK47_M @ "
+
+
 ,"SA58 Mag. @ CUP_30Rnd_Sa58_M @ "
 ,"SA58 Mag. (green) @ CUP_30Rnd_Sa58_M_TracerG @ "
 ,"Lee Enfield Mag. @ CUP_10x_303_M @ "
@@ -415,6 +419,7 @@
 ,"7.62mm M62 Tracer 100rnd Belt @ rhsusf_100Rnd_762x51_m62_tracer @ "
 ,"7.62mm M80A1EPR 100rnd Belt @ rhsusf_100Rnd_762x51_m80a1epr @ "
 ,"7.62mm M82 Blank 100rnd Belt @ rhsusf_100Rnd_762x51_m82_blank @ "
+
 ,"7.62mm M118 20Rnd Mag @ rhsusf_20Rnd_762x51_m118_special_Mag @ "
 ,"7.62mm M993 20Rnd Mag @ rhsusf_20Rnd_762x51_m993_Mag @ "
 ,"7.62mm M62 Tracer 20rnd Mag @ rhsusf_20Rnd_762x51_m62_Mag @ "
@@ -424,6 +429,7 @@
 ,"7.62mm M118 10 Rnd Mag @ rhsusf_10Rnd_762x51_m118_special_Mag @ "
 ,"7.62mm M993 10 Rnd Mag @ rhsusf_10Rnd_762x51_m993_Mag @ "
 ,"7.62mm M62 Tracer 10 Rnd Mag @ rhsusf_10Rnd_762x51_m62_Mag @ "
+
 ,"40Rnd 4.6mm FMJ SX Magazine @ rhsusf_mag_40Rnd_46x30_FMJ @ "
 ,"40Rnd 4.6mm JHP SX Magazine @ rhsusf_mag_40Rnd_46x30_JHP @ "
 ,"40Rnd 4.6mm AP SX Magazine @ rhsusf_mag_40Rnd_46x30_AP @ "
@@ -571,8 +577,8 @@
 ,"25Rnd .45ACP Tracer Red Mag @ KA_25Rnd_45ACP_Tracer_Red_Mag @ KICKASS"
 ,"25Rnd .45ACP Tracer Green Mag @ KA_25Rnd_45ACP_Tracer_Green_Mag @ KICKASS"
 ,"25Rnd .45ACP High Presure Mag @ KA_25Rnd_45ACP_High_Presure_Mag @ KICKASS"
-,"30Rnd .40 Si?â€ W FMJ Mag @ KA_30Rnd_40SW_FMJ_Mag @ KICKASS"
-,"30Rnd .40 Si?â€ W JHP Mag @ KA_30Rnd_40SW_JHP_Mag @ KICKASS"
+,"30Rnd .40 Si?†W FMJ Mag @ KA_30Rnd_40SW_FMJ_Mag @ KICKASS"
+,"30Rnd .40 Si?†W JHP Mag @ KA_30Rnd_40SW_JHP_Mag @ KICKASS"
 ,"30Rnd 9x19 FMJ Mag @ KA_30Rnd_9x19_FMJ_Mag @ KICKASS"
 ,"30Rnd 9x19 JHP Mag @ KA_30Rnd_9x19_JHP_Mag @ KICKASS"
 ,"30Rnd 9x19 Subsonic Mag @ KA_30Rnd_9x19_Subsonic_Mag @ KICKASS"
