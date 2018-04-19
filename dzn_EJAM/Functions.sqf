@@ -33,13 +33,13 @@ dzn_EJAM_fnc_doAction = {
 	private _actionID = _this;
 	switch (_actionID) do {
 		case "pull_bolt": {
-			[2, [], {
+			[0.5, [], {
 				call dzn_EJAM_fnc_pullBolt;			
 				[] spawn dzn_EJAM_fnc_ShowUnjamMenu;				
 			}, {}, "Передергиваем затвор"] call ace_common_fnc_progressBar;
 		};	
 		case "open_bolt": {
-			[2, [], {
+			[0.5, [], {
 				hint "Затвор отведен в заднее положение";
 				["bolt_opened",nil,nil,nil] call dzn_EJAM_fnc_setWeaponState;
 				[] spawn dzn_EJAM_fnc_ShowUnjamMenu;
@@ -60,14 +60,14 @@ dzn_EJAM_fnc_doAction = {
 			}, {}, "Извлекаем гильзу"] call ace_common_fnc_progressBar;
 		};
 		case "detach_mag": {
-			[2, [], {
+			[1, [], {
 				hint "Отсоединили магазин";
 				[nil,nil,nil,"mag_detached"] call dzn_EJAM_fnc_setWeaponState;
 				[] spawn dzn_EJAM_fnc_ShowUnjamMenu;
 			}, {}, "Отсоединяем магазин"] call ace_common_fnc_progressBar;
 		};
 		case "attach_mag": {
-			[2, [], {
+			[1, [], {
 				hint "Присоединили магазин";
 				[nil,nil,nil,"mag_attached"] call dzn_EJAM_fnc_setWeaponState;
 				[] spawn dzn_EJAM_fnc_ShowUnjamMenu;
@@ -112,6 +112,8 @@ dzn_EJAM_fnc_pullBolt = {
 };
 
 dzn_EJAM_fnc_processWeaponFixed = {
+	if (isNil { player getVariable "dzn_EJAM_WeaponState" }) exitWith {};
+	
 	(player getVariable "dzn_EJAM_WeaponState") params ["_bolt","_chamber","_case","_mag"];
 	
 	if (
@@ -139,10 +141,10 @@ dzn_EJAM_fnc_ShowUnjamMenu = {
 	
 	(player getVariable "dzn_EJAM_WeaponState") params ["_bolt","_chamber","_case","_mag"];
 	
-	private _boltText = (dzn_EJAM_States select { _x select 0 == _bolt }) select 0;
-	private _chamberText = (dzn_EJAM_States select { _x select 0 == _chamber }) select 0;
-	private _caseText = (dzn_EJAM_States select { _x select 0 == _case }) select 0;
-	private _magText = (dzn_EJAM_States select { _x select 0 == _mag }) select 0;	
+	private _boltText = (dzn_EJAM_States select { _x select 0 == _bolt }) select 0 select 1;
+	private _chamberText = (dzn_EJAM_States select { _x select 0 == _chamber }) select 0 select 1;
+	private _caseText = (dzn_EJAM_States select { _x select 0 == _case }) select 0 select 1;
+	private _magText = (dzn_EJAM_States select { _x select 0 == _mag }) select 0 select 1;	
 	
 	private _menuItems = [ 
 		[0,"HEADER","WEAPON MALFUNCTION"]
@@ -176,30 +178,42 @@ dzn_EJAM_fnc_ShowUnjamMenu = {
 	
 	{
 		// Creates a bunch of variables containing action data: _pull_bolt = ["Pull Bolt", { 'pull_bolt' call dzn_EJAM_fnc_doAction; }]
-		call compile format ["_%1 = [%2, { closeDialog 2; '%1' spawn dzn_EJAM_fnc_doAction; }, %4]", _x select 0, _x select 1];
+		call compile format ["dzn_EJAM_%1 = ['%2', { closeDialog 2; '%1' spawn dzn_EJAM_fnc_doAction; }]", _x select 0, _x select 1];
 	} forEach dzn_EJAM_FixActions;
 	
 	// BOLT Actions
-	_actionItems set [0, [4, "BUTTON", _pull_bolt select 0, _pull_bolt select 1]];
+	_actionItems set [0, [4, "BUTTON", dzn_EJAM_pull_bolt select 0, dzn_EJAM_pull_bolt select 1]];
 	if (_bolt != "bolt_opened") then { 
-		_actionItems set [3, [5, "BUTTON", _open_bolt select 0, _open_bolt select 1]]; 
+		_actionItems set [3, [5, "BUTTON", dzn_EJAM_open_bolt select 0, dzn_EJAM_open_bolt select 1]]; 
+	} else {
+		_actionItems set [3, [5, "LABEL", format ["<t color='#777777'>%1</t>", dzn_EJAM_open_bolt select 0]]]; 
 	};
 	
 	// CHAMBER and CASE actions
 	if (_bolt == "bolt_opened" && _mag == "mag_detached" && _chamber == "chamber_stucked" && _case == "case_ejected") then {
-		_actionItems set [1, [4, "BUTTON", _clear_chamber select 0, _clear_chamber select 1]];
+		_actionItems set [1, [4, "BUTTON", dzn_EJAM_clear_chamber select 0, dzn_EJAM_clear_chamber select 1]];
+	} else {
+		_actionItems set [1, [4, "LABEL", format ["<t color='#777777'>%1</t>", dzn_EJAM_clear_chamber select 0]]]; 
 	};
 	if (_bolt == "bolt_opened" && _case == "case_not_ejected") then {
-		_actionItems set [4, [5, "BUTTON", _remove_case select 0, _remove_case select 1]];
+		_actionItems set [4, [5, "BUTTON", dzn_EJAM_remove_case select 0, dzn_EJAM_remove_case select 1]];
+	} else {
+		_actionItems set [4, [5, "LABEL", format ["<t color='#777777'>%1</t>", dzn_EJAM_remove_case select 0]]]; 
 	};
 	
 	// MAGAZINE actions
 	if (_mag == "mag_attached") then {
-		_actionItems set [2, [4, "BUTTON", _detach_mag select 0, _detach_mag select 1]];
+		_actionItems set [2, [4, "BUTTON", dzn_EJAM_detach_mag select 0, dzn_EJAM_detach_mag select 1]];
+	} else {
+		_actionItems set [2, [4, "LABEL", format ["<t color='#777777'>%1</t>", dzn_EJAM_detach_mag select 0]]]; 
 	};
 	if (_mag == "mag_detached") then {
-		_actionItems set [5, [5, "BUTTON", _attach_mag select 0, _attach_mag select 1]];
+		_actionItems set [5, [5, "BUTTON", dzn_EJAM_attach_mag select 0, dzn_EJAM_attach_mag select 1]];
+	} else {
+		_actionItems set [5, [5, "LABEL", format ["<t color='#777777'>%1</t>", dzn_EJAM_attach_mag select 0]]]; 
 	};
+	
+	AX = (_menuItems + _actionItems);
 	
 	(_menuItems + _actionItems) call dzn_fnc_ShowAdvDialog; 
 };

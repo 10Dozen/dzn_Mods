@@ -2,7 +2,17 @@
 
 // Testing
 player addAction ["Jam", {  [player, currentWeapon player] call ace_overheating_fnc_jamWeapon }];
-
+[typeof player, 1, ["ACE_SelfActions", "ACE_Equipment"], [
+	"dzn_EJAM_ACE_Action_Inspect"
+	, "Inspect Weapon"
+	, ""
+	, { [] spawn dzn_EJAM_fnc_ShowUnjamMenu; }
+	, { 
+		!((player getVariable "ace_overheating_jammedWeapons") isEqualTo [])
+		&& player getVariable ["dzn_EJAM_CauseSet", false]
+	}
+] call ace_interact_menu_fnc_createAction] call ace_interact_menu_fnc_addActionToClass;
+	
 // Init
 [] spawn {
 	waitUntil { !isNil {player getVariable "ace_overheating_jammedWeapons"} };
@@ -52,14 +62,14 @@ dzn_EJAM_Causes = [
 	,[
 		"fail_to_extract"
 		,"Неизвлечение гильзы"
-		,["bolt_not_closed","chamber_not_extracted","case_ejected","mag_attached"]
+		,["bolt_not_closed","chamber_not_extracted","case_not_ejected","mag_attached"]
 		,["open_bolt","detach_mag","remove_case","clear_chamber"]
 		
 	]
 	,[
 		"fail_to_eject"
 		,"Прихват гильзы"
-		,["bolt_not_closed","chamber_stucked","case_not_ejected","mag_attached"]
+		,["bolt_not_closed","chamber_empty","case_not_ejected","mag_attached"]
 		,["open_bolt","remove_case"]
 	]
 ];
