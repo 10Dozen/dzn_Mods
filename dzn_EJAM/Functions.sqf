@@ -1,4 +1,4 @@
-﻿#define	REMOVE_ROUND	if ((player getVariable "dzn_EJAM_RemovedMagazine" select 1) > 0) then { player setVariable ["dzn_EJAM_LooseRound", true]; }
+#define	REMOVE_ROUND	if ((player getVariable "dzn_EJAM_RemovedMagazine" select 1) > 0) then { player setVariable ["dzn_EJAM_LooseRound", true]; }
 
 dzn_EJAM_fnc_setJamCause = {
 	(selectRandom dzn_EJAM_Causes) params ["_causeID", "_causeName", "_weaponState", "_actionList"];
@@ -134,13 +134,7 @@ dzn_EJAM_fnc_processWeaponFixed = {
 		&& _chamber in ["chamber_ready","chamber_empty"]
 		&& _case == "case_ejected"
 		&& _mag == "mag_attached"
-	) then {		
-		player setVariable ["dzn_EJAM_Cause", nil];
-		player setVariable ["dzn_EJAM_WeaponState", nil];
-		player setVariable ["dzn_EJAM_CauseSet", false];
-		player setVariable ["dzn_EJAM_RemovedMagazine", nil];
-		player setVariable ["dzn_EJAM_LooseRound", nil];
-		
+	) then {
 		private _oldFailChance = ace_overheating_unJamFailChance;
 		ace_overheating_unJamFailChance = 0;
 		
@@ -148,6 +142,12 @@ dzn_EJAM_fnc_processWeaponFixed = {
 		[player, "gestureYes"] call ace_common_fnc_doGesture;
 		
 		ace_overheating_unJamFailChance = _oldFailChance;
+		
+		player setVariable ["dzn_EJAM_Cause", nil];
+		player setVariable ["dzn_EJAM_WeaponState", nil];
+		player setVariable ["dzn_EJAM_CauseSet", false];
+		player setVariable ["dzn_EJAM_RemovedMagazine", nil];
+		player setVariable ["dzn_EJAM_LooseRound", nil];
 	};
 };
 
