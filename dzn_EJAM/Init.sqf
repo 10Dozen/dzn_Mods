@@ -1,4 +1,8 @@
 ﻿call compile preProcessFileLineNumbers "EJAM\Functions.sqf";
+call compile preProcessFileLineNumbers "EJAM\UIFunctions.sqf";
+call compile preProcessFileLineNumbers "EJAM\Settings.sqf";
+
+
 
 // Testing
 player addAction ["Jam", {  [player, currentWeapon player] call ace_overheating_fnc_jamWeapon }];
@@ -92,7 +96,7 @@ dzn_EJAM_States = [
 // Actions; In format [@ID, @DisplayName]
 dzn_EJAM_FixActions = [
 	["pull_bolt"		,"Передернуть затвор", { hint "Передернули затвор";  }]
-	,["open_bolt"		,"Отвести затворную группу", { hint "Открыли затвор" }]
+	,["open_bolt"		,"Отвести затвор", { hint "Открыли затвор" }]
 	,["clear_chamber"		,"Очистить патронник", { hint "Удалили патрон" }]
 	,["remove_case"		,"Удалить гильзу", { hint "Удалили гильзу" }]
 	,["detach_mag"		,"Отсоединить магазин", { hint "Отсоединили магазин" }]
