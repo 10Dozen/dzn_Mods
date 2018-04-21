@@ -3,20 +3,9 @@ call compile preProcessFileLineNumbers "EJAM\UIFunctions.sqf";
 call compile preProcessFileLineNumbers "EJAM\Settings.sqf";
 
 
-
 // Testing
 player addAction ["Jam", {  [player, currentWeapon player] call ace_overheating_fnc_jamWeapon }];
-[typeof player, 1, ["ACE_SelfActions", "ACE_Equipment"], [
-	"dzn_EJAM_ACE_Action_Inspect"
-	, "Inspect Weapon"
-	, ""
-	, { [] spawn dzn_EJAM_fnc_ShowUnjamMenu; }
-	, { 
-		!((player getVariable "ace_overheating_jammedWeapons") isEqualTo [])
-		&& player getVariable ["dzn_EJAM_CauseSet", false]
-	}
-] call ace_interact_menu_fnc_createAction] call ace_interact_menu_fnc_addActionToClass;
-	
+
 // Init
 [] spawn {
 	waitUntil { !isNil {player getVariable "ace_overheating_jammedWeapons"} };
@@ -24,13 +13,24 @@ player addAction ["Jam", {  [player, currentWeapon player] call ace_overheating_
 	while { true } do {
 		sleep 1;
 		if ( 
-			!((player getVariable "ace_overheating_jammedWeapons") isEqualTo [])
+			((primaryWeapon player) in (player getVariable "ace_overheating_jammedWeapons"))
 			&& !(player getVariable ["dzn_EJAM_CauseSet", false])
 		) then {
 			call dzn_EJAM_fnc_setJamCause;
 		};
 	};
 };
+
+[typeof player, 1, ["ACE_SelfActions", "ACE_Equipment"], [
+	"dzn_EJAM_ACE_Action_Inspect"
+	, "Inspect Weapon"
+	, ""
+	, { [] spawn dzn_EJAM_fnc_ShowUnjamMenu; }
+	, { 
+		((primaryWeapon player) in (player getVariable "ace_overheating_jammedWeapons"))
+		&& (player getVariable ["dzn_EJAM_CauseSet", false])
+	}
+] call ace_interact_menu_fnc_createAction] call ace_interact_menu_fnc_addActionToClass;
 
 
 /*
