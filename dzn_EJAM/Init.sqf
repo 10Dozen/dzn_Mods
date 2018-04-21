@@ -23,7 +23,7 @@ player addAction ["Jam", {  [player, currentWeapon player] call ace_overheating_
 
 [typeof player, 1, ["ACE_SelfActions", "ACE_Equipment"], [
 	"dzn_EJAM_ACE_Action_Inspect"
-	, "Inspect Weapon"
+	, localize "STR_EJAM_ACE_Action_Title"
 	, ""
 	, { [] spawn dzn_EJAM_fnc_ShowUnjamMenu; }
 	, { 
@@ -80,26 +80,26 @@ dzn_EJAM_Causes = [
 
 // Weapon States; In format [@ID, @DisplayName]
 dzn_EJAM_States = [
-	["bolt_closed"			,"Затвор в переднем положении"]
-	,["bolt_not_closed"		,"Затвор в среднем положении"]
-	,["bolt_opened"			,"Затвор в заднем положении"]	
-	,["chamber_empty"			,"Патронник пустой"]
-	,["chamber_ready"			,"Патрон в патроннике"]
-	,["chamber_stucked"		,"Патрон уткнулся"]
-	,["chamber_not_extracted"	,"Гильза не извлечена"]	
-	,["case_not_ejected"		,"Гильза не выброшена"]
-	,["case_ejected"			,"Гильза выброшена"]	
-	,["mag_attached"			,"Магазин присоединен"]
-	,["mag_detached"			,"Магазин отсоединен"]
+	["bolt_closed"			,localize "STR_EJAM_State_BoltClosed"]
+	,["bolt_not_closed"		,localize "STR_EJAM_State_BoltNotClosed"]
+	,["bolt_opened"			,localize "STR_EJAM_State_BoltOpened"]
+	,["chamber_empty"			,localize "STR_EJAM_State_ChamberEmpty"]
+	,["chamber_ready"			,localize "STR_EJAM_State_ChamberReady"]
+	,["chamber_stucked"		,localize "STR_EJAM_State_ChamberStucked"]
+	,["chamber_not_extracted"	,localize "STR_EJAM_State_ChamberNotExtracted"]	
+	,["case_not_ejected"		,localize "STR_EJAM_State_ChamberNotEjected"]
+	,["case_ejected"			,localize "STR_EJAM_State_CaseEjected"]
+	,["mag_attached"			,localize "STR_EJAM_State_MagAttached"]
+	,["mag_detached"			,localize "STR_EJAM_State_MagDetached"]
 ];
 
 // Actions; In format [@ID, @DisplayName]
 dzn_EJAM_FixActions = [
-	["pull_bolt"		,"Передернуть затвор", { hint "Передернули затвор";  }]
-	,["open_bolt"		,"Отвести затвор", { hint "Открыли затвор" }]
-	,["clear_chamber"		,"Очистить патронник", { hint "Удалили патрон" }]
-	,["remove_case"		,"Удалить гильзу", { hint "Удалили гильзу" }]
-	,["detach_mag"		,"Отсоединить магазин", { hint "Отсоединили магазин" }]
-	,["attach_mag"		,"Присоединить магазин", { hint "Присоединили магазин" }]
+	["pull_bolt"		,localize "STR_EJAM_Action_PullBolt"	, localize "STR_EJAM_Action_PullBolt_Process"]
+	,["open_bolt"		,localize "STR_EJAM_Action_OpenBolt"	, localize "STR_EJAM_Action_OpenBolt_Process"]
+	,["clear_chamber"		,localize "STR_EJAM_Action_ClearChamber"	, localize "STR_EJAM_Action_ClearChamber_Process"]
+	,["remove_case"		,localize "STR_EJAM_Action_RemoveCase"	, localize "STR_EJAM_Action_RemoveCase_Process"]
+	,["detach_mag"		,localize "STR_EJAM_Action_MagDetach"	, localize "STR_EJAM_Action_MagDetach_Process"]
+	,["attach_mag"		,localize "STR_EJAM_Action_MagAttach"	, localize "STR_EJAM_Action_MagAttach_Process"]
 ];
 

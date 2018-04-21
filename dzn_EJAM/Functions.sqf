@@ -31,52 +31,47 @@ dzn_EJAM_fnc_setWeaponState = {
 
 dzn_EJAM_fnc_doAction = {
 	private _actionID = _this;
+	private _processText = (dzn_EJAM_FixActions select { _x select 0 == _actionID }) select 0 select 2;
 	
 	switch (_actionID) do {
 		case "pull_bolt": {
 			[0.5, [], {
 				call dzn_EJAM_fnc_pullBolt;			
 				[] spawn dzn_EJAM_fnc_ShowUnjamMenu;				
-			}, {}, "Передергиваем затвор"] call ace_common_fnc_progressBar;
+			}, {}, _processText] call ace_common_fnc_progressBar;
 		};	
 		case "open_bolt": {
 			[0.5, [], {
-				hint "Затвор отведен в заднее положение";
 				["bolt_opened",nil,nil,nil] call dzn_EJAM_fnc_setWeaponState;
 				[] spawn dzn_EJAM_fnc_ShowUnjamMenu;
-			}, {}, "Отводим затвор назад"] call ace_common_fnc_progressBar;
+			}, {}, _processText] call ace_common_fnc_progressBar;
 		};
 		case "clear_chamber": {
-			[3, [], {
-				hint "Патронник освобожден от лишнего";
-				
+			[3, [], {				
 				REMOVE_ROUND;
 				[nil,"chamber_empty",nil,nil] call dzn_EJAM_fnc_setWeaponState;
 				[] spawn dzn_EJAM_fnc_ShowUnjamMenu;
-			}, {}, "Извлекаем патрон из патронника"] call ace_common_fnc_progressBar;
+			}, {}, _processText] call ace_common_fnc_progressBar;
 		};		
 		case "remove_case": {
 			[3, [], {
-				hint "Гильза извлечена";
 				[nil,nil,"case_ejected",nil] call dzn_EJAM_fnc_setWeaponState;
 				[] spawn dzn_EJAM_fnc_ShowUnjamMenu;
-			}, {}, "Извлекаем гильзу"] call ace_common_fnc_progressBar;
+			}, {}, _processText] call ace_common_fnc_progressBar;
 		};
 		case "detach_mag": {
 			[1, [], {
 				true call dzn_EJAM_fnc_manageMagazine;
-				hint "Отсоединили магазин";
 				[nil,nil,nil,"mag_detached"] call dzn_EJAM_fnc_setWeaponState;
 				[] spawn dzn_EJAM_fnc_ShowUnjamMenu;
-			}, {}, "Отсоединяем магазин"] call ace_common_fnc_progressBar;
+			}, {}, _processText] call ace_common_fnc_progressBar;
 		};
 		case "attach_mag": {
 			[1, [], {
 				false call dzn_EJAM_fnc_manageMagazine;
-				hint "Присоединили магазин";
 				[nil,nil,nil,"mag_attached"] call dzn_EJAM_fnc_setWeaponState;
 				[] spawn dzn_EJAM_fnc_ShowUnjamMenu;
-			}, {}, "Присоединием магазин"] call ace_common_fnc_progressBar;
+			}, {}, _processText] call ace_common_fnc_progressBar;
 		};
 	};	
 };
@@ -119,8 +114,7 @@ dzn_EJAM_fnc_pullBolt = {
 			};
 		};
 	};
-	
-	hint "Затвор передернули";
+
 	call dzn_EJAM_fnc_processWeaponFixed;
 };
 
@@ -168,10 +162,10 @@ dzn_EJAM_fnc_ShowUnjamMenu = {
 	private _magText = (dzn_EJAM_States select { _x select 0 == _mag }) select 0 select 1;	
 	
 	private _menuItems = [ 
-		[0,"HEADER","WEAPON MALFUNCTION"]
+		[0,"HEADER", localize "STR_EJAM_Menu_Title"]
 		, [0, "LABEL", ""]
 		, [0, "LABEL", ""]
-		, [0, "BUTTON", "CLOSE", {closeDialog 2}]
+		, [0, "BUTTON", localize "STR_EJAM_Menu_Close", {closeDialog 2}]
 		, [1, "LABEL", format[
 			"<t align='center'>%1</t><br /><img image='%2' size='15' />"
 			, getText (configFile >> "CfgWeapons" >> primaryWeapon player >> "displayName")

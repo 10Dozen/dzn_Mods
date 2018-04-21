@@ -5,7 +5,7 @@
 [
 	SETNAME("handleMag")
 	, "CHECKBOX"
-	, ["Handle Magazine detachment", "Handles magazine detachement on weapon in game"]
+	, [localize "STR_EJAM_Settings", localize "STR_EJAM_Settings_Desc"]
 	, TITLE
 	, true
 	, true
@@ -16,7 +16,7 @@
 [
 	TITLE
 	,"dzn_ejam_actionKey"
-	, "Inspect weapon"
+	, localize "STR_EJAM_Keybingding"
 	, { [] spawn dzn_EJAM_fnc_ShowUnjamMenu;	}
 	, {}
 ] call CBA_fnc_addKeybind;
