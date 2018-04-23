@@ -35,12 +35,35 @@ dzn_CG_fnc_healAll = {
 	hint parseText "<t size='1.5' color='#FFD000' shadow='1'>Global Healing done</t>";
 };
 
+dzn_CG_fnc_toggleFatigue = {
+	player enableFatigue _this;
+	
+	// If ACE stamina exists
+	if (!isNil "ace_advanced_fatigue_enabled" && { ace_advanced_fatigue_enabled }) then {
+		dzn_CG_ACE_Fatigue = _this;
+		if !(_this) then {
+			[] spawn {
+				while { !dzn_CG_ACE_Fatigue } do {
+					sleep 0.25;
+					ace_advanced_fatigue_anReserve = 999999;
+				};		
+			};
+		};
+	};
+	
+	hint parseText format [
+		"<t size='1.5' shadow='1'><t color='#FFD000' >Fatigue</t> %1</t>"
+		, if (_this) then { "ON" } else { "OFF" }
+	];
+};
+
 [] spawn {
 	sleep 2;
 	
 	dzn_CG_AutoHealEnabled = false;
 	dzn_CG_AutoHealTimer = 30;
 	dzn_CG_ACE_Available = !isNil "ace_medical_fnc_treatmentAdvanced_fullHealLocal";
+	
 
 	while { true } do {
 		sleep 0.5;

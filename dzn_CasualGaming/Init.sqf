@@ -1,5 +1,6 @@
 if !(hasInterface) exitWith {};
 
+[] spawn {
 waitUntil { time > 1 };
 
 call compile preProcessFileLineNumbers "\dzn_CasualGaming\modules\Arsenal.sqf";
@@ -33,6 +34,10 @@ TOPIC(true, "Auto-Heal")
 <br /><font color='#12C4FF' size='14'>Instant Healing</font>
 <br /> [<font color='#A0DB65'><execute expression='[] spawn dzn_CG_fnc_heal;'>Heal Myself</execute></font>]
 <br /> [<font color='#A0DB65'><execute expression='[] spawn dzn_CG_fnc_healAll'>Heal All Players</execute></font>]
+<br /> 
+<br /> <font color='#12C4FF' size='14'>Fatigue</font>
+<br /> [<font color='#A0DB65'><execute expression='true call dzn_CG_fnc_toggleFatigue'>Turn On</execute></font>]
+   [<font color='#A0DB65'><execute expression='false call dzn_CG_fnc_toggleFatigue'>Turn Off</execute></font>]
 "
 END
 
@@ -76,3 +81,5 @@ TOPIC(true, "Misc")
 END
 
 ADD_TOPICS
+
+};

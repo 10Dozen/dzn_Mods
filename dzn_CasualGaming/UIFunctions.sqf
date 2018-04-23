@@ -4,6 +4,7 @@ dzn_CG_fnc_handleExecute = {
 	private _text = ctrlText 1400;
 	
 	[compile _text, _type] call dzn_CG_fnc_Execute;
+	profilenamespace setVariable ["dzn_CG_Console_LastExecute", _text];
 };
 
 dzn_CG_fnc_Execute = {
@@ -30,6 +31,17 @@ dzn_CG_fnc_Execute = {
 	hint "Executed";
 };
 
+dzn_CG_fnc_restoreLastExecutedAndWatch = {
+	if (!isNil {profilenamespace getVariable "dzn_CG_Console_LastWatch"}) then {
+		ctrlSetText [1401, profilenamespace getVariable "dzn_CG_Console_LastWatch"];
+		call dzn_CG_fnc_handleWatch;
+	};
+	
+	if (!isNil {profilenamespace getVariable "dzn_CG_Console_LastExecute"}) then {
+		ctrlSetText [1400, profilenamespace getVariable "dzn_CG_Console_LastExecute"];
+	};
+};
+
 dzn_CG_fnc_updatePlayerList = {
 	private _list = call BIS_fnc_listPlayers;
 	private _ctrl = findDisplay 192001 displayCtrl 2100;
@@ -50,6 +62,7 @@ dzn_CG_fnc_updatePlayerList = {
 dzn_CG_fnc_handleWatch = {
 	private _code = ctrlText 1401;
 	private _output = call compile _code;
+	profilenamespace setVariable ["dzn_CG_Console_LastWatch", _code];
 	
 	ctrlSetText [1402, str(_output)];
 };

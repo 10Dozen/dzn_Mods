@@ -8,6 +8,7 @@ class dzn_CG_Console_Group: RscControlsGroup
 	w = 0.354265 * safezoneW;
 	h = 0.532079 * safezoneH;
 	colorBackground[] = {0,0,0,.75};
+	onLoad = "[] spawn { uiSleep 0.01; call dzn_CG_fnc_restoreLastExecutedAndWatch;};"
 	
 	class controls
 	{
@@ -20,6 +21,7 @@ class dzn_CG_Console_Group: RscControlsGroup
 			h = 0.532079 * safezoneH;
 			colorBackground[] = {0,0,0,.5};
 			style=80;
+			
 		};
 		class dzn_CG_Console_InputMain: RscEdit
 		{
@@ -97,7 +99,7 @@ class dzn_CG_Console_Group: RscControlsGroup
 			w = 0.341144 * safezoneW;
 			h = 0.0280042 * safezoneH;
 			font = "PuristaMedium";
-			onKeyDown = "if (_this select 1 == 28) then { call dzn_CG_fnc_handleWatch }";
+			onKeyDown = "if ((_this select 1) in [28,156]) then { call dzn_CG_fnc_handleWatch }";
 		};
 		class dzn_CG_Console_WatchOutput: RscEdit
 		{
