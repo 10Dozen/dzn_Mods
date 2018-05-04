@@ -1,4 +1,4 @@
-﻿#define	REMOVE_ROUND	if ((player getVariable "dzn_EJAM_RemovedMagazine" select 1) > 0) then { player setVariable ["dzn_EJAM_LooseRound", true]; }
+#define	REMOVE_ROUND	if ((player getVariable "dzn_EJAM_RemovedMagazine" select 1) > 0) then { player setVariable ["dzn_EJAM_LooseRound", true]; }
 
 dzn_EJAM_fnc_setJamCause = {
 	(selectRandom dzn_EJAM_Causes) params ["_causeID", "_causeName", "_weaponState", "_actionList"];
@@ -258,6 +258,8 @@ dzn_EJAM_fnc_manageMagazine = {
 		};			
 	} forEach _magsAmmo;
 	
+	C1 = _magsToReAdd;
+	C2 = _magsToDelete;
 	player removeWeapon _gun;
 	{ player removeMagazine _x } forEach _magsToDelete;
 	
@@ -270,11 +272,16 @@ dzn_EJAM_fnc_manageMagazine = {
 			private _curMag = player getVariable "dzn_EJAM_RemovedMagazine";
 			_magsToReAdd = _magsToReAdd - [_curMag];
 			
-			player addMagazine [
-				_curMag select 0
-				, (_curMag select 1) - (if (player getVariable ["dzn_EJAM_LooseRound", false]) then { 1 } else { 0 })
-			];
+			if (player getVariable ["dzn_EJAM_LooseRound", false]) then {
+				if (_curMag select 1 == 1) then {
+					_curMag = _magsToReAdd select 0;
+					_magsToReAdd deleteAt 0;
+				} else {
+					_curMag set [1, (_curMag select 1) - 1];				
+				};
+			};
 			
+			player addMagazine [_curMag select 0, _curMag select 1];
 			player addWeapon _gun;
 			{ player addPrimaryWeaponItem _x; } forEach _gunAttachements;
 			{ player addMagazine _x } forEach _magsToReAdd;
@@ -286,6 +293,7 @@ dzn_EJAM_fnc_manageMagazine = {
 	};
 	
 	player selectWeapon (primaryWeapon player);
+	player setVariable ["dzn_EJAM_LooseRound", nil];
 };
 
 dzn_EJAM_fnc_isMagAttached = {
