@@ -241,8 +241,11 @@ dzn_EJAM_fnc_manageMagazine = {
 	private _gun = primaryWeapon player;
 	private _gunAttachements = primaryWeaponItems player;
 	private _gunAttachementsState = [player isFlashlightOn _gun, player isIRLaserOn _gun];
+	private _zeroing = currentZeroing player;
+	
 	private _magsAmmo = magazinesAmmo player;
 	private _curWeaponMags = (getArray (configFile >> "CfgWeapons" >> _gun >> "magazines")) apply { toLower(_x) };
+	
 	
 	private _magsToDelete = [];
 	private _magsToReAdd = [];
@@ -296,6 +299,11 @@ dzn_EJAM_fnc_manageMagazine = {
 	if (_gunAttachementsState select 0) then { player action ["GunLightOn", player]; };
 	if (_gunAttachementsState select 1) then { player action ["IRLaserOn", player]; };
 	player setVariable ["dzn_EJAM_LooseRound", nil];
+	
+	if (_zeroing != currentZeroing player) then {
+		// hint parseText format ["<t size='1.25' color='#FFFF00'>Warning!</t><br />Weapon zeroing was reset (previous %1)", _zeroing];
+		[ format ["<t size='1.25' color='#FFFF00'>Warning!</t><br />Weapon zeroing was reset (previous %1)",_zeroing],3] call ace_common_fnc_displayTextStructured;
+	};
 };
 
 dzn_EJAM_fnc_isMagAttached = {
