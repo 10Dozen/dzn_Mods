@@ -240,6 +240,7 @@ dzn_EJAM_fnc_manageMagazine = {
 	
 	private _gun = primaryWeapon player;
 	private _gunAttachements = primaryWeaponItems player;
+	private _gunAttachementsState = [player isFlashlightOn _gun, player isIRLaserOn _gun];
 	private _magsAmmo = magazinesAmmo player;
 	private _curWeaponMags = (getArray (configFile >> "CfgWeapons" >> _gun >> "magazines")) apply { toLower(_x) };
 	
@@ -265,7 +266,7 @@ dzn_EJAM_fnc_manageMagazine = {
 	
 	if (_needRemove) then {
 		player addWeapon _gun;
-		{ player addPrimaryWeaponItem _x; } forEach _gunAttachements;
+		
 		{ player addMagazine _x } forEach _magsToReAdd;
 	} else {
 		if (!isNil {player getVariable "dzn_EJAM_RemovedMagazine"}) then {
@@ -283,16 +284,17 @@ dzn_EJAM_fnc_manageMagazine = {
 			
 			player addMagazine [_curMag select 0, _curMag select 1];
 			player addWeapon _gun;
-			{ player addPrimaryWeaponItem _x; } forEach _gunAttachements;
 			{ player addMagazine _x } forEach _magsToReAdd;
 		} else {
 			{ player addMagazine _x } forEach _magsToReAdd;
 			player addWeapon _gun;
-			{ player addPrimaryWeaponItem _x; } forEach _gunAttachements;
 		};
 	};
 	
 	player selectWeapon (primaryWeapon player);
+	{ player addPrimaryWeaponItem _x; } forEach _gunAttachements;
+	if (_gunAttachementsState select 0) then { player action ["GunLightOn", player]; };
+	if (_gunAttachementsState select 1) then { player action ["IRLaserOn", player]; };
 	player setVariable ["dzn_EJAM_LooseRound", nil];
 };
 
