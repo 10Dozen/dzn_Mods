@@ -1,10 +1,8 @@
-Compilation of old fashin M4/M16 rifles from RH M4 and NIArms AR15 mods
+## NIArms AR15 and RH M4 ripoff/compilation
 
-## Classes
+Compilation of old fashion M4/M16 rifles from RH M4 and NIArms AR15 mods. Compatible with Vanilla, CUP and RHS magazines.
 
-
-
-
+### Weapon Classes
 Entity | Classname | Desc
 ------------ | ------------- | -------------
 **NIArms**   
@@ -18,8 +16,10 @@ M4A1 | RH_m4a1 | Modern M4A1 with removable carry handle
 M4A1 M203 | RH_m4a1_m203 | Modern M4A1 with removable carry handle and M203 grenade launcher
 M4A1 Camo variant | RH_m4a1_tg<br />RH_m4a1_des<br />RH_m4a1_wdl<br />RH_m4a1_m203_tg<br />RH_m4a1_m203_des<br />RH_m4a1_m203_wdl | M4A1 and M4A1 w. M203 in tiger stripes, desert or woodland camo 
 
-### Magazines
+### Magazine Classes
 Entity | Classname | Desc
 ------------ | ------------- | -------------
 20Rnd 5.56mm STANAG | 20Rnd_556x45_Stanag | 20 rounds magazine
 20Rnd 5.56mm STANAG Tracer Red | 20Rnd_556x45_Stanag_Tracer_Red | 20 rounds magazine, tracers
+
+### PBO: [Download](https://drive.google.com/open?id=1Q1UoGCkF_1R4f2Kxia7ylbFLKT3a4J5y)
