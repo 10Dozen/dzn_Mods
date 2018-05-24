@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="SAmod">
+  <Package name="SAmod">
+    <Container name="Misc">
+      <Key ID="STR_PANAMA">
+        <Original>Panama (OKSVA)</Original>
+        <Russian>Панама (ОКСВА)</Russian>
+      </Key>
+	  
+    </Container>
+  </Package>
+</Project>
