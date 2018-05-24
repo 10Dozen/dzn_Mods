@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="rhsgref">
+  <Package name="rhsgref_main">
+    <Container name="Misc">
+      <Key ID="STR_RHS_AUTHOR_FULL">
+        <Original>RHS Team</Original>
+      </Key>
+      <Key ID="STR_RHSGREF_6B5_NAME">
+        <Original>6B5-19</Original>
+        <English>6B5-19</English>
+        <Czech>6B5-19</Czech>
+        <French>6B5-19</French>
+        <Spanish>6B5-19</Spanish>
+        <Italian>6B5-19</Italian>
+        <Polish>6B5-19</Polish>
+        <Portuguese>6B5-19</Portuguese>
+        <Russian>6Б5-19</Russian>
+        <German>6B5-19</German>
+      </Key>
+      <Key ID="STR_RHSGREF_6B5_RIFLEMAN_NAME">
+        <Original>6B5-19 (6Sh46)</Original>
+        <English>6B5-19 (6Sh46)</English>
+        <Czech>6B5-19 (6Sh46)</Czech>
+        <French>6B5-19 (6Sh46)</French>
+        <Spanish>6B5-19 (6Sh46)</Spanish>
+        <Italian>6B5-19 (6Sh46)</Italian>
+        <Polish>6B5-19 (6Sh46)</Polish>
+        <Portuguese>6B5-19 (6Sh46)</Portuguese>
+        <Russian>6Б5-19 (6Ш46)</Russian>
+        <German>6B5-19 (6Sh46)</German>
+      </Key>
+      <Key ID="STR_RHSGREF_6B5_OFFICER_NAME">
+        <Original>6B5-19 (Officer)</Original>
+        <English>6B5-19 (Officer)</English>
+        <Czech>6B5-19 (Officer)</Czech>
+        <French>6B5-19 (Officer)</French>
+        <Spanish>6B5-19 (Oficial)</Spanish>
+        <Italian>6B5-19 (Ufficiale)</Italian>
+        <Polish>6B5-19 (Oficer)</Polish>
+        <Portuguese>6B5-19 (Officer)</Portuguese>
+        <Russian>6Б5-19 (офицер)</Russian>
+        <German>6B5-19 (Unteroffizier)</German>
+      </Key>
+      <Key ID="STR_RHSGREF_6B5_MEDIC_NAME">
+        <Original>6B5-19 (Medic)</Original>
+        <English>6B5-19 (Medic)</English>
+        <Czech>6B5-19 (Medic)</Czech>
+        <French>6B5-19 (Medic)</French>
+        <Spanish>6B5-19 (Médico)</Spanish>
+        <Italian>6B5-19 (Medico)</Italian>
+        <Polish>6B5-19 (Medyk)</Polish>
+        <Portuguese>6B5-19 (Medic)</Portuguese>
+        <Russian>6Б5-19 (медик)</Russian>
+        <German>6B5-19 (Sanitäter)</German>
+      </Key>
+      <Key ID="STR_RHSGREF_6B5_SNIPER_NAME">
+        <Original>6B5-19 (Sniper)</Original>
+        <English>6B5-19 (Sniper)</English>
+        <Czech>6B5-19 (Sniper)</Czech>
+        <French>6B5-19 (Sniper)</French>
+        <Spanish>6B5-19 (Francotirador)</Spanish>
+        <Italian>6B5-19 (Cecchino)</Italian>
+        <Polish>6B5-19 (Snajper)</Polish>
+        <Portuguese>6B5-19 (Sniper)</Portuguese>
+        <Russian>6Б5-19 (снайпер)</Russian>
+        <German>6B5-19 (Scharfschütze)</German>
+      </Key>
+      <Key ID="STR_RHSGREF_6B5_OLIVE_NAME">
+        <Original>6B5-19 Olive</Original>
+        <English>6B5-19 Olive</English>
+        <Czech>6B5-19 Olive</Czech>
+        <French>6B5-19 Olive</French>
+        <Spanish>6B5-19 Olive</Spanish>
+        <Italian>6B5-19 Oliva</Italian>
+        <Polish>6B5-19 Olive</Polish>
+        <Portuguese>6B5-19 Olive</Portuguese>
+        <Russian>6Б5-19 Олив.</Russian>
+        <German>6B5-19 Olive</German>
+      </Key>
+      <Key ID="STR_RHSGREF_6B5_RIFLEMAN_OLIVE_NAME">
+        <Original>6B5-19 Olive (6Sh46)</Original>
+        <English>6B5-19 Olive (6Sh46)</English>
+        <Czech>6B5-19 Olive (6Sh46)</Czech>
+        <French>6B5-19 Olive (6Sh46)</French>
+        <Spanish>6B5-19 Olive (6Sh46)</Spanish>
+        <Italian>6B5-19 Oliva (6Sh46)</Italian>
+        <Polish>6B5-19 Olive (6Sh46)</Polish>
+        <Portuguese>6B5-19 Olive (6Sh46)</Portuguese>
+        <Russian>6Б5-19 Олив. (6Ш46)</Russian>
+        <German>6B5-19 Olive (6Sh46)</German>
+      </Key>
+      <Key ID="STR_RHSGREF_6B5_OFFICER_OLIVE_NAME">
+        <Original>6B5-19 Olive (Officer)</Original>
+        <English>6B5-19 Olive (Officer)</English>
+        <Czech>6B5-19 Olive (Officer)</Czech>
+        <French>6B5-19 Olive (Officer)</French>
+        <Spanish>6B5-19 Olive (Oficial)</Spanish>
+        <Italian>6B5-19 Oliva (Ufficiale)</Italian>
+        <Polish>6B5-19 Olive (Oficer)</Polish>
+        <Portuguese>6B5-19 Olive (Officer)</Portuguese>
+        <Russian>6Б5-19 Олив. (офицер)</Russian>
+        <German>6B5-19 Olive (Unteroffizier)</German>
+      </Key>
+      <Key ID="STR_RHSGREF_6B5_MEDIC_OLIVE_NAME">
+        <Original>6B5-19 Olive (Medic)</Original>
+        <English>6B5-19 Olive (Medic)</English>
+        <Czech>6B5-19 Olive (Medic)</Czech>
+        <French>6B5-19 Olive (Medic)</French>
+        <Spanish>6B5-19 Olive (Médico)</Spanish>
+        <Italian>6B5-19 Oliva (Medico)</Italian>
+        <Polish>6B5-19 Olive (Medyk)</Polish>
+        <Portuguese>6B5-19 Olive (Medic)</Portuguese>
+        <Russian>6Б5-19 Олив. (медик)</Russian>
+        <German>6B5-19 Olive (Sanitäter)</German>
+      </Key>
+      <Key ID="STR_RHSGREF_6B5_SNIPER_OLIVE_NAME">
+        <Original>6B5-19 Olive (Sniper)</Original>
+        <English>6B5-19 Olive (Sniper)</English>
+        <Czech>6B5-19 Olive (Sniper)</Czech>
+        <French>6B5-19 Olive (Sniper)</French>
+        <Spanish>6B5-19 Olive (Francotirador)</Spanish>
+        <Italian>6B5-19 Oliva (Cecchino)</Italian>
+        <Polish>6B5-19 Olive (Snajper)</Polish>
+        <Portuguese>6B5-19 Olive (Sniper)</Portuguese>
+        <Russian>6Б5-19 Олив. (снайпер)</Russian>
+        <German>6B5-19 Olive (Scharfschütze)</German>
+      </Key>
+      <Key ID="STR_RHSGREF_6B5_VSR_NAME">
+        <Original>6B5-19 VSR</Original>
+        <English>6B5-19 VSR</English>
+        <Czech>6B5-19 VSR</Czech>
+        <French>6B5-19 VSR</French>
+        <Spanish>6B5-19 VSR</Spanish>
+        <Italian>6B5-19 VSR</Italian>
+        <Polish>6B5-19 VSR</Polish>
+        <Portuguese>6B5-19 VSR</Portuguese>
+        <Russian>6Б5-19 ВСР</Russian>
+        <German>6B5-19 VSR</German>
+      </Key>
+      <Key ID="STR_RHSGREF_6B5_RIFLEMAN_VSR_NAME">
+        <Original>6B5-19 VSR (6Sh46)</Original>
+        <English>6B5-19 VSR (6Sh46)</English>
+        <Czech>6B5-19 VSR (6Sh46)</Czech>
+        <French>6B5-19 VSR (6Sh46)</French>
+        <Spanish>6B5-19 VSR (6Sh46)</Spanish>
+        <Italian>6B5-19 VSR (6Sh46)</Italian>
+        <Polish>6B5-19 VSR (6Sh46)</Polish>
+        <Portuguese>6B5-19 VSR (6Sh46)</Portuguese>
+        <Russian>6Б5-19 ВСР (6Ш46)</Russian>
+        <German>6B5-19 VSR (6Sh46)</German>
+      </Key>
+      <Key ID="STR_RHSGREF_6B5_OFFICER_VSR_NAME">
+        <Original>6B5-19 VSR (Officer)</Original>
+        <English>6B5-19 VSR (Officer)</English>
+        <Czech>6B5-19 VSR (Officer)</Czech>
+        <French>6B5-19 VSR (Officer)</French>
+        <Spanish>6B5-19 VSR (Oficial)</Spanish>
+        <Italian>6B5-19 VSR (Ufficiale)</Italian>
+        <Polish>6B5-19 VSR (Oficer)</Polish>
+        <Portuguese>6B5-19 VSR (Officer)</Portuguese>
+        <Russian>6Б5-19 ВСР (офицер)</Russian>
+        <German>6B5-19 VSR (Unteroffizier)</German>
+      </Key>
+      <Key ID="STR_RHSGREF_6B5_SNIPER_VSR_NAME">
+        <Original>6B5-19 VSR (Sniper)</Original>
+        <English>6B5-19 VSR (Sniper)</English>
+        <Czech>6B5-19 VSR (Sniper)</Czech>
+        <French>6B5-19 VSR (Sniper)</French>
+        <Spanish>6B5-19 VSR (Francotirador)</Spanish>
+        <Italian>6B5-19 VSR (Cecchino)</Italian>
+        <Polish>6B5-19 VSR (Snajper)</Polish>
+        <Portuguese>6B5-19 VSR (Sniper)</Portuguese>
+        <Russian>6Б5-19 ВСР (снайпер)</Russian>
+        <German>6B5-19 VSR (Scharfschütze)</German>
+      </Key>
+      <Key ID="STR_RHSGREF_6B5_TTsKO_NAME">
+        <Original>6B5-19 TTsKO</Original>
+        <English>6B5-19 TTsKO</English>
+        <Czech>6B5-19 TTsKO</Czech>
+        <French>6B5-19 TTsKO</French>
+        <Spanish>6B5-19 TTsKO</Spanish>
+        <Italian>6B5-19 TTsKO</Italian>
+        <Polish>6B5-19 TTsKO</Polish>
+        <Portuguese>6B5-19 TTsKO</Portuguese>
+        <Russian>6Б5-19 ТТсКО</Russian>
+        <German>6B5-19 TTsKO</German>
+      </Key>
+      <Key ID="STR_RHSGREF_6B5_RIFLEMAN_TTsKO_NAME">
+        <Original>6B5-19 TTsKO (6Sh46)</Original>
+        <English>6B5-19 TTsKO (6Sh46)</English>
+        <Czech>6B5-19 TTsKO (6Sh46)</Czech>
+        <French>6B5-19 TTsKO (6Sh46)</French>
+        <Spanish>6B5-19 TTsKO (6Sh46)</Spanish>
+        <Italian>6B5-19 TTsKO (6Sh46)</Italian>
+        <Polish>6B5-19 TTsKO (6Sh46)</Polish>
+        <Portuguese>6B5-19 TTsKO (6Sh46)</Portuguese>
+        <Russian>6Б5-19 ТТсКО (6Ш46)</Russian>
+        <German>6B5-19 TTsKO (6Sh46)</German>
+      </Key>
+      <Key ID="STR_RHSGREF_6B5_OFFICER_TTsKO_NAME">
+        <Original>6B5-19 TTsKO (Officer)</Original>
+        <English>6B5-19 TTsKO (Officer)</English>
+        <Czech>6B5-19 TTsKO (Officer)</Czech>
+        <French>6B5-19 TTsKO (Officer)</French>
+        <Spanish>6B5-19 TTsKO (Oficial)</Spanish>
+        <Italian>6B5-19 TTsKO (Ufficiale)</Italian>
+        <Polish>6B5-19 TTsKO (Oficer)</Polish>
+        <Portuguese>6B5-19 TTsKO (Officer)</Portuguese>
+        <Russian>6Б5-19 ТТсКО (офицер)</Russian>
+        <German>6B5-19 TTsKO (Unteroffizier)</German>
+      </Key>
+      <Key ID="STR_RHSGREF_6B5_MEDIC_VSR_NAME">
+        <Original>6B5-19 VSR (Medic)</Original>
+        <English>6B5-19 VSR (Medic)</English>
+        <Czech>6B5-19 VSR (Medic)</Czech>
+        <French>6B5-19 VSR (Medic)</French>
+        <Spanish>6B5-19 VSR (Médico)</Spanish>
+        <Italian>6B5-19 VSR (Medico)</Italian>
+        <Polish>6B5-19 VSR (Medyk)</Polish>
+        <Portuguese>6B5-19 VSR (Medic)</Portuguese>
+        <Russian>6Б5-19 ВСР (медик)</Russian>
+        <German>6B5-19 VSR (Sanitäter)</German>
+      </Key>
+      <Key ID="STR_RHSGREF_6B5_MEDIC_TTsKO_NAME">
+        <Original>6B5-19 TTsKO (Medic)</Original>
+        <English>6B5-19 TTsKO (Medic)</English>
+        <Czech>6B5-19 TTsKO (Medic)</Czech>
+        <French>6B5-19 TTsKO (Medic)</French>
+        <Spanish>6B5-19 TTsKO (Médico)</Spanish>
+        <Italian>6B5-19 TTsKO (Medico)</Italian>
+        <Polish>6B5-19 TTsKO (Medyk)</Polish>
+        <Portuguese>6B5-19 TTsKO (Medic)</Portuguese>
+        <Russian>6Б5-19 ТТсКО (медик)</Russian>
+        <German>6B5-19 TTsKO (Sanitäter)</German>
+      </Key>
+      <Key ID="STR_RHSGREF_6B5_SNIPER_TTsKO_NAME">
+        <Original>6B5-19 TTsKO (Sniper)</Original>
+        <English>6B5-19 TTsKO (Sniper)</English>
+        <Czech>6B5-19 TTsKO (Sniper)</Czech>
+        <French>6B5-19 TTsKO (Sniper)</French>
+        <Spanish>6B5-19 TTsKO (Francotirador)</Spanish>
+        <Italian>6B5-19 TTsKO (Cecchino)</Italian>
+        <Polish>6B5-19 TTsKO (Snajper)</Polish>
+        <Portuguese>6B5-19 TTsKO (Sniper)</Portuguese>
+        <Russian>6Б5-19 ТТсКО (снайпер)</Russian>
+        <German>6B5-19 TTsKO (Scharfschütze)</German>
+      </Key>
+	  
+    </Container>
+  </Package>
+</Project>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project name="dzn_pook">
+	<Package name="Weapons">
+		<Container name="Grenade launchers">
+			<Key ID="STR_dzn_pook_GM94">
+				<Original>GM-94</Original>				
+				<Russian>ГМ-94</Russian>
+			</Key>
+			<Key ID="STR_dzn_pook_GM94_desc">
+				<Original>GM-94 43mm pump-action grenade launcher</Original>				
+				<Russian>ГМ-94 43мм помповый гранатомет</Russian>
+			</Key>
+			<Key ID="STR_dzn_pook_GM94_3Rnd_Mag">
+				<Original>43mm Thermobaric</Original>
+				<Russian>43мм Термобарический</Russian>
+			</Key>
+			<Key ID="STR_dzn_pook_GM94_3Rnd_Mag_desc">
+				<Original>3x 43mm VGM93.100 thermobaric grenades for GM-94</Original>
+				<Russian>3х выстрел 43мм ВГМ93.100 (термобарический) для ГМ-94</Russian>
+			</Key>
+			<Key ID="STR_dzn_pook_GM94_3Rnd_Smoke_Mag">
+				<Original>43mm Smoke</Original>
+				<Russian>43мм Дымовой</Russian>
+			</Key>
+			<Key ID="STR_dzn_pook_GM94_3Rnd_Smoke_Mag_desc">
+				<Original>3x 43mm VGM93.300 smoke grenades for GM-94</Original>
+				<Russian>3х выстрел 43мм ВГМ93.300 (дымовой) для ГМ-94</Russian>
+			</Key>
+			<Key ID="STR_dzn_pook_GM94_3Rnd_Stun_Mag">
+				<Original>43mm Stun</Original>
+				<Russian>43мм Cветозвуковой</Russian>
+			</Key>
+			<Key ID="STR_dzn_pook_GM94_3Rnd_Stun_Mag_desc">
+				<Original>3x 43mm VGM93.400 stun grenades for GM-94</Original>
+				<Russian>3х выстрел 43мм ВГМ93.400 (светозвуковой) для ГМ-94</Russian>
+			</Key>
+		</Container>
+	</Package>
+</Project>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project name="YuEmod">
+  <Package name="YuEmod">
+    <Container name="Misc">
+      <Key ID="STR_YUE_Sumrak">
+        <Original>Sumrak (Berezka)</Original>
+        <Russian>Сумрак (Березка)</Russian>
+      </Key>
+	  
+    </Container>
+  </Package>
+</Project>
