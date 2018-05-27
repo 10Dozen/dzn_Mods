@@ -1,9 +1,10 @@
+	// class SoldierEB;
 	class Spec_EAST_soldier_Base: SoldierEB
 	{
 		scope = 0;
 		author = "Yura Esin";
 		side = 0;
-		faction = "YuE_EAST";
+		faction = "";
 		genericNames = "RussianMen";
 		identitytypes[] = {"LanguageRUS","Head_Euro"};
 		class UniformInfo
@@ -50,7 +51,7 @@
 	{
 		_generalMacro = "Spec_EAST_soldier";
 		author = "Yura Esin";
-		faction = "YuE_EAST";
+		faction = "";
 		vehicleClass = "YuE_S";
 		editorSubcategory = "YuE_EdSubcat_S";
 		displayName = "Recon Medic (Sfera)";
@@ -94,7 +95,7 @@
 	{
 		_generalMacro = "Spec_EAST_soldier46";
 		author = "Yura Esin";
-		faction = "YuE_EAST";
+		faction = "";
 		vehicleClass = "YuE_B";
 		editorSubcategory = "YuE_EdSubcat_B";
 		displayName = "Recon VAL (Berezka)";
@@ -124,7 +125,7 @@
 	{
 		_generalMacro = "Spec_EAST_soldier37";
 		author = "Yura Esin";
-		faction = "YuE_EAST";
+		faction = "";
 		vehicleClass = "YuE_B";
 		editorSubcategory = "YuE_EdSubcat_B";
 		displayName = "Recon Medic (Berezka)";
@@ -154,7 +155,7 @@
 	{
 		_generalMacro = "Spec_EAST_soldier40";
 		author = "Yura Esin";
-		faction = "YuE_EAST";
+		faction = "";
 		vehicleClass = "YuE_B";
 		editorSubcategory = "YuE_EdSubcat_B";
 		displayName = "Recon Sniper SVD (Berezka)";
