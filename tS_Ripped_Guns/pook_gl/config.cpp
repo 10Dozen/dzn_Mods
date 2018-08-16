@@ -10,11 +10,11 @@ class CfgPatches
 		weapons[] = {"dzn_weapon_GM94"};
 		requiredVersion = 0.1;
 		requiredAddons[] = {"CUP_Weapons_GrenadeLaunchers","rhs_c_weapons"};
-		magazines[] = {};
+		magazines[] = {"dzn_3Rnd_VGM93_100_Mag","dzn_3Rnd_VGM93_300_Mag","dzn_3Rnd_VGM93_400_Mag"};
 		ammo[] = {};
 		
-		version = "v0.2";
-		author = "pook & 10Dozen";
+		version = "v0.3";
+		author = "pook & 10Dozen & Urban";
 	};
 };
 
@@ -36,21 +36,21 @@ class cfgWeapons
 	
 	class dzn_weapon_GM94: CUP_glaunch_Mk13
 	{
-		author = "pook & 10Dozen";
+		author = "pook & 10Dozen & Urban";
 		scope = 2;
 		handAnim[] = {"OFP2_ManSkeleton","\CUP\Weapons\CUP_Weapons_GrenadeLaunchers\data\anim\Mk13.rtm"};
 		picture = "\pook_gl\data\icon\pook_GM94.paa";
 		model = "\pook_gl\pook_GM94.p3d";
-		displayName = "$STR_dzn_pook_GM94";
+		displayName = $STR_dzn_pook_GM94;
 		class Library
 		{
-			libTextDesc = "$STR_dzn_pook_GM94_desc";
+			libTextDesc = $STR_dzn_pook_GM94_desc;
 		};
-		descriptionShort = "$STR_dzn_pook_GM94_desc";
+		descriptionShort = $STR_dzn_pook_GM94_desc;
 		cameraDir = "OP_look";
-		discreteDistance[] = {150};
-		discreteDistanceCameraPoint[] = {"OP_eye_150"};
-		discreteDistanceInitIndex = 1;
+		discreteDistance[] = {50,100,150,200,250};
+		discreteDistanceCameraPoint[] = {"OP_eye_50","OP_eye_100","OP_eye_150","OP_eye_200","OP_eye_250"};
+		discreteDistanceInitIndex = 0;
 		aimTransitionSpeed = 1.1;
 		
 		modes[] = {"Single"};
@@ -77,20 +77,19 @@ class CfgAmmo
 	class G_40mm_HE;
 	class dzn_43mm_VGM93_100: G_40mm_HE
 	{
-		indirectHitRange = 5;
+		indirectHitRange = 3;
 		aiAmmoUsageFlags = "64 + 128";
 		cost = 0;
 		minRange = 10;
 		midRange = 150;
 		maxRange = 400;
-		fuseDistance = 10
+		fuseDistance = 10;
 		
 		ace_frag_enabled = 0;
 		ace_frag_force = 0;
 		ace_frag_skip = 1;
 		initTime = 0.12;
 	};
-	
 };
 
 class CfgMagazines
@@ -110,7 +109,7 @@ class CfgMagazines
 		count = 3;
 		picture = "\pook_gl\data\icon\vgm93_100.paa";
 	};
-	class dzn_3Rnd_VGM93_300_Mag:  1Rnd_Smoke_Grenade_shell 
+	class dzn_3Rnd_VGM93_300_Mag: 1Rnd_Smoke_Grenade_shell 
 	{
 		ammo = "G_40mm_Smoke";
 		mass = 13;
