@@ -2,7 +2,7 @@
 
 	Select 2 objects in Zeus and open console.
 	Execute:
-	
+		
 		// Asphalt road type 1 (old)
 		"Asphalt" call dzn_DynRoads_fnc_createRoadZeus
 
@@ -14,6 +14,9 @@
 		
 		// Sand/gravel road
 		"Dirt" call dzn_DynRoads_fnc_createRoadZeus
+		
+	OR without Zeus from obj1 to obj2:
+		[getPos obj1, getPos obj2, "Asphalt2"] spawn dzn_DynRoads_fnc_createSection;
 
 */
 
