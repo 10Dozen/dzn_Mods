@@ -1,10 +1,12 @@
-﻿player addAction [
-	"Change house"
-	, {
-		cursorObject call dzn_DynHouse_fnc_replaceBuilding; 
-		player sideChat "DynBuildings: Replaced!";
-	}
-];
+/*
+	Replace not-enterable buildings to same shape but enterable buildings from CUP Terrains Core.
+	
+	// Replaces all buildings inside given trigger
+	TRG_1 spawn dzn_DynHouse_fnc_replaceInTrigger
+
+	// Replaces given building to enterable one
+	cursorTarget call dzn_DynHouse_fnc_replaceBuilding;
+*/
 
 
 dzn_DynHouse_Config = call CBA_fnc_createNamespace;
@@ -60,76 +62,3 @@ dzn_DynHouse_fnc_replaceInTrigger = {
 		};
 	} forEach _houses;
 };
-
-
-/*
-A1 setPosASL (getPosASL A2);
-A1 setPosATL (A1 modelToWorld [(boundingCenter A1) # 0, (boundingCenter A1) # 1, -1 * ((boundingCenter A1) # 2)] )
-*/
-/*
-dzn_DynHouse_fnc_replaceBuilding = {
-	params ["_house"];
-	
-	private _replaceOption = dzn_DynHouse_Config getVariable [typeof _house, nil];
-	if (isNil "_replaceOption") exitWith {player sideChat "No class to exchange";};
-	
-	private _pos = getPosATL _house;
-	private _dir = getDir _house;
-	[_house, true] remoteExec ["hideObjectGlobal",2];
-	[_house, false] remoteExec ["enableSimulationGlobal",2];
-	
-	_replaceOption params ["_replaceClass", "_replaceOffset"];
-	private _replaceHouse = createVehicle [_replaceOption # 0, _pos, [], 0, "CAN_COLLIDE"];
-	
-	_replaceHouse setDir _dir;	
-	_replaceHouse setPosATL [
-		(_pos # 0) + (_replaceOffset # 0)
-		, (_pos # 1) - (_replaceOffset # 1)
-		, (_pos # 2) 
-	];
-	
-	[_house, _replaceHouse]
-};
-*/
-
-/*
-boundingCenter (AX # 1)
-(AX # 1) setPosATL [61195.2 + 4.32969,60802 - 1.673, 0]
-
-
-A1 = cursorObject;
-
-A1 hideObject true;
-A1 enableSimulation false;
-A1 setDamage 1;
-deleteVehicle A1;
-
-
-*/
-/*
-dzn_DynRoads_Config = call CBA_fnc_createNamespace;
-private _asphaltConfig = call CBA_fnc_createNamespace;
-private _asphalt2Config = call CBA_fnc_createNamespace;
-private _mudConfig = call CBA_fnc_createNamespace;
-private _dirtConfig = call CBA_fnc_createNamespace;
-
-{
-	_x params ["_name","_class","_size","_startPos","_endPos"];
-	_asphaltConfig setVariable [
-		_name
-		, [_class, _size, _startPos, _endPos]
-	];
-} forEach [
-	["6", "CUP_A2_Road_asf3_6", 6, [0,-3,0], [0,3,0]]
-	,["E", "CUP_A2_Road_asf3_6konec", 3, [0,-3,0], [0,0,0]]
-	,["12", "CUP_A2_Road_asf3_12", 12, [0,-6,0], [0,6,0]]
-	,["25", "CUP_A2_Road_asf3_25", 25, [0,-12.5,0], [0,12.5,0]]
-	,["18","CUP_A2_Road_asf3_1_1000", 18, [0,-9,0], [0,9,0]]
-];
-
-
-dzn_DynRoads_Config setVariable ["Asphalt", _asphaltConfig];
-dzn_DynRoads_Config setVariable ["Asphalt2", _asphalt2Config];
-dzn_DynRoads_Config setVariable ["Mud", _mudConfig];
-dzn_DynRoads_Config setVariable ["Dirt", _dirtConfig];
-*/
