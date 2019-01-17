@@ -1,5 +1,14 @@
 /*
 	Select 2 objects in Zeus and open console.
+	List of road types:
+		"Asphalt"
+		"Asphalt2" (with sand dust)
+		"Asphalt3" 
+		"Asphalt4" 
+		"Asphalt5" (old cracked)
+		"Mud"
+		"Dirt"
+		"Gravel"
 	Execute:
 		
 		// Asphalt road type 1 (old)
