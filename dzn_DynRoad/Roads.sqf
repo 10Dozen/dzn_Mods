@@ -1,4 +1,26 @@
-﻿
+/*
+	Select 2 objects in Zeus and open console.
+	Execute:
+		
+		// Asphalt road type 1 (old)
+		"Asphalt" call dzn_DynRoads_fnc_createRoadZeus
+		// Asphalt road type 2 (new with dust)
+		"Asphalt2" call dzn_DynRoads_fnc_createRoadZeus
+		
+		// Mud 2-wheel path
+		"Mud" call dzn_DynRoads_fnc_createRoadZeus
+		
+		// Sand/gravel road
+		"Dirt" call dzn_DynRoads_fnc_createRoadZeus
+		
+		// OR without Zeus from obj1 to obj2:
+		[getPos obj1, getPos obj2, "Asphalt2"] spawn dzn_DynRoads_fnc_createSection;
+		
+		// Draw road from GameLogic named "Road1" through chain of synced game logics
+		[Road1, "Asphalt2"] spawn dzn_DynRoads_fnc_createRoadFromPath;
+*/
+
+
 /*
 
 	117c73580# 1160558: asf3_1 1000.p3d
