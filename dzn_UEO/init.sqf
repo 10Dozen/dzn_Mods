@@ -11,6 +11,7 @@ player addAction ["To VSR-93", { [player, "CUP_U_O_RUS_VSR93_worn_MSV"] call dzn
 #define 	DN_ROLLED			"Rolled up"
 #define		DN_ROLLED_ACTION	"Roll up"
 
+// Presets
 dzn_Uniforms = [
 	[
 		["U_B_CTRG_1"		,DN_NORMAL		,DN_NORMAL_ACTION]
@@ -42,7 +43,7 @@ dzn_Uniforms = [
 	]
 ];
 
-
+// Functions
 dzn_UEO_fnc_handleInventoryDisplay = {
 	dzn_UEO_handleIventory = true;
 	while { dzn_UEO_handleIventory } do {
@@ -192,3 +193,8 @@ dzn_UEO_fnc_uiHideDropdownItems = {
 };
 
 
+// INIT
+[] spawn {
+	waitUntil { time > 0 };
+	[] spawn dzn_UEO_fnc_handleInventoryDisplay;
+};
